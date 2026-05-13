@@ -1,0 +1,363 @@
+[gd_scene format=3 uid="uid://dkuuhw6j251v"]
+
+[ext_resource type="Script" uid="uid://dkm01vf4lknir" path="res://Contents_P_I.cs" id="1_ljdgf"]
+[ext_resource type="Texture2D" uid="uid://dv407cyytps0d" path="res://place holders/678389911_1870797110453119_1821731508704277239_n.png" id="2_bomhp"]
+[ext_resource type="Texture2D" uid="uid://pko0y5y0chtt" path="res://place holders/679961220_1321777009872154_7719911029311369346_n.png" id="3_uph1y"]
+[ext_resource type="Texture2D" uid="uid://c5b2sbksxoyvm" path="res://place holders/684146226_2513326992456987_2687682788803640839_n.jpg" id="4_ecejo"]
+[ext_resource type="Script" uid="uid://cutfnqhhtckyn" path="res://Deceased_Sprite.cs" id="5_4pka1"]
+[ext_resource type="Script" uid="uid://dgqxfanx26jy6" path="res://Admit.cs" id="6_7u4js"]
+[ext_resource type="Script" uid="uid://p58vsvndvpy4" path="res://PreviousScene.cs" id="6_bomhp"]
+[ext_resource type="Script" uid="uid://4bmxrws85nrk" path="res://Dialogue_Trigger.cs" id="7_bomhp"]
+[ext_resource type="Script" uid="uid://cstuj82v3inub" path="res://Reject.cs" id="8_kytyi"]
+[ext_resource type="Script" uid="uid://crorsi7rixu8n" path="res://Inventory_P_I.cs" id="10_bomhp"]
+[ext_resource type="Script" uid="uid://b4ak7d8245m4x" path="res://Inventory_Access_P_I.cs" id="10_uph1y"]
+[ext_resource type="Script" uid="uid://bxxm2s11khoax" path="res://Character_Speech.cs" id="11_ecejo"]
+[ext_resource type="Script" uid="uid://tkupfc1dnrga" path="res://Checkbox.cs" id="12_oaj4u"]
+[ext_resource type="Script" uid="uid://drow72lvn73wp" path="res://Diagnosis_Box.cs" id="13_3xib3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r6l1"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rh4kq"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1bgp"]
+bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cn0j"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hdwo"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkk41"]
+bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2s87"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_073d2"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl1ua"]
+bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqp7s"]
+bg_color = Color(0.9661711, 0.66405463, 0.6947776, 1)
+
+[node name="Contents_P_I" type="Node" unique_id=1348472510]
+script = ExtResource("1_ljdgf")
+
+[node name="Sprites_PH" type="Node2D" parent="." unique_id=2126787329]
+
+[node name="Patient" type="Sprite2D" parent="Sprites_PH" unique_id=994478939]
+position = Vector2(1302.9375, 342.1875)
+scale = Vector2(0.42309022, 0.43263888)
+texture = ExtResource("2_bomhp")
+
+[node name="Clipboard" type="Sprite2D" parent="Sprites_PH" unique_id=364051709]
+position = Vector2(484.3125, 526.6875)
+scale = Vector2(0.49348956, 0.50813687)
+texture = ExtResource("3_uph1y")
+
+[node name="Deceased_Sprite" type="Sprite2D" parent="Sprites_PH" unique_id=1313979685]
+position = Vector2(1327, 366.00003)
+rotation = -0.51428306
+scale = Vector2(0.6680139, 0.63441265)
+texture = ExtResource("4_ecejo")
+script = ExtResource("5_4pka1")
+
+[node name="Deceased_Sprite_2" type="Sprite2D" parent="Sprites_PH" unique_id=1153696951]
+position = Vector2(243.00003, 127.00003)
+rotation = -0.51428306
+scale = Vector2(0.13045417, 0.14069395)
+texture = ExtResource("4_ecejo")
+script = ExtResource("5_4pka1")
+
+[node name="Player_Interactables_P_I" type="Control" parent="." unique_id=832899310]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Previous_Scene" type="Button" parent="Player_Interactables_P_I" unique_id=294028163]
+custom_minimum_size = Vector2(210, 100)
+layout_mode = 0
+offset_left = 1672.0
+offset_top = 152.0
+offset_right = 1882.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Return "
+script = ExtResource("6_bomhp")
+
+[node name="Dialogue_Trigger" type="Button" parent="Player_Interactables_P_I" unique_id=667856672]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 0
+offset_left = 1454.3125
+offset_top = 714.6875
+offset_right = 1644.3125
+offset_bottom = 814.6875
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Press for 
+Dialogue"
+script = ExtResource("7_bomhp")
+
+[node name="Patient_Zoom" type="Button" parent="Player_Interactables_P_I" unique_id=764683982]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 0
+offset_left = 1218.3125
+offset_top = 713.6875
+offset_right = 1406.3125
+offset_bottom = 813.6875
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Zoom Into
+ Patient"
+
+[node name="Pulse_Measurement" type="Button" parent="Player_Interactables_P_I" unique_id=1056763404]
+custom_minimum_size = Vector2(140, 100)
+layout_mode = 0
+offset_left = 998.3125
+offset_top = 713.6875
+offset_right = 1169.3125
+offset_bottom = 813.6875
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Measure Pulse "
+
+[node name="Reject" type="Button" parent="Player_Interactables_P_I" unique_id=1995509717]
+custom_minimum_size = Vector2(210, 100)
+layout_mode = 0
+offset_left = 1366.0
+offset_top = 871.0
+offset_right = 1516.0
+offset_bottom = 971.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Reject"
+script = ExtResource("8_kytyi")
+
+[node name="Admit" type="Button" parent="Player_Interactables_P_I" unique_id=1942473230]
+custom_minimum_size = Vector2(210, 100)
+layout_mode = 0
+offset_left = 1084.0
+offset_top = 871.0
+offset_right = 1294.0
+offset_bottom = 971.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Admit "
+script = ExtResource("6_7u4js")
+
+[node name="Inventory_P_I" type="Button" parent="Player_Interactables_P_I" unique_id=204242760]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 0
+offset_left = 1730.0
+offset_top = 853.0
+offset_right = 1850.0
+offset_bottom = 973.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Inventory"
+script = ExtResource("10_bomhp")
+
+[node name="InventoryAccess_P_I" type="VBoxContainer" parent="Player_Interactables_P_I" unique_id=1299831844]
+layout_mode = 0
+offset_left = 1702.0
+offset_top = 338.0
+offset_right = 1866.0
+offset_bottom = 543.0
+script = ExtResource("10_uph1y")
+
+[node name="Diagnosis_Tools" type="Button" parent="Player_Interactables_P_I/InventoryAccess_P_I" unique_id=323827721]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_4cn0j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1hdwo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xkk41")
+text = "Diagnosis 
+Tools"
+
+[node name="Shotgun" type="Button" parent="Player_Interactables_P_I/InventoryAccess_P_I" unique_id=178007493]
+custom_minimum_size = Vector2(120, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2s87")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_073d2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xl1ua")
+text = "Shotgun"
+
+[node name="Character_Speech" type="Label" parent="Player_Interactables_P_I" unique_id=861240804]
+layout_mode = 0
+offset_left = 1368.0
+offset_top = 93.0
+offset_right = 1590.0
+offset_bottom = 152.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_kqp7s")
+script = ExtResource("11_ecejo")
+
+[node name="Checkbox_1" type="Button" parent="Player_Interactables_P_I" unique_id=468010843]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 184.0
+offset_top = 254.0
+offset_right = 284.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+script = ExtResource("12_oaj4u")
+
+[node name="Cough" type="Label" parent="Player_Interactables_P_I/Checkbox_1" unique_id=904256855]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 38.0
+offset_right = 211.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Cough "
+
+[node name="Checkbox_2" type="Button" parent="Player_Interactables_P_I" unique_id=410492612]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 184.3125
+offset_top = 381.6875
+offset_right = 284.3125
+offset_bottom = 485.6875
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+script = ExtResource("12_oaj4u")
+
+[node name="Headache" type="Label" parent="Player_Interactables_P_I/Checkbox_2" unique_id=62163935]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 39.0
+offset_right = 243.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Headache"
+
+[node name="Checkbox_3" type="Button" parent="Player_Interactables_P_I" unique_id=1252863871]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 183.3125
+offset_top = 523.6875
+offset_right = 283.3125
+offset_bottom = 627.6875
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+script = ExtResource("12_oaj4u")
+
+[node name="Sneezing" type="Label" parent="Player_Interactables_P_I/Checkbox_3" unique_id=495774476]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 38.0
+offset_right = 216.0
+offset_bottom = 61.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Sneezing"
+
+[node name="Checkbox_4" type="Button" parent="Player_Interactables_P_I" unique_id=669634636]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 184.3125
+offset_top = 653.6875
+offset_right = 284.3125
+offset_bottom = 757.6875
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+script = ExtResource("12_oaj4u")
+
+[node name="Fever" type="Label" parent="Player_Interactables_P_I/Checkbox_4" unique_id=1467022489]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 31.0
+offset_right = 200.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(0, 0, 0, 0.9882353)
+theme_override_font_sizes/font_size = 20
+text = "Fever"
+
+[node name="Diagnosis_Box" type="Label" parent="Player_Interactables_P_I" unique_id=603001178]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 839.0
+offset_right = 577.0
+offset_bottom = 867.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "What do the symptoms tell us?"
+script = ExtResource("13_3xib3")
+
+[connection signal="pressed" from="Player_Interactables_P_I/Previous_Scene" to="." method="_on_previous_s_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Dialogue_Trigger" to="Player_Interactables_P_I/Character_Speech" method="_on_dialogue_t_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Patient_Zoom" to="Player_Interactables_P_I/Character_Speech" method="_on_patient_z_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Pulse_Measurement" to="Player_Interactables_P_I/Character_Speech" method="_on_pulse_m_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Inventory_P_I" to="Player_Interactables_P_I/InventoryAccess_P_I" method="_on_inventory_p_i_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/InventoryAccess_P_I/Diagnosis_Tools" to="Player_Interactables_P_I/Character_Speech" method="_on_diagnosis_t_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/InventoryAccess_P_I/Shotgun" to="Sprites_PH/Deceased_Sprite" method="_on_shotgun_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/InventoryAccess_P_I/Shotgun" to="Sprites_PH/Deceased_Sprite_2" method="_on_shotgun_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Checkbox_1" to="Player_Interactables_P_I/Diagnosis_Box" method="_on_checkbox_1_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Checkbox_2" to="Player_Interactables_P_I/Diagnosis_Box" method="_on_checkbox_2_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Checkbox_3" to="Player_Interactables_P_I/Diagnosis_Box" method="_on_checkbox_3_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Checkbox_4" to="Player_Interactables_P_I/Diagnosis_Box" method="_on_checkbox_4_pressed"]
