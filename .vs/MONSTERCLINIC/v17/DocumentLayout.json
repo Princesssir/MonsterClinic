@@ -1,0 +1,89 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\artur\\MonsterClinic\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\deadline_countdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:deadline_countdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\close.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:close.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\mirror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:mirror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\contents_o.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:contents_o.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Deadline_Countdown.cs",
+              "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Deadline_Countdown.cs",
+              "RelativeDocumentMoniker": "Deadline_Countdown.cs",
+              "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Deadline_Countdown.cs",
+              "RelativeToolTip": "Deadline_Countdown.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T22:55:43.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Close.cs",
+              "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Close.cs",
+              "RelativeDocumentMoniker": "Close.cs",
+              "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Close.cs",
+              "RelativeToolTip": "Close.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T22:47:40.508Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mirror.cs",
+              "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Mirror.cs",
+              "RelativeDocumentMoniker": "Mirror.cs",
+              "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Mirror.cs",
+              "RelativeToolTip": "Mirror.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T22:47:24.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Contents_O.cs",
+              "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Contents_O.cs",
+              "RelativeDocumentMoniker": "Contents_O.cs",
+              "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Contents_O.cs",
+              "RelativeToolTip": "Contents_O.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T13:02:35.56Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

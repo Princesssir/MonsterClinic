@@ -108,34 +108,59 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jn5dn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7escd")
 text = "Malady Catalogue"
 
-[node name="Map_PH" type="Label" parent="Player_Interactables_C" unique_id=1044538284]
-visible = false
-z_index = 1
+[node name="Log_out" type="Button" parent="Player_Interactables_C" unique_id=768078225]
+custom_minimum_size = Vector2(200, 10)
 layout_mode = 0
-offset_left = 21.0
+offset_left = 1703.0
 offset_top = 20.0
-offset_right = 1684.0
-offset_bottom = 1017.0
+offset_right = 1903.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fqyqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jn5dn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7escd")
+text = "Log out"
+
+[node name="Money_Adder" type="Button" parent="Player_Interactables_C" unique_id=306485701]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = 1043.0
+offset_top = 903.0
+offset_right = 1343.0
+offset_bottom = 1020.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fqyqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jn5dn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7escd")
+text = "Infinite wealth 
+be upon ye"
+script = ExtResource("8_dekc5")
+
+[node name="Money_Display" type="Label" parent="Player_Interactables_C" unique_id=1983009738]
+layout_mode = 0
+offset_left = 649.0
+offset_top = 715.0
+offset_right = 1352.0
+offset_bottom = 880.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_sfps3")
-text = "This prototype exists in a void, what do you want a map of nothing for? 
-
-Get outta here, come back in a later version"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("3_dueua")
+script = ExtResource("8_3f6el")
 
-[node name="Close" type="Button" parent="Player_Interactables_C/Map_PH" unique_id=834944]
+[node name="Money_Subtractor" type="Button" parent="Player_Interactables_C" unique_id=294244695]
+custom_minimum_size = Vector2(200, 10)
 layout_mode = 0
-offset_left = 1613.0
-offset_right = 1663.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_7ixi1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_660v7")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qsxs0")
-text = "X"
-script = ExtResource("6_hqpia")
+offset_left = 659.0
+offset_top = 902.0
+offset_right = 959.0
+offset_bottom = 1019.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_fqyqf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jn5dn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7escd")
+text = "BOUNDLESS DEBT"
+script = ExtResource("10_vjhme")
 
 [node name="Dealer_PH" type="Label" parent="Player_Interactables_C" unique_id=1842103304]
 visible = false
@@ -144,7 +169,8 @@ layout_mode = 0
 offset_left = 40.0
 offset_top = 20.0
 offset_right = 1684.0
-offset_bottom = 1017.0
+offset_bottom = 1021.0
+mouse_filter = 0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_sfps3")
 text = "'Ullo Stranger!
@@ -166,14 +192,44 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qsxs0")
 text = "X"
 script = ExtResource("6_hqpia")
 
-[node name="Malady_PH" type="Label" parent="Player_Interactables_C" unique_id=1235186100]
+[node name="Map_PH" type="Label" parent="Player_Interactables_C" unique_id=1044538284]
 visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 21.0
+offset_top = 20.0
+offset_right = 1684.0
+offset_bottom = 1019.0
+mouse_filter = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_sfps3")
+text = "This prototype exists in a void, what do you want a map of nothing for? 
+
+Get outta here, come back in a later version"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_dueua")
+
+[node name="Close" type="Button" parent="Player_Interactables_C/Map_PH" unique_id=834944]
+layout_mode = 0
+offset_left = 1613.0
+offset_right = 1663.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_7ixi1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_660v7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qsxs0")
+text = "X"
+script = ExtResource("6_hqpia")
+
+[node name="Malady_PH" type="Label" parent="Player_Interactables_C" unique_id=1235186100]
 z_index = 1
 layout_mode = 0
 offset_left = 40.0
 offset_top = 20.0
 offset_right = 1684.0
-offset_bottom = 1017.0
+offset_bottom = 1019.0
+mouse_filter = 0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_sfps3")
 text = "LIST OF EVERY MALADY
@@ -197,65 +253,10 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_qsxs0")
 text = "X"
 script = ExtResource("6_hqpia")
 
-[node name="Log_out" type="Button" parent="Player_Interactables_C" unique_id=768078225]
-custom_minimum_size = Vector2(200, 10)
-layout_mode = 0
-offset_left = 1703.0
-offset_top = 20.0
-offset_right = 1903.0
-offset_bottom = 96.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_fqyqf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jn5dn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7escd")
-text = "Log out"
-
-[node name="Money_Adder" type="Button" parent="Player_Interactables_C" unique_id=306485701]
-custom_minimum_size = Vector2(200, 10)
-layout_mode = 0
-offset_left = 1052.0
-offset_top = 929.0
-offset_right = 1352.0
-offset_bottom = 1046.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_fqyqf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jn5dn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7escd")
-text = "Infinite wealth 
-be upon ye"
-script = ExtResource("8_dekc5")
-
-[node name="Money_Display" type="Label" parent="Player_Interactables_C" unique_id=1983009738]
-z_index = 1
-layout_mode = 0
-offset_left = 649.0
-offset_top = 743.0
-offset_right = 1352.0
-offset_bottom = 908.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_sfps3")
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_3f6el")
-
-[node name="Money_Subtractor" type="Button" parent="Player_Interactables_C" unique_id=294244695]
-custom_minimum_size = Vector2(200, 10)
-layout_mode = 0
-offset_left = 657.0
-offset_top = 923.0
-offset_right = 957.0
-offset_bottom = 1040.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_fqyqf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jn5dn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7escd")
-text = "BOUNDLESS DEBT"
-script = ExtResource("10_vjhme")
-
 [connection signal="pressed" from="Player_Interactables_C/Dealer" to="Player_Interactables_C/Dealer_PH" method="_on_dealer_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Map" to="Player_Interactables_C/Map_PH" method="_on_map_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Malady_Catalogue" to="Player_Interactables_C/Malady_PH" method="_on_malady_c_pressed"]
-[connection signal="pressed" from="Player_Interactables_C/Map_PH/Close" to="Player_Interactables_C/Map_PH" method="_on_close_pressed"]
-[connection signal="pressed" from="Player_Interactables_C/Dealer_PH/Close" to="Player_Interactables_C/Dealer_PH" method="_on_close_pressed"]
-[connection signal="pressed" from="Player_Interactables_C/Malady_PH/Close" to="Player_Interactables_C/Malady_PH" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Log_out" to="." method="_on_log_o_pressed"]
+[connection signal="pressed" from="Player_Interactables_C/Dealer_PH/Close" to="Player_Interactables_C/Dealer_PH" method="_on_close_pressed"]
+[connection signal="pressed" from="Player_Interactables_C/Map_PH/Close" to="Player_Interactables_C/Map_PH" method="_on_close_pressed"]
+[connection signal="pressed" from="Player_Interactables_C/Malady_PH/Close" to="Player_Interactables_C/Malady_PH" method="_on_close_pressed"]

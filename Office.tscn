@@ -58,45 +58,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "Computer"
 
-[node name="Bed" type="Button" parent="Player_Interactables_O" unique_id=1565711458]
-layout_mode = 0
-offset_left = 101.0
-offset_top = 492.0
-offset_right = 701.0
-offset_bottom = 690.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "Bed"
-
-[node name="Bed_Time" type="Label" parent="Player_Interactables_O/Bed" unique_id=387284444]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_left = -101.0
-offset_top = -492.0
-offset_right = 1819.0
-offset_bottom = 588.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
-text = "Eepy time : )"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_hq38p")
-
-[node name="Close" type="Button" parent="Player_Interactables_O/Bed/Bed_Time" unique_id=1686267010]
-layout_mode = 0
-offset_left = 1870.0
-offset_right = 1920.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "X"
-script = ExtResource("3_ttk34")
-
 [node name="Treatment_Deadline" type="Button" parent="Player_Interactables_O" unique_id=65374973]
 layout_mode = 0
 offset_left = 376.0
@@ -115,10 +76,12 @@ script = ExtResource("3_p0jbg")
 visible = false
 z_index = 1
 layout_mode = 0
-offset_left = -152.0
-offset_top = -134.0
-offset_right = 329.0
-offset_bottom = 311.0
+offset_left = -149.0
+offset_top = -185.0
+offset_right = 332.0
+offset_bottom = 260.0
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
 horizontal_alignment = 1
@@ -155,10 +118,11 @@ script = ExtResource("7_4fm71")
 visible = false
 z_index = 1
 layout_mode = 0
-offset_left = -101.0
-offset_top = -45.0
-offset_right = 358.0
-offset_bottom = 952.0
+offset_left = -35.0
+offset_top = -51.0
+offset_right = 424.0
+offset_bottom = 946.0
+mouse_filter = 0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
 text = "Oh wow mate, you look terrible, 
@@ -196,10 +160,10 @@ text = "Elevator
 visible = false
 z_index = 1
 layout_mode = 0
-offset_left = -76.0
-offset_top = -55.0
-offset_right = 383.0
-offset_bottom = 942.0
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 429.0
+offset_bottom = 951.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
 text = "Sorry, nowhere to go,
@@ -235,10 +199,48 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "Patient admition
 "
 
+[node name="Bed" type="Button" parent="Player_Interactables_O" unique_id=1565711458]
+layout_mode = 0
+offset_left = 101.0
+offset_top = 492.0
+offset_right = 701.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
+text = "Bed"
+
+[node name="Bed_Time" type="Label" parent="Player_Interactables_O/Bed" unique_id=387284444]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = -104.0
+offset_top = -490.0
+offset_right = 1816.0
+offset_bottom = 590.0
+mouse_filter = 0
+mouse_behavior_recursive = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
+text = "Eepy time : )"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_hq38p")
+
+[node name="Close" type="Button" parent="Player_Interactables_O/Bed/Bed_Time" unique_id=1686267010]
+layout_mode = 0
+offset_left = 1870.0
+offset_right = 1920.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
+text = "X"
+script = ExtResource("3_ttk34")
+
 [connection signal="pressed" from="Player_Interactables_O/Computer_Access" to="." method="_on_computer_a_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Bed" to="Player_Interactables_O/Bed/Bed_Time" method="_on_bed_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Bed/Bed_Time" method="_on_close_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_time_passed"]
 [connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_treatment_d_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown/Close" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Mirror" to="Player_Interactables_O/Mirror/Mirror_Close_Up" method="_on_mirror_pressed"]
@@ -246,3 +248,6 @@ text = "Patient admition
 [connection signal="pressed" from="Player_Interactables_O/Elevator" to="Player_Interactables_O/Elevator/Destination_PH" method="_on_elevator_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Elevator/Destination_PH/Close" to="Player_Interactables_O/Elevator/Destination_PH" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Patient_Interface_Access" to="." method="_on_patient_i_a_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Bed" to="Player_Interactables_O/Bed/Bed_Time" method="_on_bed_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Bed/Bed_Time" method="_on_close_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_time_passed"]
