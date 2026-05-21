@@ -2,7 +2,6 @@ using Godot;
 
 public partial class AdmissionManager : Node
 {
-    
     [Export] public Sprite2D PatientSpriteDisplay; 
 
     public void _on_admit_pressed()
@@ -10,10 +9,18 @@ public partial class AdmissionManager : Node
         // saves patient sprite
         if (PatientSpriteDisplay != null)
         {
-            GlobalData.AdmittedPatientTexture = PatientSpriteDisplay.Texture;
+            global.Variables.AdmittedPatientTexture = PatientSpriteDisplay.Texture;
         }
 
-        // takes sprite to patient rooom
-        GetTree().ChangeSceneToFile("res://Room.tscn"); 
+       
+        Node mainNode = GetParent().GetParent(); 
+        
+        
+        var roomNode = mainNode.GetNode<Node2D>("Room");
+        var patientInterface = mainNode.GetNode<Node2D>("Patient_Interface");
+
+       
+        roomNode.Show();
+        patientInterface.Hide();
     }
 }
