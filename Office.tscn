@@ -59,6 +59,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "Computer"
 
 [node name="Treatment_Deadline" type="Button" parent="Player_Interactables_O" unique_id=65374973]
+visible = false
 layout_mode = 0
 offset_left = 376.0
 offset_top = 204.0
@@ -249,5 +250,5 @@ script = ExtResource("3_ttk34")
 [connection signal="pressed" from="Player_Interactables_O/Elevator/Destination_PH/Close" to="Player_Interactables_O/Elevator/Destination_PH" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Patient_Interface_Access" to="." method="_on_patient_i_a_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Bed" to="Player_Interactables_O/Bed/Bed_Time" method="_on_bed_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Bed/Bed_Time" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_time_passed"]
+[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Bed/Bed_Time" method="_on_close_pressed"]

@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:deadline_countdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\bed_time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:bed_time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\close.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:close.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -26,11 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Bed_Time.cs",
+              "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Bed_Time.cs",
+              "RelativeDocumentMoniker": "Bed_Time.cs",
+              "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Bed_Time.cs",
+              "RelativeToolTip": "Bed_Time.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-23T16:09:28.495Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -40,14 +57,14 @@
               "RelativeDocumentMoniker": "Deadline_Countdown.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Deadline_Countdown.cs",
               "RelativeToolTip": "Deadline_Countdown.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCEAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wCEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-19T22:55:43.774Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Close.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Close.cs",
               "RelativeDocumentMoniker": "Close.cs",
@@ -59,7 +76,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Mirror.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Mirror.cs",
               "RelativeDocumentMoniker": "Mirror.cs",
@@ -71,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Contents_O.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Contents_O.cs",
               "RelativeDocumentMoniker": "Contents_O.cs",

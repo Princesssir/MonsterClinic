@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cwllxhajljhc6"]
+
+[ext_resource type="Script" uid="uid://bmm7tkhpmttp6" path="res://Bed/Bed.cs" id="1_abbq1"]
+
+[node name="Bed" type="Node2D" unique_id=747584765]
+script = ExtResource("1_abbq1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=375707818]
+offset_left = -39.0
+offset_top = -30.0
+offset_right = 1937.0
+offset_bottom = 1095.0
+color = Color(0, 0, 0, 1)
+
+[node name="Day" type="RichTextLabel" parent="." unique_id=108921721]
+offset_right = 1923.0
+offset_bottom = 1058.0
+theme_override_font_sizes/normal_font_size = 130
+bbcode_enabled = true
+text = "{0} Day in Containment
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChangeToOffice_Timer" type="Timer" parent="." unique_id=1244544582]
+
+[node name="TreatmentDays" type="RichTextLabel" parent="." unique_id=718139507]
+offset_right = 1932.0
+offset_bottom = 941.0
+theme_override_font_sizes/normal_font_size = 110
+bbcode_enabled = true
+text = "{0} days left without treatment"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="timeout" from="ChangeToOffice_Timer" to="." method="_on_change_to_office_timer_timeout"]

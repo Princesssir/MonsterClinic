@@ -11,7 +11,7 @@ public partial class Bed_Time : Label
 
     private void _on_bed_pressed()
     {
-        Show();
+        GetTree().ChangeSceneToFile("res://Bed/bed.tscn");
     }
 
     private void _on_close_pressed()

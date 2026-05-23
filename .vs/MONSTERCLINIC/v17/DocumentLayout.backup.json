@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "Deadline_Countdown.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Deadline_Countdown.cs",
               "RelativeToolTip": "Deadline_Countdown.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-19T22:55:43.774Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "Close.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T22:47:40.508Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T22:47:40.508Z"
             },
             {
               "$type": "Document",
@@ -68,8 +67,7 @@
               "RelativeToolTip": "Mirror.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T22:47:24.879Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T22:47:24.879Z"
             },
             {
               "$type": "Document",
@@ -81,8 +79,7 @@
               "RelativeToolTip": "Contents_O.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T13:02:35.56Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T13:02:35.56Z"
             }
           ]
         }
