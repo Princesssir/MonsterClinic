@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\artur\\MonsterClinic\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scripts\\globaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scripts\\globaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\givemedicine3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\givemedicine3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\GiveMedicine1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\givemedicine2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\givemedicine2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\givemedicine1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\givemedicine1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\closepatientcuredpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\closepatientcuredpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\closewrongmedicinepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\closewrongmedicinepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\wrongmedicinepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\wrongmedicinepopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scripts\\globaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scripts\\globaldata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\medicine1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,44 +47,8 @@
       "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:bed_time.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\PatientCuredPopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\PatientCuredPopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\ClosePatientCuredPopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\ClosePatientCuredPopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\CloseWrongMedicinePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\CloseWrongMedicinePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\WrongMedicinePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\WrongMedicinePopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\NoPatientPopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\NoPatientPopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\close.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:close.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\GiveMedicine3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\GiveMedicine2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\PatientDisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\PatientDisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\PatientInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\PatientInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\admissionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,16 +63,32 @@
       "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:mirror.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\artur\\MonsterClinic\\Scenes\\LeaveRoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Scenes\\LeaveRoom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scripts\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scripts\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\back.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\back.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\patientcuredpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\patientcuredpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\nopatientpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\nopatientpopup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\patientinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\patientinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\patientdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\patientdisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|c:\\users\\artur\\monsterclinic\\scenes\\leaveroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7CA31135-A908-4F5A-A247-60F8C4C5F353}|MonsterClinic.csproj|solutionrelative:scenes\\leaveroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -98,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "Medicine2.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Medicine2.cs",
               "RelativeDocumentMoniker": "Medicine2.cs",
@@ -114,12 +114,11 @@
               "RelativeToolTip": "Medicine2.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T22:14:43.167Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T22:14:43.167Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "Medicine3.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Medicine3.cs",
               "RelativeDocumentMoniker": "Medicine3.cs",
@@ -127,12 +126,11 @@
               "RelativeToolTip": "Medicine3.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T22:13:58.631Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T22:13:58.631Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "Bed_Time.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Bed_Time.cs",
               "RelativeDocumentMoniker": "Bed_Time.cs",
@@ -140,12 +138,11 @@
               "RelativeToolTip": "Bed_Time.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T22:09:01.486Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T22:09:01.486Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 17,
               "Title": "PatientCuredPopup.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\PatientCuredPopup.cs",
               "RelativeDocumentMoniker": "Scenes\\PatientCuredPopup.cs",
@@ -153,44 +150,43 @@
               "RelativeToolTip": "Scenes\\PatientCuredPopup.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T21:56:00.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T21:56:00.273Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "ClosePatientCuredPopup.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\ClosePatientCuredPopup.cs",
               "RelativeDocumentMoniker": "Scenes\\ClosePatientCuredPopup.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Scenes\\ClosePatientCuredPopup.cs",
               "RelativeToolTip": "Scenes\\ClosePatientCuredPopup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAByAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T21:50:56.709Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 4,
               "Title": "CloseWrongMedicinePopup.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\CloseWrongMedicinePopup.cs",
               "RelativeDocumentMoniker": "Scenes\\CloseWrongMedicinePopup.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Scenes\\CloseWrongMedicinePopup.cs",
               "RelativeToolTip": "Scenes\\CloseWrongMedicinePopup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T21:08:22.933Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "WrongMedicinePopup.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\WrongMedicinePopup.cs",
               "RelativeDocumentMoniker": "Scenes\\WrongMedicinePopup.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Scenes\\WrongMedicinePopup.cs",
               "RelativeToolTip": "Scenes\\WrongMedicinePopup.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T20:43:34.758Z",
               "EditorCaption": ""
@@ -205,12 +201,11 @@
               "RelativeToolTip": "Close.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T20:17:41.811Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T20:17:41.811Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 18,
               "Title": "NoPatientPopup.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\NoPatientPopup.cs",
               "RelativeDocumentMoniker": "Scenes\\NoPatientPopup.cs",
@@ -218,51 +213,50 @@
               "RelativeToolTip": "Scenes\\NoPatientPopup.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T20:11:19.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T20:11:19.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "GiveMedicine3.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine3.cs",
               "RelativeDocumentMoniker": "Scenes\\GiveMedicine3.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine3.cs",
               "RelativeToolTip": "Scenes\\GiveMedicine3.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T19:55:46.438Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
               "Title": "GiveMedicine2.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine2.cs",
               "RelativeDocumentMoniker": "Scenes\\GiveMedicine2.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine2.cs",
               "RelativeToolTip": "Scenes\\GiveMedicine2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABnAAAAAAAAAA==",
+              "ViewState": "AgIAABoAAAAAAAAAAAAwwDYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T19:55:20.208Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "GiveMedicine1.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine1.cs",
               "RelativeDocumentMoniker": "Scenes\\GiveMedicine1.cs",
               "ToolTip": "C:\\Users\\artur\\MonsterClinic\\Scenes\\GiveMedicine1.cs",
               "RelativeToolTip": "Scenes\\GiveMedicine1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAABsAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDwAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T19:49:05.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Medicine1.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Medicine1.cs",
               "RelativeDocumentMoniker": "Medicine1.cs",
@@ -270,12 +264,11 @@
               "RelativeToolTip": "Medicine1.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T15:17:19.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T15:17:19.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "PatientInfo.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\PatientInfo.cs",
               "RelativeDocumentMoniker": "Scenes\\PatientInfo.cs",
@@ -283,12 +276,11 @@
               "RelativeToolTip": "Scenes\\PatientInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAACKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T15:15:46.102Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T15:15:46.102Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 20,
               "Title": "PatientDisplay.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\PatientDisplay.cs",
               "RelativeDocumentMoniker": "Scenes\\PatientDisplay.cs",
@@ -296,12 +288,11 @@
               "RelativeToolTip": "Scenes\\PatientDisplay.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T14:56:23.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T14:56:23.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 12,
               "Title": "AdmissionManager.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\AdmissionManager.cs",
               "RelativeDocumentMoniker": "AdmissionManager.cs",
@@ -309,12 +300,11 @@
               "RelativeToolTip": "AdmissionManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T14:43:40.67Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T14:43:40.67Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 13,
               "Title": "Admit.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Admit.cs",
               "RelativeDocumentMoniker": "Admit.cs",
@@ -322,12 +312,11 @@
               "RelativeToolTip": "Admit.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T14:43:25.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T14:43:25.262Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "GlobalData.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scripts\\GlobalData.cs",
               "RelativeDocumentMoniker": "Scripts\\GlobalData.cs",
@@ -340,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 14,
               "Title": "Mirror.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Mirror.cs",
               "RelativeDocumentMoniker": "Mirror.cs",
@@ -348,12 +337,11 @@
               "RelativeToolTip": "Mirror.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T14:07:02.906Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T14:07:02.906Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "LeaveRoom.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\LeaveRoom.cs",
               "RelativeDocumentMoniker": "Scenes\\LeaveRoom.cs",
@@ -361,12 +349,11 @@
               "RelativeToolTip": "Scenes\\LeaveRoom.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T14:06:21.945Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T14:06:21.945Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 15,
               "Title": "Room.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scripts\\Room.cs",
               "RelativeDocumentMoniker": "Scripts\\Room.cs",
@@ -374,12 +361,11 @@
               "RelativeToolTip": "Scripts\\Room.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T14:05:39.014Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-25T14:05:39.014Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 16,
               "Title": "Back.cs",
               "DocumentMoniker": "C:\\Users\\artur\\MonsterClinic\\Scenes\\Back.cs",
               "RelativeDocumentMoniker": "Scenes\\Back.cs",
@@ -387,8 +373,7 @@
               "RelativeToolTip": "Scenes\\Back.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T02:25:57.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-22T02:25:57.025Z"
             }
           ]
         }

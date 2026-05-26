@@ -33,8 +33,8 @@ public partial class GiveMedicine3 : Button
             if (GlobalData.CurrentPatientMalady != "C")
             {
                 Wrong_Medicine_Popup.Show();
-                var med1 = (Button)GetParent().GetNode("Give_Medicine_2");
-                var med2 = (Button)GetParent().GetNode("Give_Medicine_3");
+                var med1 = (Button)GetParent().GetNode("Give_Medicine_1");
+                var med2 = (Button)GetParent().GetNode("Give_Medicine_2");
                 Disabled = true;
                 med1.Disabled = true;
                 med2.Disabled = true;
@@ -49,6 +49,11 @@ public partial class GiveMedicine3 : Button
                 {
                     var cured = (Label)GetParent().GetNode("Patient_Cured_Popup");
                     cured.Show();
+                    var med1 = (Button)GetParent().GetNode("Give_Medicine_1");
+                    var med2 = (Button)GetParent().GetNode("Give_Medicine_2");
+                    Disabled = true;
+                    med1.Disabled = true;
+                    med2.Disabled = true;
                     GlobalData.DailyEarnings += 100;
                 }
             }

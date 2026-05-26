@@ -48,6 +48,11 @@ public partial class GiveMedicine2 : Button
                 {
                     var cured = (Label)GetParent().GetNode("Patient_Cured_Popup");
                     cured.Show();
+                    var med1 = (Button)GetParent().GetNode("Give_Medicine_1");
+                    var med3 = (Button)GetParent().GetNode("Give_Medicine_3");
+                    Disabled = true;
+                    med1.Disabled = true;
+                    med3.Disabled = true;
                     GlobalData.DailyEarnings += 70;
                 }
             }
