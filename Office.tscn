@@ -65,6 +65,13 @@ icon = ExtResource("2_kjhbo")
 flat = true
 expand_icon = true
 
+[node name="Label" type="Label" parent="Player_Interactables_O/Computer_Access" unique_id=764561184]
+layout_mode = 0
+offset_right = 543.0
+offset_bottom = 126.54999
+theme_override_font_sizes/font_size = 60
+text = "Computer"
+
 [node name="Treatment_Deadline" type="Button" parent="Player_Interactables_O" unique_id=65374973]
 layout_mode = 0
 offset_left = 700.0
@@ -153,6 +160,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 script = ExtResource("3_ttk34")
 
+[node name="Label" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 255.0
+offset_bottom = 172.22
+theme_override_font_sizes/font_size = 50
+text = "Mirror"
+
 [node name="Elevator" type="Button" parent="Player_Interactables_O" unique_id=1792734093]
 layout_mode = 0
 offset_left = 1169.27
@@ -199,6 +215,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 script = ExtResource("3_ttk34")
 
+[node name="Label" type="Label" parent="Player_Interactables_O/Elevator" unique_id=658853895]
+layout_mode = 0
+offset_left = 46.125
+offset_top = 163.035
+offset_right = 308.125
+offset_bottom = 242.24937
+theme_override_font_sizes/font_size = 40
+text = "Patient Room"
+
 [node name="Patient_Interface_Access" type="Button" parent="Player_Interactables_O" unique_id=1350439951]
 custom_minimum_size = Vector2(503, 475)
 layout_mode = 0
@@ -214,6 +239,15 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 icon = ExtResource("11_gisrx")
 flat = true
 expand_icon = true
+
+[node name="Label" type="Label" parent="Player_Interactables_O/Patient_Interface_Access" unique_id=1431757594]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 420.58008
+offset_bottom = 529.44
+theme_override_font_sizes/font_size = 50
+text = "Reception"
 
 [node name="Bed" type="Button" parent="Player_Interactables_O" unique_id=1565711458]
 layout_mode = 0
@@ -258,6 +292,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 script = ExtResource("3_ttk34")
+
+[node name="Label" type="Label" parent="Player_Interactables_O/Bed" unique_id=490842031]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 318.33224
+offset_bottom = 196.2774
+theme_override_font_sizes/font_size = 40
+text = "Rest"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=198520339]
 z_index = -4
