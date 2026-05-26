@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://chmg4tjmycsse"]
 
 [ext_resource type="Script" uid="uid://3ailttjlob0g" path="res://Contents_O.cs" id="1_35wc1"]
-[ext_resource type="Texture2D" uid="uid://db67lxdg3gjpw" path="res://Assets/2D Art/Office/Office_Blockouts_Desk.png" id="2_ei0gw"]
 [ext_resource type="Script" uid="uid://5na27tfl3yvu" path="res://Bed_Time.cs" id="2_hq38p"]
+[ext_resource type="Texture2D" uid="uid://c5ncjx7yugc5j" path="res://Assets/2D Art/Office/office-pc.png" id="2_kjhbo"]
 [ext_resource type="Script" uid="uid://dm42silqg7ir1" path="res://Treatment_Deadline.cs" id="3_p0jbg"]
 [ext_resource type="Script" uid="uid://cps7wyoavl5wx" path="res://Close.cs" id="3_ttk34"]
 [ext_resource type="Script" uid="uid://tko5xpbwbya8" path="res://Deadline_Countdown.cs" id="4_r1f8t"]
+[ext_resource type="Texture2D" uid="uid://b4o0ubcg603ro" path="res://Assets/2D Art/Office/office-mirror.png" id="6_4fm71"]
 [ext_resource type="Script" uid="uid://damlipp41xqb1" path="res://Mirror.cs" id="7_4fm71"]
 [ext_resource type="Script" uid="uid://4pv2su1jjxij" path="res://Mirror_Close_Up.cs" id="7_ei0gw"]
-[ext_resource type="Texture2D" uid="uid://jfeo3gn8v3go" path="res://Assets/2D Art/Office/Office_Blockouts_Elevator.png" id="8_knk1q"]
 [ext_resource type="Script" uid="uid://b8t0rredi262l" path="res://Destination_PH.cs" id="8_n8ipj"]
-[ext_resource type="Texture2D" uid="uid://b2ej3lhjo43ms" path="res://Assets/2D Art/Office/Office_Blockouts_Reception.png" id="10_43i68"]
-[ext_resource type="Texture2D" uid="uid://bgjshs3p8ml73" path="res://Assets/2D Art/Office/Office_Blockouts_Bed.png" id="11_kjhbo"]
-[ext_resource type="Texture2D" uid="uid://mow64132ied8" path="res://Assets/2D Art/Office/Office_Blockouts_BG.png" id="13_43i68"]
+[ext_resource type="Texture2D" uid="uid://jdngferi6lje" path="res://Assets/2D Art/Office/office-elevator.png" id="9_yauhp"]
+[ext_resource type="Texture2D" uid="uid://djvdgfra7b3b8" path="res://Assets/2D Art/Office/office-phone.png" id="11_gisrx"]
+[ext_resource type="Texture2D" uid="uid://cvcqxyesknw0" path="res://Assets/2D Art/Office/office-bed.png" id="12_grpir"]
+[ext_resource type="Texture2D" uid="uid://duxu8md0l1yr5" path="res://Assets/2D Art/Office/office-background.png" id="14_3080y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fedq"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
@@ -53,22 +54,22 @@ offset_bottom = 40.0
 [node name="Computer_Access" type="Button" parent="Player_Interactables_O" unique_id=1784326359]
 z_index = 1
 layout_mode = 0
-offset_left = -7.805
-offset_top = 405.865
-offset_right = 583.195
-offset_bottom = 1072.8647
-scale = Vector2(1.05, 1.05)
+offset_left = 82.5
+offset_top = 398.725
+offset_right = 712.5
+offset_bottom = 833.7257
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-icon = ExtResource("2_ei0gw")
+icon = ExtResource("2_kjhbo")
 flat = true
 expand_icon = true
 
 [node name="Treatment_Deadline" type="Button" parent="Player_Interactables_O" unique_id=65374973]
 layout_mode = 0
-offset_left = 376.0
+offset_left = 700.0
 offset_top = 204.0
-offset_right = 502.0
+offset_right = 826.0
 offset_bottom = 329.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
@@ -108,16 +109,19 @@ script = ExtResource("3_ttk34")
 
 [node name="Mirror" type="Button" parent="Player_Interactables_O" unique_id=1997607079]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 65.0
-offset_right = 991.0
-offset_bottom = 625.0
+offset_left = 261.335
+offset_top = 146.78
+offset_right = 524.83496
+offset_bottom = 474.28
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "Mirror
+text = "
 "
+icon = ExtResource("6_4fm71")
+flat = true
+expand_icon = true
 script = ExtResource("7_4fm71")
 
 [node name="Mirror_Close_Up" type="Label" parent="Player_Interactables_O/Mirror" unique_id=1633342914]
@@ -162,7 +166,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "
 "
-icon = ExtResource("8_knk1q")
+icon = ExtResource("9_yauhp")
 flat = true
 expand_icon = true
 
@@ -196,33 +200,33 @@ text = "X"
 script = ExtResource("3_ttk34")
 
 [node name="Patient_Interface_Access" type="Button" parent="Player_Interactables_O" unique_id=1350439951]
-custom_minimum_size = Vector2(200, 10)
+custom_minimum_size = Vector2(503, 475)
 layout_mode = 0
-offset_left = 1450.0
-offset_top = 150.0
-offset_right = 1916.0001
-offset_bottom = 1061.0
-scale = Vector2(1.05, 1.05)
+offset_left = 1555.71
+offset_top = 445.28
+offset_right = 2058.711
+offset_bottom = 1356.2804
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-icon = ExtResource("10_43i68")
+icon = ExtResource("11_gisrx")
 flat = true
 expand_icon = true
 
 [node name="Bed" type="Button" parent="Player_Interactables_O" unique_id=1565711458]
 layout_mode = 0
-offset_left = 437.475
-offset_top = 479.98
-offset_right = 1077.4739
-offset_bottom = 765.97974
-scale = Vector2(1.05, 1.05)
+offset_left = 401.585
+offset_top = 398.77
+offset_right = 1042.131
+offset_bottom = 684.7742
+scale = Vector2(1.55, 1.55)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-icon = ExtResource("11_kjhbo")
+icon = ExtResource("12_grpir")
 flat = true
 expand_icon = true
 
@@ -257,8 +261,9 @@ script = ExtResource("3_ttk34")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=198520339]
 z_index = -4
-position = Vector2(960, 540)
-texture = ExtResource("13_43i68")
+position = Vector2(967, 542)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_3080y")
 
 [connection signal="pressed" from="Player_Interactables_O/Computer_Access" to="." method="_on_computer_a_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_treatment_d_pressed"]
