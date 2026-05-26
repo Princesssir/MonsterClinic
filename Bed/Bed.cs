@@ -5,6 +5,7 @@ using System;
 public partial class Bed : Node2D
 {
     private RichTextLabel DaysCounter;
+    private RichTextLabel MoneyEarned;
     private Timer sceneTimer;
 
     // Called when the node enters the scene tree for the first time.
@@ -18,6 +19,12 @@ public partial class Bed : Node2D
         var DaysCounter = GetNode<RichTextLabel>("Day");
         DaysCounter.BbcodeEnabled = true;
         DaysCounter.Text = $"[b][font_size=130] {day_M.Player_Ingame_Days} days in containment [/font_size][/b]";
+
+        var MoneyEarned = GetNode<RichTextLabel>("MoneyEarned");
+        MoneyEarned.BbcodeEnabled = true;
+        MoneyEarned.Text = "Today's earnings: " + GlobalData.DailyEarnings;
+        GlobalData.Money += GlobalData.DailyEarnings;
+        GlobalData.DailyEarnings = 0;
 
         // Timer from the scene
         var sceneTimer = GetNode<Timer>("ChangeToOffice_Timer");

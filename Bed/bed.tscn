@@ -34,4 +34,12 @@ vertical_alignment = 1
 
 [node name="ChangeToOffice_Timer" type="Timer" parent="." unique_id=716369425]
 
+[node name="MoneyEarned" type="RichTextLabel" parent="." unique_id=880434954]
+offset_top = 9.0
+offset_right = 1919.0
+offset_bottom = 224.0
+theme_override_font_sizes/normal_font_size = 70
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="timeout" from="ChangeToOffice_Timer" to="." method="_on_change_to_office_timer_timeout"]
