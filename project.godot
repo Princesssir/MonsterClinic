@@ -15,6 +15,11 @@ run/main_scene="uid://w3h4yybr04yy"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DayManager="*uid://c3v57xqvfori4"
+MaladyAutoload="*uid://cil0v07xkr4ec"
+
 [display]
 
 window/size/viewport_width=1920
