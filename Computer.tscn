@@ -14,6 +14,7 @@
 [ext_resource type="Script" uid="uid://b0jnjo6h04xgr" path="res://MoneySubtractor.cs" id="10_vjhme"]
 [ext_resource type="Script" uid="uid://4phbi63r8tpl" path="res://Medicine3.cs" id="11_hqpia"]
 [ext_resource type="Script" uid="uid://bhwalee26aynr" path="res://InsufficientFunds.cs" id="12_hqpia"]
+[ext_resource type="Script" uid="uid://08n5ukorqdyk" path="res://ScrollCatalog.cs" id="15_vbt5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqyqf"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
@@ -328,6 +329,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_660v7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qsxs0")
 text = "X"
 script = ExtResource("6_hqpia")
+
+[node name="ScrollCatalog" type="ScrollContainer" parent="Player_Interactables_C/Malady_PH" unique_id=1770234032]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 55.0
+offset_right = 1588.0
+offset_bottom = 966.0
+script = ExtResource("15_vbt5y")
+
+[node name="GridContainer" type="GridContainer" parent="Player_Interactables_C/Malady_PH/ScrollCatalog" unique_id=1273949924]
+layout_mode = 2
+theme_override_constants/h_separation = 274
+theme_override_constants/v_separation = 222
+columns = 6
 
 [connection signal="pressed" from="Player_Interactables_C/Dealer" to="Player_Interactables_C/Dealer_PH" method="_on_dealer_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Map" to="Player_Interactables_C/Map_PH" method="_on_map_pressed"]
