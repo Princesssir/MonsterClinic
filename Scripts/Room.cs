@@ -11,7 +11,7 @@ public partial class Room : Node2D
         VisibilityChanged += OnVisibilityChanged;
     }
 
-    private void _on_back_pressed()
+    private void _on_leave_room_pressed()
     {
         Hide();
         var OfficeScene = (Node2D)GetParent().GetNode("Office");
@@ -21,7 +21,7 @@ public partial class Room : Node2D
     private void OnVisibilityChanged()
     {
         
-        if (IsVisibleInTree())
+        /*if (IsVisibleInTree())
         {
             if (GlobalData.AdmittedPatientTexture != null)
             {
@@ -32,6 +32,6 @@ public partial class Room : Node2D
             {
                 PatientDisplay.Hide();
             }
-        }
+        }*/
     }
 }

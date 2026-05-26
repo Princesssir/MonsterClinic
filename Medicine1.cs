@@ -26,6 +26,12 @@ public partial class Medicine1 : Button
         }
     }
 
+    private void _on_dealer_ph_visibility_changed()
+    {
+        //refresh the text every time the dealer window's visibility changes
+        Text = "Medicine 1 \n (Price: 10) \n \n Owned: " + GlobalData.Medicine1Count.ToString();
+    }
+
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
 	{

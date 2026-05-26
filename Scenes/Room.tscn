@@ -1,56 +1,307 @@
 [gd_scene format=3 uid="uid://c36i0asmfb8o"]
 
 [ext_resource type="Script" uid="uid://bw0pahok3mlpx" path="res://Scripts/Room.cs" id="1_5hpqs"]
-[ext_resource type="Script" uid="uid://d2lt2c7skf3g4" path="res://Scenes/Back.cs" id="2_nn86p"]
+[ext_resource type="Script" uid="uid://hlle4mwduj25" path="res://Scenes/LeaveRoom.cs" id="2_nn86p"]
+[ext_resource type="Texture2D" uid="uid://bf3om3qmf68vl" path="res://place holders/Patient_Room_Blocking.png" id="2_uj218"]
+[ext_resource type="Texture2D" uid="uid://bcqtc40plwpsl" path="res://place holders/Patient_Sitting_Blocking.png" id="4_aaq88"]
+[ext_resource type="Script" uid="uid://d2jdir2kf313g" path="res://Scenes/PatientDisplay.cs" id="5_7gm67"]
+[ext_resource type="Script" uid="uid://cdah6xnvafdw4" path="res://Scenes/PatientInfo.cs" id="6_7gm67"]
+[ext_resource type="Script" uid="uid://d0aisxjnhbpkv" path="res://Scenes/GiveMedicine1.cs" id="7_xebr5"]
+[ext_resource type="Script" uid="uid://d375n58qj81je" path="res://Scenes/GiveMedicine2.cs" id="8_mimag"]
+[ext_resource type="Script" uid="uid://ch52d0ea80nou" path="res://Scenes/GiveMedicine3.cs" id="9_ijr7e"]
+[ext_resource type="Script" uid="uid://cps7wyoavl5wx" path="res://Close.cs" id="10_ijr7e"]
+[ext_resource type="Script" uid="uid://hxjbkymmmt05" path="res://Scenes/NoPatientPopup.cs" id="10_khqja"]
+[ext_resource type="Script" uid="uid://i23q2ntbwlwt" path="res://Scenes/CloseWrongMedicinePopup.cs" id="11_vofke"]
+[ext_resource type="Script" uid="uid://cfvbct87tc7sf" path="res://Scenes/WrongMedicinePopup.cs" id="12_l0f8h"]
+[ext_resource type="Script" uid="uid://csgcb71gwxife" path="res://Scenes/PatientCuredPopup.cs" id="14_0sh5y"]
+[ext_resource type="Script" uid="uid://bll4u1au0a4ai" path="res://Scenes/ClosePatientCuredPopup.cs" id="14_f1ah8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5hpqs"]
-bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nn86p"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nn86p"]
-bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+bg_color = Color(1, 0.21176471, 0.18431373, 1)
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uj218"]
+bg_color = Color(1, 0.5176471, 0.49803922, 0.65882355)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xebr5"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7gm67"]
+bg_color = Color(0.4862745, 0.9411765, 0.5176471, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.6745098, 1, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si31g"]
+bg_color = Color(0.42352942, 0.8784314, 0.45490196, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.6745098, 1, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mimag"]
+bg_color = Color(0.6745098, 1, 0.6901961, 1)
+border_color = Color(0.6745098, 1, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sh5y"]
+bg_color = Color(0.42352942, 0.8784314, 0.45490196, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.6745098, 1, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b7nhj"]
+bg_color = Color(0.42352942, 0.8784314, 0.45490196, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.6745098, 1, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vtib3"]
+bg_color = Color(0.42352942, 0.8784314, 0.45490196, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.6745098, 1, 0.6901961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_khqja"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0f8h"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vofke"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+border_width_left = 14
+border_width_top = 14
+border_width_right = 14
+border_width_bottom = 14
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ah8"]
 bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
 [node name="Room" type="Node2D" unique_id=1403791563 node_paths=PackedStringArray("PatientDisplay")]
 position = Vector2(1302.9375, 342.1875)
 scale = Vector2(0.42309022, 0.43263888)
 script = ExtResource("1_5hpqs")
-PatientDisplay = NodePath("PatientDisplay")
+PatientDisplay = NodePath("Patient_Display")
 
-[node name="RoomFloor" type="ColorRect" parent="." unique_id=928542603]
-offset_left = -3070.1194
-offset_top = -797.8652
-offset_right = 1446.6477
-offset_bottom = 1659.1489
-color = Color(0.47592735, 0.47592735, 0.4759273, 1)
+[node name="Patient_Room_Background" type="Sprite2D" parent="." unique_id=1209967813]
+position = Vector2(-810.5541, 461.84573)
+scale = Vector2(1.181781, 1.1599786)
+texture = ExtResource("2_uj218")
 
-[node name="Back" type="Button" parent="." unique_id=1531308757]
+[node name="Leave_Room" type="Button" parent="." unique_id=1531308757]
+z_index = 1
 custom_minimum_size = Vector2(200, 10)
-offset_left = 1009.3887
-offset_top = -684.6068
-offset_right = 1315.4167
-offset_bottom = -494.26984
+offset_left = -3079.5737
+offset_top = 1483.4832
+offset_right = 1458.4648
+offset_bottom = 1705.3772
 theme_override_font_sizes/font_size = 40
-theme_override_styles/normal = SubResource("StyleBoxFlat_5hpqs")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nn86p")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nn86p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uj218")
-text = "Back to 
-the office"
 script = ExtResource("2_nn86p")
 
-[node name="PatientDisplay" type="Sprite2D" parent="." unique_id=180831602]
+[node name="Patient_Display" type="Sprite2D" parent="." unique_id=180831602]
+position = Vector2(-1131.9985, 854.78326)
+texture = ExtResource("4_aaq88")
+script = ExtResource("5_7gm67")
 
 [node name="BedPosition" type="Marker2D" parent="." unique_id=902232887]
 
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[node name="Patient_Info" type="Label" parent="." unique_id=1407452061]
+z_index = 1
+offset_left = -2701.4038
+offset_top = -606.0193
+offset_right = -1415.626
+offset_bottom = -32.79303
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_xebr5")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("6_7gm67")
+
+[node name="Stylish_Medicine_Background" type="ColorRect" parent="." unique_id=1513001360]
+offset_left = 550.85767
+offset_top = -716.96625
+offset_right = 1345.0146
+offset_bottom = 1575.9387
+color = Color(0.27058825, 0.27058825, 0.27058825, 1)
+
+[node name="Give_Medicine_1" type="Button" parent="Stylish_Medicine_Background" unique_id=1337990621]
+z_index = 1
+layout_mode = 0
+offset_left = 94.54248
+offset_top = 92.45578
+offset_right = 694.5425
+offset_bottom = 692.4558
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gm67")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_si31g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mimag")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_0sh5y")
+script = ExtResource("7_xebr5")
+
+[node name="Give_Medicine_2" type="Button" parent="Stylish_Medicine_Background" unique_id=408054606]
+z_index = 1
+layout_mode = 0
+offset_left = 94.54248
+offset_top = 850.59375
+offset_right = 694.5425
+offset_bottom = 1450.5936
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gm67")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_si31g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mimag")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_b7nhj")
+script = ExtResource("8_mimag")
+
+[node name="Give_Medicine_3" type="Button" parent="Stylish_Medicine_Background" unique_id=819132043]
+z_index = 1
+layout_mode = 0
+offset_left = 94.54248
+offset_top = 1590.2405
+offset_right = 694.5425
+offset_bottom = 2190.2405
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_7gm67")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_si31g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mimag")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_vtib3")
+script = ExtResource("9_ijr7e")
+
+[node name="Wrong_Medicine_Popup" type="Label" parent="Stylish_Medicine_Background" unique_id=1279645988]
+z_index = 1
+layout_mode = 0
+offset_left = -1415.7734
+offset_top = 753.51514
+offset_right = -380.5332
+offset_bottom = 1181.1233
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_khqja")
+text = "This medicine won't work for this patient"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("12_l0f8h")
+
+[node name="Close_Wrong_medicine_Popup" type="Button" parent="Stylish_Medicine_Background/Wrong_Medicine_Popup" unique_id=1279164653]
+layout_mode = 0
+offset_left = 945.42487
+offset_top = 7.053822e-05
+offset_right = 1033.2417
+offset_bottom = 87.83308
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0f8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vofke")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f1ah8")
+text = "X"
+script = ExtResource("11_vofke")
+
+[node name="No_Patient_Popup" type="Label" parent="Stylish_Medicine_Background" unique_id=1929407681]
+z_index = 1
+layout_mode = 0
+offset_left = -1418.1372
+offset_top = 684.1733
+offset_right = -382.89697
+offset_bottom = 1111.7815
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_khqja")
+text = "No patient currently admitted"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("10_khqja")
+
+[node name="Close" type="Button" parent="Stylish_Medicine_Background/No_Patient_Popup" unique_id=465048054]
+layout_mode = 0
+offset_left = 945.42487
+offset_top = 7.053822e-05
+offset_right = 1033.2417
+offset_bottom = 87.83308
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0f8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vofke")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f1ah8")
+text = "X"
+script = ExtResource("10_ijr7e")
+
+[node name="Patient_Cured_Popup" type="Label" parent="Stylish_Medicine_Background" unique_id=735954631]
+z_index = 1
+layout_mode = 0
+offset_left = -1512.6797
+offset_top = 776.629
+offset_right = -477.43945
+offset_bottom = 1204.2373
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_khqja")
+text = "The patient is cured!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("14_0sh5y")
+
+[node name="Close_Patient_Cured_Popup" type="Button" parent="Stylish_Medicine_Background/Patient_Cured_Popup" unique_id=1252280685]
+layout_mode = 0
+offset_left = 945.42487
+offset_top = 7.053822e-05
+offset_right = 1033.2417
+offset_bottom = 87.83308
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_l0f8h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vofke")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f1ah8")
+text = "X"
+script = ExtResource("14_f1ah8")
+
+[connection signal="visibility_changed" from="." to="Patient_Info" method="_on_room_visibility_changed"]
+[connection signal="visibility_changed" from="." to="Stylish_Medicine_Background/Give_Medicine_1" method="_on_room_visibility_changed"]
+[connection signal="visibility_changed" from="." to="Stylish_Medicine_Background/Give_Medicine_2" method="_on_room_visibility_changed"]
+[connection signal="visibility_changed" from="." to="Stylish_Medicine_Background/Give_Medicine_3" method="_on_room_visibility_changed"]
+[connection signal="visibility_changed" from="." to="Stylish_Medicine_Background/No_Patient_Popup" method="_on_room_visibility_changed"]
+[connection signal="pressed" from="Leave_Room" to="." method="_on_leave_room_pressed"]
+[connection signal="pressed" from="Stylish_Medicine_Background/Give_Medicine_1" to="Patient_Info" method="_on_give_medicine_1_pressed"]
+[connection signal="pressed" from="Stylish_Medicine_Background/Give_Medicine_2" to="Patient_Info" method="_on_give_medicine_2_pressed"]
+[connection signal="pressed" from="Stylish_Medicine_Background/Give_Medicine_3" to="." method="_on_give_medicine_3_pressed"]
+[connection signal="pressed" from="Stylish_Medicine_Background/Wrong_Medicine_Popup/Close_Wrong_medicine_Popup" to="Stylish_Medicine_Background/Wrong_Medicine_Popup" method="_on_close_pressed"]
+[connection signal="pressed" from="Stylish_Medicine_Background/No_Patient_Popup/Close" to="Stylish_Medicine_Background/No_Patient_Popup" method="_on_close_pressed"]
+[connection signal="pressed" from="Stylish_Medicine_Background/Patient_Cured_Popup/Close_Patient_Cured_Popup" to="Stylish_Medicine_Background/Patient_Cured_Popup" method="_on_close_patient_cured_popup_pressed"]

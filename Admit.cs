@@ -17,5 +17,16 @@ public partial class Admit : Button
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
     {
+        //disables the button and prevents the admission of any new patients while one is already admitted
+        if (GlobalData.CurrentPatientMalady != "none")
+        {
+            Text = "your patient awaits";
+            Disabled = true;
+        }
+        else
+        {
+            Text = "Admit";
+            Disabled = false;
+        }
     }
 }

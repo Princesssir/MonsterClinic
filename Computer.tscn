@@ -167,11 +167,12 @@ text = "BOUNDLESS DEBT"
 script = ExtResource("10_vjhme")
 
 [node name="Dealer_PH" type="Label" parent="Player_Interactables_C" unique_id=1842103304]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 40.0
 offset_top = 20.0
-offset_right = 1684.0
+offset_right = 1914.0
 offset_bottom = 1021.0
 mouse_filter = 0
 theme_override_font_sizes/font_size = 20
@@ -182,9 +183,10 @@ script = ExtResource("5_tjl6a")
 
 [node name="Close" type="Button" parent="Player_Interactables_C/Dealer_PH" unique_id=434525094]
 layout_mode = 0
-offset_left = 1594.0
-offset_right = 1644.0
-offset_bottom = 50.0
+offset_left = 1824.0
+offset_top = -1.0
+offset_right = 1874.0
+offset_bottom = 49.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ixi1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_660v7")
@@ -194,10 +196,10 @@ script = ExtResource("6_hqpia")
 
 [node name="Money_Display" type="Label" parent="Player_Interactables_C/Dealer_PH" unique_id=368042294]
 layout_mode = 0
-offset_left = 1371.0
-offset_top = 24.0
-offset_right = 1569.0
-offset_bottom = 100.0
+offset_left = 1567.0
+offset_top = 30.0
+offset_right = 1765.0
+offset_bottom = 106.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_sfps3")
 horizontal_alignment = 1
@@ -271,9 +273,9 @@ script = ExtResource("6_hqpia")
 visible = false
 z_index = 1
 layout_mode = 0
-offset_left = 21.0
+offset_left = 27.0
 offset_top = 20.0
-offset_right = 1684.0
+offset_right = 1910.0
 offset_bottom = 1019.0
 mouse_filter = 0
 theme_override_font_sizes/font_size = 20
@@ -287,8 +289,8 @@ script = ExtResource("3_dueua")
 
 [node name="Close" type="Button" parent="Player_Interactables_C/Map_PH" unique_id=834944]
 layout_mode = 0
-offset_left = 1613.0
-offset_right = 1663.0
+offset_left = 1834.0
+offset_right = 1884.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ixi1")
@@ -298,12 +300,11 @@ text = "X"
 script = ExtResource("6_hqpia")
 
 [node name="Malady_PH" type="Label" parent="Player_Interactables_C" unique_id=1235186100]
-visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 40.0
 offset_top = 20.0
-offset_right = 1684.0
+offset_right = 1912.0
 offset_bottom = 1019.0
 mouse_filter = 0
 theme_override_font_sizes/font_size = 20
@@ -319,8 +320,8 @@ script = ExtResource("6_3f6el")
 
 [node name="Close" type="Button" parent="Player_Interactables_C/Malady_PH" unique_id=779862827]
 layout_mode = 0
-offset_left = 1594.0
-offset_right = 1644.0
+offset_left = 1821.0
+offset_right = 1871.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ixi1")
@@ -333,6 +334,9 @@ script = ExtResource("6_hqpia")
 [connection signal="pressed" from="Player_Interactables_C/Map" to="Player_Interactables_C/Map_PH" method="_on_map_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Malady_Catalogue" to="Player_Interactables_C/Malady_PH" method="_on_malady_c_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Log_out" to="." method="_on_log_o_pressed"]
+[connection signal="visibility_changed" from="Player_Interactables_C/Dealer_PH" to="Player_Interactables_C/Dealer_PH/HBoxContainer/Medicine1" method="_on_dealer_ph_visibility_changed"]
+[connection signal="visibility_changed" from="Player_Interactables_C/Dealer_PH" to="Player_Interactables_C/Dealer_PH/HBoxContainer/Medicine2" method="_on_dealer_ph_visibility_changed"]
+[connection signal="visibility_changed" from="Player_Interactables_C/Dealer_PH" to="Player_Interactables_C/Dealer_PH/HBoxContainer/Medicine3" method="_on_dealer_ph_visibility_changed"]
 [connection signal="pressed" from="Player_Interactables_C/Dealer_PH/Close" to="Player_Interactables_C/Dealer_PH" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Dealer_PH/Insufficient_Funds/Close" to="Player_Interactables_C/Dealer_PH/Insufficient_Funds" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Map_PH/Close" to="Player_Interactables_C/Map_PH" method="_on_close_pressed"]

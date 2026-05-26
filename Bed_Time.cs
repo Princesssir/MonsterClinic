@@ -9,13 +9,18 @@ public partial class Bed_Time : Label
         Hide();
     }
 
+    //now also shows the earnings for the day
     private void _on_bed_pressed()
     {
         Show();
+        Text = "Eepy time :) \n \n Today's earnings: " + GlobalData.DailyEarnings;
     }
 
+    //adds the dat's earnings to your money, and resets daily earnings to 0
     private void _on_close_pressed()
     {
+        GlobalData.Money += GlobalData.DailyEarnings;
+        GlobalData.DailyEarnings = 0;
         Hide();
     }
 
