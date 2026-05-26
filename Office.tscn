@@ -1,11 +1,19 @@
 [gd_scene format=3 uid="uid://chmg4tjmycsse"]
 
 [ext_resource type="Script" uid="uid://3ailttjlob0g" path="res://Contents_O.cs" id="1_35wc1"]
+[ext_resource type="Script" uid="uid://5na27tfl3yvu" path="res://Bed_Time.cs" id="2_hq38p"]
+[ext_resource type="Texture2D" uid="uid://c5ncjx7yugc5j" path="res://Assets/2D Art/Office/office-pc.png" id="2_kjhbo"]
 [ext_resource type="Script" uid="uid://dm42silqg7ir1" path="res://Treatment_Deadline.cs" id="3_p0jbg"]
 [ext_resource type="Script" uid="uid://cps7wyoavl5wx" path="res://Close.cs" id="3_ttk34"]
 [ext_resource type="Script" uid="uid://tko5xpbwbya8" path="res://Deadline_Countdown.cs" id="4_r1f8t"]
+[ext_resource type="Texture2D" uid="uid://b4o0ubcg603ro" path="res://Assets/2D Art/Office/office-mirror.png" id="6_4fm71"]
 [ext_resource type="Script" uid="uid://damlipp41xqb1" path="res://Mirror.cs" id="7_4fm71"]
 [ext_resource type="Script" uid="uid://4pv2su1jjxij" path="res://Mirror_Close_Up.cs" id="7_ei0gw"]
+[ext_resource type="Script" uid="uid://b8t0rredi262l" path="res://Destination_PH.cs" id="8_n8ipj"]
+[ext_resource type="Texture2D" uid="uid://jdngferi6lje" path="res://Assets/2D Art/Office/office-elevator.png" id="9_yauhp"]
+[ext_resource type="Texture2D" uid="uid://djvdgfra7b3b8" path="res://Assets/2D Art/Office/office-phone.png" id="11_gisrx"]
+[ext_resource type="Texture2D" uid="uid://cvcqxyesknw0" path="res://Assets/2D Art/Office/office-bed.png" id="12_grpir"]
+[ext_resource type="Texture2D" uid="uid://duxu8md0l1yr5" path="res://Assets/2D Art/Office/office-background.png" id="14_3080y"]
 [ext_resource type="Script" uid="uid://ybgrq4acnibr" path="res://Elevator.cs" id="8_ei0gw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fedq"]
@@ -47,21 +55,29 @@ offset_bottom = 40.0
 [node name="Computer_Access" type="Button" parent="Player_Interactables_O" unique_id=1784326359]
 z_index = 1
 layout_mode = 0
-offset_left = 31.0
-offset_top = 642.0
-offset_right = 317.0
-offset_bottom = 1017.0
+offset_left = 82.5
+offset_top = 398.725
+offset_right = 712.5
+offset_bottom = 833.7257
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
+icon = ExtResource("2_kjhbo")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Player_Interactables_O/Computer_Access" unique_id=764561184]
+layout_mode = 0
+offset_right = 543.0
+offset_bottom = 126.54999
+theme_override_font_sizes/font_size = 60
 text = "Computer"
 
 [node name="Treatment_Deadline" type="Button" parent="Player_Interactables_O" unique_id=65374973]
 layout_mode = 0
-offset_left = 376.0
+offset_left = 700.0
 offset_top = 204.0
-offset_right = 502.0
+offset_right = 826.0
 offset_bottom = 329.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
@@ -99,16 +115,19 @@ script = ExtResource("3_ttk34")
 
 [node name="Mirror" type="Button" parent="Player_Interactables_O" unique_id=1997607079]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 65.0
-offset_right = 991.0
-offset_bottom = 625.0
+offset_left = 261.335
+offset_top = 146.78
+offset_right = 524.83496
+offset_bottom = 474.28
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "Mirror
+text = "
 "
+icon = ExtResource("6_4fm71")
+flat = true
+expand_icon = true
 script = ExtResource("7_4fm71")
 
 [node name="Mirror_Close_Up" type="Label" parent="Player_Interactables_O/Mirror" unique_id=1633342914]
@@ -138,47 +157,127 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 script = ExtResource("3_ttk34")
 
+[node name="Label" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 255.0
+offset_bottom = 172.22
+theme_override_font_sizes/font_size = 50
+text = "Mirror"
+
 [node name="Elevator" type="Button" parent="Player_Interactables_O" unique_id=1792734093]
 layout_mode = 0
-offset_left = 1226.0
-offset_top = 55.0
-offset_right = 1578.0
-offset_bottom = 674.0
+offset_left = 1169.27
+offset_top = 64.825
+offset_right = 1597.27
+offset_bottom = 787.825
+scale = Vector2(1.05, 1.05)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "Elevator
+text = "
 "
+icon = ExtResource("9_yauhp")
+flat = true
+expand_icon = true
+
+[node name="Destination_PH" type="Label" parent="Player_Interactables_O/Elevator" unique_id=1756916659]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -30.0
+offset_top = -46.0
+offset_right = 429.0
+offset_bottom = 951.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
+text = "Sorry, nowhere to go,
+ this prototype floats in a void,
+come back later"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_n8ipj")
+
+[node name="Close" type="Button" parent="Player_Interactables_O/Elevator/Destination_PH" unique_id=709969312]
+layout_mode = 0
+offset_left = 409.0
+offset_right = 459.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
+text = "X"
+script = ExtResource("3_ttk34")
 script = ExtResource("8_ei0gw")
 
-[node name="Patient_Interface_Access" type="Button" parent="Player_Interactables_O" unique_id=1350439951]
-custom_minimum_size = Vector2(200, 10)
+[node name="Label" type="Label" parent="Player_Interactables_O/Elevator" unique_id=658853895]
 layout_mode = 0
-offset_left = 1660.0
-offset_top = 336.0
-offset_right = 1891.0
-offset_bottom = 867.0
+offset_left = 46.125
+offset_top = 163.035
+offset_right = 308.125
+offset_bottom = 242.24937
+theme_override_font_sizes/font_size = 40
+text = "Patient Room"
+
+[node name="Patient_Interface_Access" type="Button" parent="Player_Interactables_O" unique_id=1350439951]
+custom_minimum_size = Vector2(503, 475)
+layout_mode = 0
+offset_left = 1555.71
+offset_top = 445.28
+offset_right = 2058.711
+offset_bottom = 1356.2804
+scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "Patient admition
-"
+icon = ExtResource("11_gisrx")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="Player_Interactables_O/Patient_Interface_Access" unique_id=1431757594]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 400.0
+offset_right = 420.58008
+offset_bottom = 529.44
+theme_override_font_sizes/font_size = 50
+text = "Reception"
 
 [node name="Bed" type="Button" parent="Player_Interactables_O" unique_id=1565711458]
 layout_mode = 0
-offset_left = 101.0
-offset_top = 492.0
-offset_right = 701.0
-offset_bottom = 690.0
+offset_left = 401.585
+offset_top = 398.77
+offset_right = 1042.131
+offset_bottom = 684.7742
+scale = Vector2(1.55, 1.55)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "Bed"
+icon = ExtResource("12_grpir")
+flat = true
+expand_icon = true
 
 [node name="ChangeToBed_Timer" type="Timer" parent="." unique_id=1022067532]
+
+[node name="Label" type="Label" parent="Player_Interactables_O/Bed" unique_id=490842031]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 318.33224
+offset_bottom = 196.2774
+theme_override_font_sizes/font_size = 40
+text = "Rest"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=198520339]
+z_index = -4
+position = Vector2(967, 542)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_3080y")
 
 [connection signal="pressed" from="Player_Interactables_O/Computer_Access" to="." method="_on_computer_a_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_treatment_d_pressed"]
@@ -187,4 +286,7 @@ text = "Bed"
 [connection signal="pressed" from="Player_Interactables_O/Mirror/Mirror_Close_Up/Close" to="Player_Interactables_O/Mirror/Mirror_Close_Up" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Elevator" to="." method="_on_elevator_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Patient_Interface_Access" to="." method="_on_patient_i_a_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Bed" to="Player_Interactables_O/Bed/Bed_Time" method="_on_bed_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_time_passed"]
+[connection signal="pressed" from="Player_Interactables_O/Bed/Bed_Time/Close" to="Player_Interactables_O/Bed/Bed_Time" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Bed" to="." method="_on_bed_pressed"]
