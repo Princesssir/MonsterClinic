@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://4phbi63r8tpl" path="res://Medicine3.cs" id="11_hqpia"]
 [ext_resource type="Script" uid="uid://bhwalee26aynr" path="res://InsufficientFunds.cs" id="12_hqpia"]
 [ext_resource type="Script" uid="uid://08n5ukorqdyk" path="res://ScrollCatalog.cs" id="15_vbt5y"]
+[ext_resource type="Script" uid="uid://bho5a8iwfj3pn" path="res://Scripts/MapUI.cs" id="16_l232m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fqyqf"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
@@ -168,7 +169,6 @@ text = "BOUNDLESS DEBT"
 script = ExtResource("10_vjhme")
 
 [node name="Dealer_PH" type="Label" parent="Player_Interactables_C" unique_id=1842103304]
-visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 40.0
@@ -271,7 +271,6 @@ text = "X"
 script = ExtResource("6_hqpia")
 
 [node name="Map_PH" type="Label" parent="Player_Interactables_C" unique_id=1044538284]
-visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 27.0
@@ -301,6 +300,7 @@ text = "X"
 script = ExtResource("6_hqpia")
 
 [node name="Malady_PH" type="Label" parent="Player_Interactables_C" unique_id=1235186100]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = 40.0
@@ -345,6 +345,53 @@ theme_override_constants/h_separation = 274
 theme_override_constants/v_separation = 222
 columns = 6
 
+[node name="MapUI" type="CanvasLayer" parent="." unique_id=2110428934]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MapUI" unique_id=1891633938 node_paths=PackedStringArray("RoomCount", "Funds", "PatientCount", "BuyRoomButton", "WarningLabel")]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -316.0
+offset_top = -47.0
+offset_right = -43.0
+offset_bottom = 65.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("16_l232m")
+RoomCount = NodePath("RoomCount")
+Funds = NodePath("Funds")
+PatientCount = NodePath("PatientCount")
+BuyRoomButton = NodePath("BuyRoomButton")
+WarningLabel = NodePath("../WarningLabel")
+
+[node name="RoomCount" type="Label" parent="MapUI/VBoxContainer" unique_id=1869807329]
+layout_mode = 2
+theme_override_constants/line_spacing = 3
+
+[node name="Funds" type="Label" parent="MapUI/VBoxContainer" unique_id=1352145390]
+layout_mode = 2
+theme_override_constants/line_spacing = 3
+
+[node name="PatientCount" type="Label" parent="MapUI/VBoxContainer" unique_id=1699672386]
+layout_mode = 2
+theme_override_constants/line_spacing = 3
+
+[node name="BuyRoomButton" type="Button" parent="MapUI/VBoxContainer" unique_id=1415746303]
+layout_mode = 2
+size_flags_vertical = 4
+text = "Buy Room (10 Credits)"
+
+[node name="WarningLabel" type="Label" parent="MapUI" unique_id=1397842417]
+visible = false
+offset_left = 1664.0
+offset_top = 607.0
+offset_right = 1833.0
+offset_bottom = 647.0
+theme_override_colors/font_color = Color(1, 0.029999971, 0.029999971, 1)
+text = "Insufficient funds :("
+
 [connection signal="pressed" from="Player_Interactables_C/Dealer" to="Player_Interactables_C/Dealer_PH" method="_on_dealer_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Map" to="Player_Interactables_C/Map_PH" method="_on_map_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Malady_Catalogue" to="Player_Interactables_C/Malady_PH" method="_on_malady_c_pressed"]
@@ -356,3 +403,4 @@ columns = 6
 [connection signal="pressed" from="Player_Interactables_C/Dealer_PH/Insufficient_Funds/Close" to="Player_Interactables_C/Dealer_PH/Insufficient_Funds" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Map_PH/Close" to="Player_Interactables_C/Map_PH" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_C/Malady_PH/Close" to="Player_Interactables_C/Malady_PH" method="_on_close_pressed"]
+[connection signal="pressed" from="MapUI/VBoxContainer/BuyRoomButton" to="MapUI/VBoxContainer" method="OnBuyRoomButtonPressed"]
