@@ -1,4 +1,5 @@
 using Godot;
+using System;
 
 public static class GlobalData
 {
@@ -7,6 +8,11 @@ public static class GlobalData
     //public static Texture2D AdmittedPatientTexture { get; set; }
 
     public static int Countdown { get; set; } = 4;
+    public static int MedicinePlayer { get; set; } = 0;
+    public static int MedicineCost { get; set; } = 150;
+    public static int Medicincavailability { get; set; } = 0;
+    public static Boolean Dialog_Dealer { get; set; } = false;
+    public static Boolean Dialog_Dealer_Control { get; set; } = true;
 
     public static int Money { get; set; } = 150;
 
@@ -17,6 +23,8 @@ public static class GlobalData
     public static int Medicine2Count { get; set; } = 0;
 
     public static int Medicine3Count { get; set; } = 0;
+
+   
 
     public static string[] Maladies = { "A", "B", "C" };
 

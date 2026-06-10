@@ -10,6 +10,8 @@ public partial class Bed : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        
+
         Hide();
         // getting the information for the days from the DayManager
         var day_M = GetNode<DayManager>("/root/DayManager");
@@ -26,13 +28,14 @@ public partial class Bed : Node2D
         GlobalData.Money += GlobalData.DailyEarnings;
         GlobalData.DailyEarnings = 0;
 
-        
+       
+
 
 
         // the treatment countdown gets his information from the Global autoload. It is different than from the Daymanager, because Global has the namespace global which is gets set in the upper code (almost the first thing) and then you can call the class Variable and the integer
-     
 
-       
+
+
 
         // setting the RichTextLabel up (needs new name or its getting confusing), to custommize it like up there before BbcodeEnabled needs to be true. The frontSize is 110, the text is big.
         var DaysCounters = GetNode<RichTextLabel>("TreatmentDays");
@@ -95,14 +98,16 @@ public partial class Bed : Node2D
             //not implemented yet
             //GetTree().ChangeSceneToFile("res://DeathScreen/death_screen.tscn");
         }
+
+        if (GlobalData.MedicinePlayer >= 1)
+        {
+            GlobalData.Dialog_Dealer = true;
+        }
+
     }
 
     
     
 
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
-    }
 }
