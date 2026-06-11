@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pko0y5y0chtt" path="res://place holders/679961220_1321777009872154_7719911029311369346_n.png" id="3_uph1y"]
 [ext_resource type="Texture2D" uid="uid://c5b2sbksxoyvm" path="res://place holders/684146226_2513326992456987_2687682788803640839_n.jpg" id="4_ecejo"]
 [ext_resource type="Script" uid="uid://dgqxfanx26jy6" path="res://Admit.cs" id="6_7u4js"]
-[ext_resource type="Script" uid="uid://p58vsvndvpy4" path="res://PreviousScene.cs" id="6_bomhp"]
 [ext_resource type="Script" uid="uid://cfadpeoxi5fon" path="res://SpeechManager.cs" id="7_3xib3"]
-[ext_resource type="Script" uid="uid://cstuj82v3inub" path="res://Reject.cs" id="8_kytyi"]
 [ext_resource type="Script" uid="uid://tkupfc1dnrga" path="res://Checkbox.cs" id="12_oaj4u"]
 [ext_resource type="Script" uid="uid://drow72lvn73wp" path="res://Diagnosis_Box.cs" id="13_3xib3"]
 [ext_resource type="Script" uid="uid://um68vmhviamh" path="res://AdmissionManager.cs" id="15_uph1y"]
@@ -73,16 +71,9 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl1ua"]
 bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
-[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DialogueButton", "ZoomButton", "PulseButton", "DiagnosisButton", "InventoryButton", "ShotgunButton", "InventoryContainer", "DeceasedSprite1", "DeceasedSprite2")]
+[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DeceasedSprite1", "DeceasedSprite2")]
 script = ExtResource("1_ljdgf")
-SpeechManagerAccess = NodePath("Player_Interactables_P_I/SpeechManager")
-DialogueButton = NodePath("Player_Interactables_P_I/Dialogue_Trigger")
-ZoomButton = NodePath("Player_Interactables_P_I/Patient_Zoom")
-PulseButton = NodePath("Player_Interactables_P_I/Pulse_Measurement")
-DiagnosisButton = NodePath("Player_Interactables_P_I/InventoryAccess_P_I/Diagnosis_Tools")
-InventoryButton = NodePath("Player_Interactables_P_I/Inventory_P_I")
-ShotgunButton = NodePath("Player_Interactables_P_I/InventoryAccess_P_I/Shotgun")
-InventoryContainer = NodePath("Player_Interactables_P_I/InventoryAccess_P_I")
+SpeechManagerAccess = NodePath("ControlPatientInterface/SpeechManager")
 DeceasedSprite1 = NodePath("Sprites_PH/Deceased_Sprite")
 DeceasedSprite2 = NodePath("Sprites_PH/Deceased_Sprite_2")
 
@@ -113,17 +104,17 @@ rotation = -0.51428306
 scale = Vector2(0.13045417, 0.14069395)
 texture = ExtResource("4_ecejo")
 
-[node name="Player_Interactables_P_I" type="Control" parent="." unique_id=832899310]
+[node name="ControlPatientInterface" type="Control" parent="." unique_id=832899310]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SpeechManager" type="Node" parent="Player_Interactables_P_I" unique_id=1707730347 node_paths=PackedStringArray("SpeechBubble")]
+[node name="SpeechManager" type="Node" parent="ControlPatientInterface" unique_id=1707730347 node_paths=PackedStringArray("SpeechBubble")]
 script = ExtResource("7_3xib3")
 SpeechBubble = NodePath("SpeechBubble")
 
-[node name="SpeechBubble" type="Label" parent="Player_Interactables_P_I/SpeechManager" unique_id=1448112577]
+[node name="SpeechBubble" type="Label" parent="ControlPatientInterface/SpeechManager" unique_id=1448112577]
 z_index = 3
 offset_left = 1379.0
 offset_top = 395.0
@@ -133,7 +124,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_kqp7s")
 
-[node name="Previous_Scene" type="Button" parent="Player_Interactables_P_I" unique_id=294028163]
+[node name="Return" type="Button" parent="ControlPatientInterface" unique_id=294028163]
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 0
 offset_left = 1672.0
@@ -145,9 +136,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Return "
-script = ExtResource("6_bomhp")
 
-[node name="Dialogue_Trigger" type="Button" parent="Player_Interactables_P_I" unique_id=667856672]
+[node name="Dialogue" type="Button" parent="ControlPatientInterface" unique_id=667856672]
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 0
 offset_left = 1454.3125
@@ -161,7 +151,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Press for 
 Dialogue"
 
-[node name="Patient_Zoom" type="Button" parent="Player_Interactables_P_I" unique_id=764683982]
+[node name="Zoom" type="Button" parent="ControlPatientInterface" unique_id=764683982]
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 0
 offset_left = 1218.3125
@@ -175,7 +165,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Zoom Into
  Patient"
 
-[node name="Pulse_Measurement" type="Button" parent="Player_Interactables_P_I" unique_id=1056763404]
+[node name="Pulse" type="Button" parent="ControlPatientInterface" unique_id=1056763404]
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 0
 offset_left = 998.3125
@@ -188,7 +178,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Measure Pulse "
 
-[node name="Reject" type="Button" parent="Player_Interactables_P_I" unique_id=1995509717]
+[node name="Reject" type="Button" parent="ControlPatientInterface" unique_id=1995509717]
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 0
 offset_left = 1366.0
@@ -200,9 +190,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Reject"
-script = ExtResource("8_kytyi")
 
-[node name="Admit" type="Button" parent="Player_Interactables_P_I" unique_id=1942473230]
+[node name="Admit" type="Button" parent="ControlPatientInterface" unique_id=1942473230]
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 0
 offset_left = 1084.0
@@ -216,7 +205,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Admit "
 script = ExtResource("6_7u4js")
 
-[node name="Inventory_P_I" type="Button" parent="Player_Interactables_P_I" unique_id=204242760]
+[node name="Inventory" type="Button" parent="ControlPatientInterface" unique_id=204242760]
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 0
 offset_left = 1730.0
@@ -229,14 +218,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Inventory"
 
-[node name="InventoryAccess_P_I" type="VBoxContainer" parent="Player_Interactables_P_I" unique_id=1299831844]
+[node name="InventoryContainer" type="VBoxContainer" parent="ControlPatientInterface" unique_id=1299831844]
+visible = false
 layout_mode = 0
 offset_left = 1702.0
 offset_top = 338.0
 offset_right = 1866.0
 offset_bottom = 543.0
 
-[node name="Diagnosis_Tools" type="Button" parent="Player_Interactables_P_I/InventoryAccess_P_I" unique_id=323827721]
+[node name="Diagnosis" type="Button" parent="ControlPatientInterface/InventoryContainer" unique_id=323827721]
 custom_minimum_size = Vector2(120, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
@@ -246,7 +236,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xkk41")
 text = "Diagnosis 
 Tools"
 
-[node name="Shotgun" type="Button" parent="Player_Interactables_P_I/InventoryAccess_P_I" unique_id=178007493]
+[node name="Shotgun" type="Button" parent="ControlPatientInterface/InventoryContainer" unique_id=178007493]
 custom_minimum_size = Vector2(120, 100)
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
@@ -255,7 +245,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_073d2")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xl1ua")
 text = "Shotgun"
 
-[node name="Diagnosis_Box" type="Label" parent="Player_Interactables_P_I" unique_id=603001178]
+[node name="Diagnosis_Box" type="Label" parent="ControlPatientInterface" unique_id=603001178]
 layout_mode = 0
 offset_left = 280.0
 offset_top = 839.0
@@ -267,7 +257,7 @@ text = "What do the symptoms tell us?
     "
 script = ExtResource("13_3xib3")
 
-[node name="Checkbox_1" type="Button" parent="Player_Interactables_P_I/Diagnosis_Box" unique_id=468010843]
+[node name="Checkbox_1" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=468010843]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_left = -96.0
@@ -280,7 +270,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Cough" type="Label" parent="Player_Interactables_P_I/Diagnosis_Box/Checkbox_1" unique_id=904256855]
+[node name="Cough" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_1" unique_id=904256855]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 38.0
@@ -290,7 +280,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Cough "
 
-[node name="Checkbox_2" type="Button" parent="Player_Interactables_P_I/Diagnosis_Box" unique_id=410492612]
+[node name="Checkbox_2" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=410492612]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_left = -95.6875
@@ -303,7 +293,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Headache" type="Label" parent="Player_Interactables_P_I/Diagnosis_Box/Checkbox_2" unique_id=62163935]
+[node name="Headache" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_2" unique_id=62163935]
 layout_mode = 0
 offset_left = 146.0
 offset_top = 39.0
@@ -313,7 +303,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Headache"
 
-[node name="Checkbox_3" type="Button" parent="Player_Interactables_P_I/Diagnosis_Box" unique_id=1252863871]
+[node name="Checkbox_3" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=1252863871]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_left = -96.6875
@@ -326,7 +316,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Sneezing" type="Label" parent="Player_Interactables_P_I/Diagnosis_Box/Checkbox_3" unique_id=495774476]
+[node name="Sneezing" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_3" unique_id=495774476]
 layout_mode = 0
 offset_left = 147.0
 offset_top = 38.0
@@ -336,7 +326,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
 text = "Sneezing"
 
-[node name="Checkbox_4" type="Button" parent="Player_Interactables_P_I/Diagnosis_Box" unique_id=669634636]
+[node name="Checkbox_4" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=669634636]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 0
 offset_left = -95.6875
@@ -349,7 +339,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Fever" type="Label" parent="Player_Interactables_P_I/Diagnosis_Box/Checkbox_4" unique_id=1467022489]
+[node name="Fever" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_4" unique_id=1467022489]
 layout_mode = 0
 offset_left = 146.0
 offset_top = 31.0
@@ -363,5 +353,4 @@ text = "Fever"
 script = ExtResource("15_uph1y")
 PatientSpriteDisplay = NodePath("../Sprites_PH/Patient")
 
-[connection signal="pressed" from="Player_Interactables_P_I/Previous_Scene" to="." method="_on_previous_s_pressed"]
-[connection signal="pressed" from="Player_Interactables_P_I/Admit" to="AdmissionManager" method="_on_admit_pressed"]
+[connection signal="pressed" from="ControlPatientInterface/Admit" to="AdmissionManager" method="_on_admit_pressed"]

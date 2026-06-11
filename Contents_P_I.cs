@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.JavaScript;
 
 public partial class Contents_P_I : Node2D
 {
@@ -8,40 +9,67 @@ public partial class Contents_P_I : Node2D
     PatientStats PatientStats;
     [Export] SpeechManager SpeechManagerAccess;
 
-    [Export] Button DialogueButton;
-    [Export] Button ZoomButton;
-    [Export] Button PulseButton;
-    [Export] Button DiagnosisButton;
-    [Export] Button InventoryButton;
-    [Export] Button ShotgunButton;
-    [Export] VBoxContainer InventoryContainer;
+    Button ReturnButton;
+    Button DialogueButton;
+    Button ZoomButton;
+    Button PulseButton;
+    Button RejectButton;
+    Button InventoryButton;
+    Button DiagnosisButton;
+    Button ShotgunButton;
+    VBoxContainer InventoryContainer;
+
+
+
     [Export] Sprite2D DeceasedSprite1, DeceasedSprite2;
 
     //List<Func<bool>> GameFunctions = new List<Func<bool>>();
     public override void _Ready()
 	{
         Hide();
+        GetAllButtons();
         PatientStats = GetNode<PatientStats>("PatientStats");
         if (PatientStats == null)
         {
             GD.Print("Error patient stats not found!!");
         }
         PatientStats.PatientInitalize();
+
+        ReturnButton.Pressed += ReturnToOffice;
         DialogueButton.Pressed += ShowSpeechDialogue;
         ZoomButton.Pressed += ShowSpeechZoom;
         PulseButton.Pressed += ShowSpeechHeartrate;
-        DiagnosisButton.Pressed += ShowSpeechDiagnosis;
+        RejectButton.Pressed += ShowSpeechReject;
         InventoryButton.Pressed += ToggleInventory;
+        DiagnosisButton.Pressed += ShowSpeechDiagnosis;
         ShotgunButton.Pressed += KillPatient;
+
         DeceasedSprite1.Hide();
         DeceasedSprite2.Hide();
-        ToggleInventory();
-        
-	}
+        InventoryContainer.Hide();
+    }
 
+    private void GetAllButtons()
+    {
+        Control control = GetNode<Control>("ControlPatientInterface");
+        ReturnButton = control.GetNode<Button>("Return");
+        DialogueButton = control.GetNode<Button>("Dialogue");
+        ZoomButton = control.GetNode<Button>("Zoom");
+        PulseButton = control.GetNode<Button>("Pulse");
+        RejectButton = control.GetNode<Button>("Reject");
+        InventoryButton = control.GetNode<Button>("Inventory");
+
+        InventoryContainer = control.GetNode<VBoxContainer>("InventoryContainer");
+        DiagnosisButton = InventoryContainer.GetNode<Button>("Diagnosis");
+        ShotgunButton = InventoryContainer.GetNode<Button>("Shotgun");
+    }
     private void ShowSpeechDialogue()
     {
         SpeechManagerAccess.SpeechText(PatientStats.dialogue);
+    }
+    private void ShowSpeechReject()
+    {
+        SpeechManagerAccess.SpeechText("Patient has left");
     }
 
     private void ShowSpeechZoom()
@@ -69,8 +97,8 @@ public partial class Contents_P_I : Node2D
         DeceasedSprite1.Show();
         DeceasedSprite2.Show();
     }
-        
-    private void _on_previous_s_pressed()
+    
+    private void ReturnToOffice()
     {
         //when leaving the room, hide it, show the office, and pop the room off the previous scenes stack, to not interfere with the right click functionality
         Hide();
@@ -78,8 +106,4 @@ public partial class Contents_P_I : Node2D
         OfficeScene.Show();
         GlobalData.PreviousScenes.Pop();
     }
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-	{
-	}
 }
