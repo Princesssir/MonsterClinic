@@ -3,23 +3,29 @@ using System;
 
 public partial class Mirror : Button
 {
+
+    //All the necessary mirror references
     Button MirrorButton;
     Button Close;
     Label MirrorLabel;
-    //Button cureButton = GetNode<Button>("Cure");
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        MirrorButton = (Button)this;
+        // Grabbing all the mirror references
+        // MirrorButton reference is unecessary and should just be replaced with "this"
+        MirrorButton = this;
         MirrorLabel = GetNode<Label>("MirrorLabel");
         Close = MirrorLabel.GetNode<Button>("Close");
+
+        //Hiding the mirror since we only want to see it once clicked.
         HideMirrorCloseUp();
+
+        //Subscribing to the relevant events
         MirrorButton.Pressed += ShowMirrorCloseUp;
         Close.Pressed += HideMirrorCloseUp;
-
-        //Pressed += ButtonPressed;
     }
     
+
+    //Showing and hiding the mirror, pretty simple.
     private void ShowMirrorCloseUp()
     {
         MirrorLabel.Show();
@@ -28,8 +34,5 @@ public partial class Mirror : Button
     private void HideMirrorCloseUp()
     {
         MirrorLabel.Hide();
-    }
-    private void ButtonPressed()
-    {
     }
 }

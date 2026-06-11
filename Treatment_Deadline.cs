@@ -3,23 +3,30 @@ using System;
 
 public partial class Treatment_Deadline : Button
 {
+
+    // Three node references used for referencing all the elements within the deadline window.
     Button Deadline;
 	Button Close;
 	Label DeadlineLabel;
-    //Button cureButton = GetNode<Button>("Cure");
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        Deadline = (Button)this;
+        // This script is attached to the button itself, so the button stores itself basically.
+        // This reference is unecessary, I didn't think about it when writing.
+        Deadline = this;
         DeadlineLabel = GetNode<Label>("DeadlineLabel");
         Close = DeadlineLabel.GetNode<Button>("Close");
+
+        // Hiding the deadline window. It shouldn't be visible until clicked on.
         HideDeadline();
+
+        // Subscribing to the relevant events.
         Deadline.Pressed += ShowDeadline;
         Close.Pressed += HideDeadline;
     }
     
     private void ShowDeadline()
     {
+        //Updating the label with the relevant info.
         DeadlineLabel.Show();
         if (GlobalData.Countdown > 1)
         {
@@ -37,6 +44,7 @@ public partial class Treatment_Deadline : Button
 
     private void HideDeadline()
 	{
+        // Hiding the window, which in this case is a label.
 		DeadlineLabel.Hide();
     }
 }
