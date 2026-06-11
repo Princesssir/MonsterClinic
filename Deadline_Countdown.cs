@@ -7,12 +7,12 @@ public partial class Deadline_Countdown : Label
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        Hide();
+        //Hide();
     }
 
     private void _on_treatment_d_pressed()
     {
-        Show();
+      /*  Show();
         if (GlobalData.Countdown > 1)
         {
             Text = String.Format("If you don't get treatment in {0} days, \n you'll be in real trouble", GlobalData.Countdown);
@@ -24,20 +24,21 @@ public partial class Deadline_Countdown : Label
         else
         {
             Text = "Time's up! If this wasn't a prototype, \n you'd already be gone...";
-        }
+        } 
+      */
     }
 
     private void _on_close_pressed()
     {
-        Hide();
+        //Hide();
     }
 
     private void _on_time_passed()
     {
-        if (GlobalData.Countdown > 0)
+       /* if (GlobalData.Countdown > 0)
         {
             GlobalData.Countdown--;
-        }
+        } */
     }
 
 

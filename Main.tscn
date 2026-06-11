@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://w3h4yybr04yy"]
 
-[ext_resource type="Script" uid="uid://cqj6nynl1twjp" path="res://Main.cs" id="1_lgr22"]
+[ext_resource type="Script" uid="uid://d3dvmti0dd4va" path="res://Main.cs" id="1_lgr22"]
 [ext_resource type="PackedScene" uid="uid://chmg4tjmycsse" path="res://Office.tscn" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cd5mco04n5aoh" path="res://Computer.tscn" id="2_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://dkuuhw6j251v" path="res://Patient_Interface.tscn" id="3_fos0i"]

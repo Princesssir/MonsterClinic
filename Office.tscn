@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3ailttjlob0g" path="res://Contents_O.cs" id="1_35wc1"]
 [ext_resource type="Texture2D" uid="uid://c5ncjx7yugc5j" path="res://Assets/2D Art/Office/office-pc.png" id="2_kjhbo"]
+[ext_resource type="Script" uid="uid://m1pshkrehly7" path="res://UiManager.cs" id="3_4fm71"]
 [ext_resource type="Script" uid="uid://dm42silqg7ir1" path="res://Treatment_Deadline.cs" id="3_p0jbg"]
 [ext_resource type="Script" uid="uid://cps7wyoavl5wx" path="res://Close.cs" id="3_ttk34"]
 [ext_resource type="Script" uid="uid://tko5xpbwbya8" path="res://Deadline_Countdown.cs" id="4_r1f8t"]
@@ -45,17 +46,20 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [node name="Contents_O" type="Node2D" unique_id=586678661]
 script = ExtResource("1_35wc1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=198520339]
+[node name="Background1" type="Sprite2D" parent="." unique_id=198520339]
 z_index = -4
 position = Vector2(960, 540)
 scale = Vector2(0.5, 0.49999997)
 texture = ExtResource("14_3080y")
 
-[node name="Player_Interactables_O" type="Control" parent="." unique_id=1346865405]
+[node name="Player_Interactables_O" type="Control" parent="." unique_id=1346865405 node_paths=PackedStringArray("DeadlineButton", "myLabel")]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("3_4fm71")
+DeadlineButton = NodePath("Treatment_Deadline")
+myLabel = NodePath("Treatment_Deadline/DeadlineLabel")
 
 [node name="Computer_Access" type="Button" parent="Player_Interactables_O" unique_id=1784326359]
 layout_mode = 0
@@ -70,7 +74,8 @@ icon = ExtResource("2_kjhbo")
 flat = true
 expand_icon = true
 
-[node name="Label" type="Label" parent="Player_Interactables_O/Computer_Access" unique_id=764561184]
+[node name="ComputerLabel" type="Label" parent="Player_Interactables_O/Computer_Access" unique_id=764561184]
+visible = false
 layout_mode = 0
 offset_right = 543.0
 offset_bottom = 126.54999
@@ -91,7 +96,7 @@ text = "Treatment
 Countdown"
 script = ExtResource("3_p0jbg")
 
-[node name="Deadline_Countdown" type="Label" parent="Player_Interactables_O/Treatment_Deadline" unique_id=102657559]
+[node name="DeadlineLabel" type="Label" parent="Player_Interactables_O/Treatment_Deadline" unique_id=102657559]
 visible = false
 z_index = 1
 layout_mode = 0
@@ -101,11 +106,12 @@ offset_right = 329.0
 offset_bottom = 311.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
+text = "abcdefg"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_r1f8t")
 
-[node name="Close" type="Button" parent="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" unique_id=287276693]
+[node name="Close" type="Button" parent="Player_Interactables_O/Treatment_Deadline/DeadlineLabel" unique_id=287276693]
 layout_mode = 0
 offset_left = 431.0
 offset_right = 481.0
@@ -162,7 +168,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 script = ExtResource("3_ttk34")
 
-[node name="Label" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
+[node name="MirrorLabel" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 100.0
@@ -217,7 +223,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 script = ExtResource("8_ei0gw")
 
-[node name="Label" type="Label" parent="Player_Interactables_O/Elevator" unique_id=658853895]
+[node name="PatientRoomLabel" type="Label" parent="Player_Interactables_O/Elevator" unique_id=658853895]
 layout_mode = 0
 offset_left = 46.125
 offset_top = 163.035
@@ -242,7 +248,7 @@ icon = ExtResource("11_gisrx")
 flat = true
 expand_icon = true
 
-[node name="Label" type="Label" parent="Player_Interactables_O/Patient_Interface_Access" unique_id=1431757594]
+[node name="ReceptionLabel" type="Label" parent="Player_Interactables_O/Patient_Interface_Access" unique_id=1431757594]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 400.0
@@ -266,7 +272,7 @@ icon = ExtResource("12_grpir")
 flat = true
 expand_icon = true
 
-[node name="Label" type="Label" parent="Player_Interactables_O/Bed" unique_id=490842031]
+[node name="BedLabel" type="Label" parent="Player_Interactables_O/Bed" unique_id=490842031]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 100.0
@@ -282,15 +288,16 @@ visible = false
 offset_right = 1933.0
 offset_bottom = 1091.0
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=198520339]
+[node name="Background2" type="Sprite2D" parent="." unique_id=1708659909]
+visible = false
 z_index = -4
 position = Vector2(962.5, 541)
 scale = Vector2(0.5023438, 0.5009259)
 texture = ExtResource("14_3080y")
 
 [connection signal="pressed" from="Player_Interactables_O/Computer_Access" to="." method="_on_computer_a_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_treatment_d_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown/Close" to="Player_Interactables_O/Treatment_Deadline/Deadline_Countdown" method="_on_close_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline" to="Player_Interactables_O/Treatment_Deadline/DeadlineLabel" method="_on_treatment_d_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline/DeadlineLabel/Close" to="Player_Interactables_O/Treatment_Deadline/DeadlineLabel" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Mirror" to="Player_Interactables_O/Mirror/Mirror_Close_Up" method="_on_mirror_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Mirror/Mirror_Close_Up/Close" to="Player_Interactables_O/Mirror/Mirror_Close_Up" method="_on_close_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Elevator" to="." method="_on_elevator_pressed"]
