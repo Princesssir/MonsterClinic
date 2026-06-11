@@ -4,11 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://c5ncjx7yugc5j" path="res://Assets/2D Art/Office/office-pc.png" id="2_kjhbo"]
 [ext_resource type="Script" uid="uid://m1pshkrehly7" path="res://UiManager.cs" id="3_4fm71"]
 [ext_resource type="Script" uid="uid://dm42silqg7ir1" path="res://Treatment_Deadline.cs" id="3_p0jbg"]
-[ext_resource type="Script" uid="uid://cps7wyoavl5wx" path="res://Close.cs" id="3_ttk34"]
-[ext_resource type="Script" uid="uid://tko5xpbwbya8" path="res://Deadline_Countdown.cs" id="4_r1f8t"]
 [ext_resource type="Texture2D" uid="uid://b4o0ubcg603ro" path="res://Assets/2D Art/Office/office-mirror.png" id="6_4fm71"]
 [ext_resource type="Script" uid="uid://damlipp41xqb1" path="res://Mirror.cs" id="7_4fm71"]
-[ext_resource type="Script" uid="uid://4pv2su1jjxij" path="res://Mirror_Close_Up.cs" id="7_ei0gw"]
 [ext_resource type="Script" uid="uid://ybgrq4acnibr" path="res://Elevator.cs" id="8_ei0gw"]
 [ext_resource type="Script" uid="uid://b8t0rredi262l" path="res://Destination_PH.cs" id="8_n8ipj"]
 [ext_resource type="Texture2D" uid="uid://jdngferi6lje" path="res://Assets/2D Art/Office/office-elevator.png" id="9_yauhp"]
@@ -93,7 +90,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "Treatment
-Countdown"
+Deadline"
 script = ExtResource("3_p0jbg")
 
 [node name="DeadlineLabel" type="Label" parent="Player_Interactables_O/Treatment_Deadline" unique_id=102657559]
@@ -109,7 +106,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
 text = "abcdefg"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("4_r1f8t")
 
 [node name="Close" type="Button" parent="Player_Interactables_O/Treatment_Deadline/DeadlineLabel" unique_id=287276693]
 layout_mode = 0
@@ -121,7 +117,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
-script = ExtResource("3_ttk34")
 
 [node name="Mirror" type="Button" parent="Player_Interactables_O" unique_id=1997607079]
 layout_mode = 0
@@ -140,7 +135,7 @@ flat = true
 expand_icon = true
 script = ExtResource("7_4fm71")
 
-[node name="Mirror_Close_Up" type="Label" parent="Player_Interactables_O/Mirror" unique_id=1633342914]
+[node name="MirrorLabel" type="Label" parent="Player_Interactables_O/Mirror" unique_id=1633342914]
 visible = false
 z_index = 1
 layout_mode = 0
@@ -150,13 +145,12 @@ offset_right = 358.0
 offset_bottom = 952.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
-text = "Oh wow mate, you look terrible, 
+text = "Oh wow m8, you look terrible, 
 be thankful you can't see it in this prototype"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("7_ei0gw")
 
-[node name="Close" type="Button" parent="Player_Interactables_O/Mirror/Mirror_Close_Up" unique_id=1033698163]
+[node name="Close" type="Button" parent="Player_Interactables_O/Mirror/MirrorLabel" unique_id=1033698163]
 layout_mode = 0
 offset_left = 409.0
 offset_right = 459.0
@@ -166,9 +160,8 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
-script = ExtResource("3_ttk34")
 
-[node name="MirrorLabel" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
+[node name="MirrorLabel3" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
 layout_mode = 0
 offset_left = 100.0
 offset_top = 100.0
@@ -297,9 +290,7 @@ texture = ExtResource("14_3080y")
 
 [connection signal="pressed" from="Player_Interactables_O/Computer_Access" to="." method="_on_computer_a_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline" to="Player_Interactables_O/Treatment_Deadline/DeadlineLabel" method="_on_treatment_d_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Treatment_Deadline/DeadlineLabel/Close" to="Player_Interactables_O/Treatment_Deadline/DeadlineLabel" method="_on_close_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Mirror" to="Player_Interactables_O/Mirror/Mirror_Close_Up" method="_on_mirror_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Mirror/Mirror_Close_Up/Close" to="Player_Interactables_O/Mirror/Mirror_Close_Up" method="_on_close_pressed"]
+[connection signal="pressed" from="Player_Interactables_O/Mirror" to="Player_Interactables_O/Mirror/MirrorLabel" method="_on_mirror_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Elevator" to="." method="_on_elevator_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Patient_Interface_Access" to="." method="_on_patient_i_a_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Bed" to="." method="_on_bed_pressed"]

@@ -6,17 +6,17 @@ public partial class Mirror_Close_Up : Label
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		Hide();
+		//Hide();
 	}
 
 	private void _on_mirror_pressed()
 	{
-		Show();
+		//Show();
 	}
 
     private void _on_close_pressed()
     {
-        Hide();
+       // Hide();
     }
 
 
