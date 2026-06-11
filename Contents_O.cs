@@ -19,6 +19,8 @@ public partial class Contents_O : Node2D
 		Hide();
 		var ComputerScene = (Node2D)GetParent().GetNode("Computer");
 		ComputerScene.Show();
+        //push the scene we're entering to the previous scenes stack
+        GlobalData.PreviousScenes.Push(ComputerScene.GetPath());
 	}
     private void _on_patient_i_a_pressed()
     {
@@ -26,6 +28,8 @@ public partial class Contents_O : Node2D
         Hide();
         var PatientScene = (Node2D)GetParent().GetNode("Patient_Interface");
         PatientScene.Show();
+        //push the scene we're entering to the previous scenes stack
+        GlobalData.PreviousScenes.Push(PatientScene.GetPath());
     }
 
 	private void _on_elevator_pressed()
@@ -33,6 +37,8 @@ public partial class Contents_O : Node2D
 		Hide();
         var RoomScene = (Node2D)GetParent().GetNode("Room");
         RoomScene.Show();
+        //push the scene we're entering to the previous scenes stack
+        GlobalData.PreviousScenes.Push(RoomScene.GetPath());
     }
     private void _on_bed_pressed()
     {
@@ -43,6 +49,8 @@ public partial class Contents_O : Node2D
         GlobalData.Countdown--;
         var BedScene = (Node2D)GetParent().GetNode("Bed");
         BedScene.Show();
+        //push the scene we're entering to the previous scenes stack
+        GlobalData.PreviousScenes.Push(BedScene.GetPath());
 
         // Timer from the scene
         var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
@@ -63,6 +71,8 @@ public partial class Contents_O : Node2D
         var BedScene = (Node2D)GetParent().GetNode("Bed");
         BedScene.Hide();
         Show();
+        //push the scene we're entering to the previous scenes stack
+        GlobalData.PreviousScenes.Pop();
     }
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)

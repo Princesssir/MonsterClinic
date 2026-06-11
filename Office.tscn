@@ -45,6 +45,12 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [node name="Contents_O" type="Node2D" unique_id=586678661]
 script = ExtResource("1_35wc1")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=198520339]
+z_index = -4
+position = Vector2(960, 540)
+scale = Vector2(0.5, 0.49999997)
+texture = ExtResource("14_3080y")
+
 [node name="Player_Interactables_O" type="Control" parent="." unique_id=1346865405]
 layout_mode = 3
 anchors_preset = 0
@@ -52,7 +58,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Computer_Access" type="Button" parent="Player_Interactables_O" unique_id=1784326359]
-z_index = 1
 layout_mode = 0
 offset_left = 82.5
 offset_top = 398.725
@@ -130,6 +135,7 @@ expand_icon = true
 script = ExtResource("7_4fm71")
 
 [node name="Mirror_Close_Up" type="Label" parent="Player_Interactables_O/Mirror" unique_id=1633342914]
+visible = false
 z_index = 1
 layout_mode = 0
 offset_left = -101.0
@@ -167,10 +173,10 @@ text = "Mirror"
 
 [node name="Elevator" type="Button" parent="Player_Interactables_O" unique_id=1792734093]
 layout_mode = 0
-offset_left = 1169.27
-offset_top = 64.825
-offset_right = 1597.27
-offset_bottom = 787.825
+offset_left = 1169.9999
+offset_top = 30.0
+offset_right = 1558.5713
+offset_bottom = 723.3334
 scale = Vector2(1.05, 1.05)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
@@ -249,7 +255,7 @@ text = "Reception"
 layout_mode = 0
 offset_left = 401.585
 offset_top = 398.77
-offset_right = 1042.131
+offset_right = 896.04626
 offset_bottom = 684.7742
 scale = Vector2(1.55, 1.55)
 theme_override_font_sizes/font_size = 20
