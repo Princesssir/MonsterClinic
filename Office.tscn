@@ -6,8 +6,6 @@
 [ext_resource type="Script" uid="uid://dm42silqg7ir1" path="res://Treatment_Deadline.cs" id="3_p0jbg"]
 [ext_resource type="Texture2D" uid="uid://b4o0ubcg603ro" path="res://Assets/2D Art/Office/office-mirror.png" id="6_4fm71"]
 [ext_resource type="Script" uid="uid://damlipp41xqb1" path="res://Mirror.cs" id="7_4fm71"]
-[ext_resource type="Script" uid="uid://ybgrq4acnibr" path="res://Elevator.cs" id="8_ei0gw"]
-[ext_resource type="Script" uid="uid://b8t0rredi262l" path="res://Destination_PH.cs" id="8_n8ipj"]
 [ext_resource type="Texture2D" uid="uid://jdngferi6lje" path="res://Assets/2D Art/Office/office-elevator.png" id="9_yauhp"]
 [ext_resource type="Texture2D" uid="uid://djvdgfra7b3b8" path="res://Assets/2D Art/Office/office-phone.png" id="11_gisrx"]
 [ext_resource type="Texture2D" uid="uid://cvcqxyesknw0" path="res://Assets/2D Art/Office/office-bed.png" id="12_grpir"]
@@ -202,19 +200,6 @@ text = "Sorry, nowhere to go,
 come back later"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("8_n8ipj")
-
-[node name="Close" type="Button" parent="Player_Interactables_O/Elevator/Destination_PH" unique_id=709969312]
-layout_mode = 0
-offset_left = 409.0
-offset_right = 459.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "X"
-script = ExtResource("8_ei0gw")
 
 [node name="PatientRoomLabel" type="Label" parent="Player_Interactables_O/Elevator" unique_id=658853895]
 layout_mode = 0

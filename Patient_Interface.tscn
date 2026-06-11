@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dkm01vf4lknir" path="res://Contents_P_I.cs" id="1_ljdgf"]
 [ext_resource type="Texture2D" uid="uid://dv407cyytps0d" path="res://place holders/678389911_1870797110453119_1821731508704277239_n.png" id="2_bomhp"]
+[ext_resource type="Script" uid="uid://d2ik2xsn376ov" path="res://PatientStats.cs" id="2_ecejo"]
 [ext_resource type="Texture2D" uid="uid://pko0y5y0chtt" path="res://place holders/679961220_1321777009872154_7719911029311369346_n.png" id="3_uph1y"]
 [ext_resource type="Texture2D" uid="uid://c5b2sbksxoyvm" path="res://place holders/684146226_2513326992456987_2687682788803640839_n.jpg" id="4_ecejo"]
-[ext_resource type="Script" uid="uid://cutfnqhhtckyn" path="res://Deceased_Sprite.cs" id="5_4pka1"]
 [ext_resource type="Script" uid="uid://dgqxfanx26jy6" path="res://Admit.cs" id="6_7u4js"]
 [ext_resource type="Script" uid="uid://p58vsvndvpy4" path="res://PreviousScene.cs" id="6_bomhp"]
+[ext_resource type="Script" uid="uid://cfadpeoxi5fon" path="res://SpeechManager.cs" id="7_3xib3"]
 [ext_resource type="Script" uid="uid://4bmxrws85nrk" path="res://Dialogue_Trigger.cs" id="7_bomhp"]
 [ext_resource type="Script" uid="uid://cstuj82v3inub" path="res://Reject.cs" id="8_kytyi"]
 [ext_resource type="Script" uid="uid://crorsi7rixu8n" path="res://Inventory_P_I.cs" id="10_bomhp"]
@@ -15,6 +16,9 @@
 [ext_resource type="Script" uid="uid://tkupfc1dnrga" path="res://Checkbox.cs" id="12_oaj4u"]
 [ext_resource type="Script" uid="uid://drow72lvn73wp" path="res://Diagnosis_Box.cs" id="13_3xib3"]
 [ext_resource type="Script" uid="uid://um68vmhviamh" path="res://AdmissionManager.cs" id="15_uph1y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqp7s"]
+bg_color = Color(0.9661711, 0.66405463, 0.6947776, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r6l1"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
@@ -73,11 +77,21 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl1ua"]
 bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqp7s"]
-bg_color = Color(0.9661711, 0.66405463, 0.6947776, 1)
-
-[node name="Contents_P_I" type="Node2D" unique_id=315031335]
+[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DialogueButton", "ZoomButton", "PulseButton", "DiagnosisButton", "InventoryButton", "ShotgunButton", "InventoryContainer", "DeceasedSprite1", "DeceasedSprite2")]
 script = ExtResource("1_ljdgf")
+SpeechManagerAccess = NodePath("Player_Interactables_P_I/SpeechManager")
+DialogueButton = NodePath("Player_Interactables_P_I/Dialogue_Trigger")
+ZoomButton = NodePath("Player_Interactables_P_I/Patient_Zoom")
+PulseButton = NodePath("Player_Interactables_P_I/Pulse_Measurement")
+DiagnosisButton = NodePath("Player_Interactables_P_I/InventoryAccess_P_I/Diagnosis_Tools")
+InventoryButton = NodePath("Player_Interactables_P_I/Inventory_P_I")
+ShotgunButton = NodePath("Player_Interactables_P_I/InventoryAccess_P_I/Shotgun")
+InventoryContainer = NodePath("Player_Interactables_P_I/InventoryAccess_P_I")
+DeceasedSprite1 = NodePath("Sprites_PH/Deceased_Sprite")
+DeceasedSprite2 = NodePath("Sprites_PH/Deceased_Sprite_2")
+
+[node name="PatientStats" type="Node" parent="." unique_id=1129415090]
+script = ExtResource("2_ecejo")
 
 [node name="Sprites_PH" type="Node2D" parent="." unique_id=2126787329]
 
@@ -96,20 +110,32 @@ position = Vector2(1327, 366.00003)
 rotation = -0.51428306
 scale = Vector2(0.6680139, 0.63441265)
 texture = ExtResource("4_ecejo")
-script = ExtResource("5_4pka1")
 
 [node name="Deceased_Sprite_2" type="Sprite2D" parent="Sprites_PH" unique_id=1153696951]
 position = Vector2(243.00003, 127.00003)
 rotation = -0.51428306
 scale = Vector2(0.13045417, 0.14069395)
 texture = ExtResource("4_ecejo")
-script = ExtResource("5_4pka1")
 
 [node name="Player_Interactables_P_I" type="Control" parent="." unique_id=832899310]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="SpeechManager" type="Node" parent="Player_Interactables_P_I" unique_id=1707730347 node_paths=PackedStringArray("SpeechBubble")]
+script = ExtResource("7_3xib3")
+SpeechBubble = NodePath("SpeechBubble")
+
+[node name="SpeechBubble" type="Label" parent="Player_Interactables_P_I/SpeechManager" unique_id=1448112577]
+z_index = 3
+offset_left = 1379.0
+offset_top = 395.0
+offset_right = 1601.0
+offset_bottom = 454.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_kqp7s")
 
 [node name="Previous_Scene" type="Button" parent="Player_Interactables_P_I" unique_id=294028163]
 custom_minimum_size = Vector2(210, 100)
@@ -237,6 +263,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_xl1ua")
 text = "Shotgun"
 
 [node name="Character_Speech" type="Label" parent="Player_Interactables_P_I" unique_id=861240804]
+visible = false
 layout_mode = 0
 offset_left = 1368.0
 offset_top = 93.0
