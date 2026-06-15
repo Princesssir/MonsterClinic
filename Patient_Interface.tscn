@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cutfnqhhtckyn" path="res://Deceased_Sprite.cs" id="5_4pka1"]
 [ext_resource type="Script" uid="uid://dgqxfanx26jy6" path="res://Admit.cs" id="6_7u4js"]
 [ext_resource type="Script" uid="uid://p58vsvndvpy4" path="res://PreviousScene.cs" id="6_bomhp"]
+[ext_resource type="FontFile" uid="uid://d076lt4s4m3cn" path="res://FONT/uglyhandwriting.ttf" id="6_ecejo"]
 [ext_resource type="Script" uid="uid://4bmxrws85nrk" path="res://Dialogue_Trigger.cs" id="7_bomhp"]
 [ext_resource type="Script" uid="uid://cstuj82v3inub" path="res://Reject.cs" id="8_kytyi"]
 [ext_resource type="Script" uid="uid://crorsi7rixu8n" path="res://Inventory_P_I.cs" id="10_bomhp"]
@@ -76,8 +77,11 @@ bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kqp7s"]
 bg_color = Color(0.9661711, 0.66405463, 0.6947776, 1)
 
-[node name="Contents_P_I" type="Node2D" unique_id=315031335]
+[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("PatientSprite", "NameLabel", "AgeLabel")]
 script = ExtResource("1_ljdgf")
+PatientSprite = NodePath("Sprites_PH/Patient")
+NameLabel = NodePath("Sprites_PH/Name_Label")
+AgeLabel = NodePath("Sprites_PH/Age_Label")
 
 [node name="Sprites_PH" type="Node2D" parent="." unique_id=2126787329]
 
@@ -90,6 +94,18 @@ texture = ExtResource("2_bomhp")
 position = Vector2(484.3125, 526.6875)
 scale = Vector2(0.49348956, 0.50813687)
 texture = ExtResource("3_uph1y")
+
+[node name="ColorRect" type="ColorRect" parent="Sprites_PH/Clipboard" unique_id=55190085]
+offset_left = -18.870686
+offset_top = -938.10846
+offset_right = 292.55942
+offset_bottom = -819.415
+
+[node name="ColorRect2" type="ColorRect" parent="Sprites_PH/Clipboard" unique_id=399877139]
+offset_left = -2.6596603
+offset_top = -806.2542
+offset_right = 331.6939
+offset_bottom = -703.9196
 
 [node name="Deceased_Sprite" type="Sprite2D" parent="Sprites_PH" unique_id=1313979685]
 position = Vector2(1327, 366.00003)
@@ -104,6 +120,27 @@ rotation = -0.51428306
 scale = Vector2(0.13045417, 0.14069395)
 texture = ExtResource("4_ecejo")
 script = ExtResource("5_4pka1")
+
+[node name="Age_Label" type="Label" parent="Sprites_PH" unique_id=421977187]
+offset_left = 479.0
+offset_top = 57.0
+offset_right = 637.0
+offset_bottom = 108.0
+theme_override_colors/font_color = Color(0.8745098, 0.0627451, 0.44313726, 1)
+theme_override_fonts/font = ExtResource("6_ecejo")
+theme_override_font_sizes/font_size = 34
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name_Label" type="Label" parent="Sprites_PH" unique_id=1068634075]
+offset_left = 476.0
+offset_top = 123.0
+offset_right = 646.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0.8745098, 0.0627451, 0.44313726, 1)
+theme_override_fonts/font = ExtResource("6_ecejo")
+theme_override_font_sizes/font_size = 34
 
 [node name="Player_Interactables_P_I" type="Control" parent="." unique_id=832899310]
 layout_mode = 3
@@ -359,6 +396,7 @@ PatientSpriteDisplay = NodePath("../Sprites_PH/Patient")
 [connection signal="pressed" from="Player_Interactables_P_I/Dialogue_Trigger" to="Player_Interactables_P_I/Character_Speech" method="_on_dialogue_t_pressed"]
 [connection signal="pressed" from="Player_Interactables_P_I/Patient_Zoom" to="Player_Interactables_P_I/Character_Speech" method="_on_patient_z_pressed"]
 [connection signal="pressed" from="Player_Interactables_P_I/Pulse_Measurement" to="Player_Interactables_P_I/Character_Speech" method="_on_pulse_m_pressed"]
+[connection signal="pressed" from="Player_Interactables_P_I/Reject" to="." method="_on_reject_pressed"]
 [connection signal="pressed" from="Player_Interactables_P_I/Admit" to="AdmissionManager" method="_on_admit_pressed"]
 [connection signal="pressed" from="Player_Interactables_P_I/Inventory_P_I" to="Player_Interactables_P_I/InventoryAccess_P_I" method="_on_inventory_p_i_pressed"]
 [connection signal="pressed" from="Player_Interactables_P_I/InventoryAccess_P_I/Diagnosis_Tools" to="Player_Interactables_P_I/Character_Speech" method="_on_diagnosis_t_pressed"]

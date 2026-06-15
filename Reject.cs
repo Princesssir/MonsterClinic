@@ -3,19 +3,26 @@ using System;
 
 public partial class Reject : Button
 {
-    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
+        // Connect the signal to your local method
         Pressed += ButtonPressed;
     }
 
     private void ButtonPressed()
     {
-        Text = "your patient left";
-    }
+        
+        var manager = GetParent() as Contents_P_I;
 
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
-    public override void _Process(double delta)
-    {
+         //check if it exists to avoid crashes
+        if (manager != null)
+        {
+        
+            manager._on_reject_pressed();
+        }
+        else
+        {
+            GD.Print("Error: Could not find Contents_P_I!");
+        }
     }
 }
