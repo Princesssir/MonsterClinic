@@ -119,20 +119,25 @@ public partial class Contents_C : Node2D
     //add money, update display
     private void AddMoney()
     {
-        
-        GlobalData.Money = GlobalData.Money + 10;
-        MoneyDisplay.Text = GlobalData.Money.ToString();
+        DoctorInventory.Money += 10;
+        MoneyDisplay.Text = DoctorInventory.Money.ToString();
+
+        //GlobalData.Money = GlobalData.Money + 10;
+        //MoneyDisplay.Text = GlobalData.Money.ToString();
     }
     //subtract money, update display
     private void SubtractMoney()
     {
-        GlobalData.Money = GlobalData.Money - 10;
-        MoneyDisplay.Text = GlobalData.Money.ToString();
+        DoctorInventory.Money -= 10;
+        MoneyDisplay.Text = DoctorInventory.Money.ToString();
+        //GlobalData.Money = GlobalData.Money - 10;
+        //MoneyDisplay.Text = GlobalData.Money.ToString();
     }
     //update display whenever the display's visibility changes (this is about as infrequently as I can easily make it update while still always being up to date
     private void _on_money_display_visibility_changed()
     {
-        MoneyDisplay.Text = GlobalData.Money.ToString(); 
+        MoneyDisplay.Text = DoctorInventory.Money.ToString();
+        //MoneyDisplay.Text = GlobalData.Money.ToString(); 
     }
     //universal method for closing a node's parent, used for all the x's in the top right of popups
     private void CloseParent(Button button)
@@ -143,8 +148,13 @@ public partial class Contents_C : Node2D
     //whenever the dealer window's visibility changes, update the text on the money display and the purchase buttons
     private void _on_dealer_ph_visibility_changed()
     {
-        MoneyDisplay.Text = GlobalData.Money.ToString();
-        DealerWindowMoneyDisplay.Text = GlobalData.Money.ToString();
+        MoneyDisplay.Text = DoctorInventory.Money.ToString();
+        DealerWindowMoneyDisplay.Text = DoctorInventory.Money.ToString();
+
+        //MoneyDisplay.Text = GlobalData.Money.ToString();
+        //DealerWindowMoneyDisplay.Text = GlobalData.Money.ToString();
+
+
         BuyMedicine1Button.Text = "Medicine 1 \n (Price: 10) \n \n Owned: " + GlobalData.Medicine1Count.ToString();
         BuyMedicine2Button.Text = "Medicine 2 \n (Price: 20) \n \n Owned: " + GlobalData.Medicine2Count.ToString();
         BuyMedicine3Button.Text = "Medicine 3 \n (Price: 30) \n \n Owned: " + GlobalData.Medicine3Count.ToString();
@@ -156,12 +166,12 @@ public partial class Contents_C : Node2D
         if (button == BuyMedicine1Button)
         {
             //if you can afford it, subtract the price from your money, add it to your inventory, and update the text
-            if (GlobalData.Money >= 10)
+            if (DoctorInventory.Money >= 10)
             {
-                GlobalData.Money -= 10;
+                DoctorInventory.Money -= 10;
                 GlobalData.Medicine1Count += 1;
                 button.Text = "Medicine 1 \n (Price: 10) \n \n Owned: " + GlobalData.Medicine1Count.ToString();
-                DealerWindowMoneyDisplay.Text = GlobalData.Money.ToString();
+                DealerWindowMoneyDisplay.Text = DoctorInventory.Money.ToString();
                 //if you can't afford it, give em the poor idiot popup
             }
             else
@@ -172,12 +182,12 @@ public partial class Contents_C : Node2D
         else if (button == BuyMedicine2Button)
         {
             //if you can afford it, subtract the price from your money, add it to your inventory, and update the text
-            if (GlobalData.Money >= 20)
+            if (DoctorInventory.Money >= 20)
             {
-                GlobalData.Money -= 20;
+                DoctorInventory.Money -= 20;
                 GlobalData.Medicine2Count += 1;
                 button.Text = "Medicine 2 \n (Price: 20) \n \n Owned: " + GlobalData.Medicine2Count.ToString();
-                DealerWindowMoneyDisplay.Text = GlobalData.Money.ToString();
+                DealerWindowMoneyDisplay.Text = DoctorInventory.Money.ToString();
             }
             //if you can't afford it, give em the poor idiot popup
             else
@@ -188,12 +198,12 @@ public partial class Contents_C : Node2D
         else if (button == BuyMedicine3Button)
         {
             //if you can afford it, subtract the price from your money, add it to your inventory, and update the text
-            if (GlobalData.Money >= 30)
+            if (DoctorInventory.Money >= 30)
             {
-                GlobalData.Money -= 30;
+                DoctorInventory.Money -= 30;
                 GlobalData.Medicine3Count += 1;
                 button.Text = "Medicine 3 \n (Price: 30) \n \n Owned: " + GlobalData.Medicine3Count.ToString();
-                DealerWindowMoneyDisplay.Text = GlobalData.Money.ToString();
+                DealerWindowMoneyDisplay.Text = DoctorInventory.Money.ToString();
             }
             //if you can't afford it, give em the poor idiot popup
             else
@@ -202,17 +212,17 @@ public partial class Contents_C : Node2D
             }
         } else if (button == SelfTreatmentButton) {
             // Check if the player has the money and if the medicine is available before allowing him to purchase item
-            if (GlobalData.Money >= GlobalData.MedicineCost && GlobalData.Medicincavailability <= 0)
+            if (DoctorInventory.Money >= GlobalData.MedicineCost && GlobalData.Medicincavailability <= 0)
             {
                 // Money deduction, player gets the medicine and the cost of the medicine gets increased (probally needs balancing)
-                GlobalData.Money -= GlobalData.MedicineCost;
+                DoctorInventory.Money -= GlobalData.MedicineCost;
                 GlobalData.MedicinePlayer++;
                 GlobalData.MedicineCost = GlobalData.MedicineCost * 2; // Increase the cost for the next purchase
                 button.Text = "Self Treatment \n (Price: " + GlobalData.MedicineCost + ") \n \n Owned: " + GlobalData.MedicinePlayer.ToString() + ") \n availability in: " + GlobalData.Medicincavailability.ToString();
-                DealerWindowMoneyDisplay.Text = GlobalData.Money.ToString();
+                DealerWindowMoneyDisplay.Text = DoctorInventory.Money.ToString();
 
             }
-            else if (GlobalData.Money < GlobalData.MedicineCost)
+            else if (DoctorInventory.Money < GlobalData.MedicineCost)
             {
                 InsufficientFunds.Show();
             }
