@@ -3,8 +3,9 @@ using System;
 
 public partial class RoomStructureRenderer
 {
-
-    private int x = 0;
+    //This class is used for managing the visual room rendering inside of
+    //the "map" tab in the computer. This class should only be responsible for generating these
+    //buttons and nothing else.
     public void GenerateRooms(GridContainer container, int amount)
 	{
         GD.Print("GenerateMapButtons");

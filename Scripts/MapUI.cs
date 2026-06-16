@@ -22,6 +22,7 @@ public partial class MapUI : Control
         WarningLabel.Visible = false;
         BuyRoomButton.Pressed += OnBuyRoomButtonPressed;
         RoomRenderer = new RoomStructureRenderer();
+        RoomRenderer.GenerateRooms(RoomContainer, Upgrades.roomCount);
     }
 
     private void UpdateUI()

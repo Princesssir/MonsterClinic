@@ -299,10 +299,9 @@ RoomContainer = NodePath("MapMarginContainer/RoomContainer")
 [node name="Close" type="Button" parent="Player_Interactables_C/MapControl" unique_id=834944]
 z_index = 2
 layout_mode = 0
-offset_left = 1589.0
-offset_top = 42.0
-offset_right = 1689.0
-offset_bottom = 142.0
+offset_left = 1700.0
+offset_right = 1800.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_7ixi1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_660v7")
