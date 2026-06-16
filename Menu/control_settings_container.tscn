@@ -34,10 +34,9 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Sound" type="TabBar" parent="TabContainer" unique_id=1088369450]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -97,7 +96,7 @@ size_flags_vertical = 6
 theme_override_styles/slider = SubResource("StyleBoxLine_px3u5")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_hbg1o")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0i3va")
-value = 28.0
+value = 50.0
 
 [node name="SXF_Slider" type="HSlider" parent="TabContainer/Sound/VBoxContainer3" unique_id=1359581999]
 layout_mode = 2
@@ -106,7 +105,7 @@ size_flags_vertical = 6
 theme_override_styles/slider = SubResource("StyleBoxLine_px3u5")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_hbg1o")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0i3va")
-value = 28.0
+value = 50.0
 
 [node name="Ambient_Slide" type="HSlider" parent="TabContainer/Sound/VBoxContainer3" unique_id=1124506023]
 layout_mode = 2
@@ -115,9 +114,10 @@ size_flags_vertical = 6
 theme_override_styles/slider = SubResource("StyleBoxLine_px3u5")
 theme_override_styles/grabber_area = SubResource("StyleBoxLine_hbg1o")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_0i3va")
-value = 28.0
+value = 50.0
 
 [node name="Grafic" type="TabBar" parent="TabContainer" unique_id=350242752]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

@@ -10,7 +10,7 @@ public partial class OptionMenu : Control
 
    private void _on_exit_pressed()
 	{
-		
+		SaveSystem.SaveToFile_Settings();
         QueueFree();
 	}
 }
