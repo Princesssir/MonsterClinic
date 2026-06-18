@@ -24,21 +24,27 @@ public partial class Contents_O : Node2D
 	}
     private void _on_patient_i_a_pressed()
     {
-
         Hide();
+
         var PatientScene = (Node2D)GetParent().GetNode("Patient_Interface");
         PatientScene.Show();
+       
         //push the scene we're entering to the previous scenes stack
         GlobalData.PreviousScenes.Push(PatientScene.GetPath());
     }
 
 	private void _on_elevator_pressed()
 	{
-		Hide();
-        var RoomScene = (Node2D)GetParent().GetNode("Room");
-        RoomScene.Show();
+        Hide();
+
+        var HallwayScene = (Node2D)GetParent().GetNode("Hallway");
+        HallwayScene.Show();
+
+        //var RoomScene = (Node2D)GetParent().GetNode("Room");
+        //RoomScene.Show();
+
         //push the scene we're entering to the previous scenes stack
-        GlobalData.PreviousScenes.Push(RoomScene.GetPath());
+        GlobalData.PreviousScenes.Push(HallwayScene.GetPath());
     }
     private void _on_bed_pressed()
     {
