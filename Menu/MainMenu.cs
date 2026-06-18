@@ -5,7 +5,9 @@ public partial class MainMenu : Control
 {
 	// Called when the node enters the scene tree for the first time.
 	[Export] PackedScene option = ResourceLoader.Load<PackedScene>("res://Menu/option_menu.tscn");
-	public override void _Ready()
+	[Signal] public delegate void DeleteSaveSystemEventHandler(bool deleteSafe);
+
+    public override void _Ready()
 	{
 		var ColorRecthide = GetNode<ColorRect>("ColorRect");
 		ColorRecthide.Hide();
@@ -16,18 +18,21 @@ public partial class MainMenu : Control
 
 	private void _on_new_game_button_pressed()
 	{
+		// deletes the save json
+		SaveSystem.Delete_Days();
 		GetTree().ChangeSceneToFile("res://Main.tscn");
 	}
 
     private void _on_load_game_button_button_down()
 	{
+		// loads the days and treatment countdown for the player
+		SaveSystem.Load_Days();
 		GetTree().ChangeSceneToFile("res://Main.tscn");
-		
 	}
 
 	private void _on_options_button_pressed()
 	{
-
+		// spawns the option menu
 		var optionMenu = option.Instantiate();
 		AddChild(optionMenu);
 
@@ -43,6 +48,7 @@ public partial class MainMenu : Control
 
 	private void _on_exit_button_pressed()
 	{
+		// closes the game
 		GetTree().Quit();
 	}
 
