@@ -246,7 +246,7 @@ public partial class Contents_C : Node2D
         }
         else
         {
-            Console.WriteLine("well this isn't supposed to happen");
+            GD.Print("well this isn't supposed to happen");
         }
     }
 }

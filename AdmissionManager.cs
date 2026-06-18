@@ -33,6 +33,8 @@ public partial class AdmissionManager : Node
         patientInterface.Hide();
         patient.Show();
         patientInfo.Show();
+        //we don't need to go back to this scene from the patient room after they're admitted, better have the right click go back to the office, so we're removing the patient admission from the stack here
+        GlobalData.PreviousScenes.Pop();
         //push the scene we're entering to the previous scenes stack
         GlobalData.PreviousScenes.Push(roomNode.GetPath());
     }

@@ -19,6 +19,7 @@ visible = false
 [node name="Patient_Interface" parent="." unique_id=315031335 instance=ExtResource("3_fos0i")]
 
 [node name="Room" parent="." unique_id=1403791563 instance=ExtResource("4_cm0pq")]
+visible = false
 
 [node name="Bed" parent="." unique_id=615608472 instance=ExtResource("5_fos0i")]
 

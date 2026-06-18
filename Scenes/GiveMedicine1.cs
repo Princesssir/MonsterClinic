@@ -32,7 +32,7 @@ public partial class GiveMedicine1 : Button
         //else if (GlobalData.Medicine1Count > 0)
         else if (MedicineManager.Database["Morphine"].amount > 0)
         {
-            //if you try to use the medicine on the wrong malady, you get the appropriate popup, and the medicie buttons get disabled until you close it
+            //if you try to use the medicine on the wrong malady, you get the appropriate popup, and the medicine buttons get disabled until you close it
             if (GlobalData.CurrentPatientMalady != "A")
             {
                 Wrong_Medicine_Popup.Show();
