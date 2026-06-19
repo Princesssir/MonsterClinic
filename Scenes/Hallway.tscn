@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://dtqygqtybqe4i"]
+
+[ext_resource type="Script" uid="uid://cmanl4uic4t8n" path="res://Hallway.cs" id="1_ak6jr"]
+[ext_resource type="Texture2D" uid="uid://j60ouk71gllp" path="res://Assets/HallwayAssets/Hallway_BG_Layout_Blockout.png" id="2_ak6jr"]
+[ext_resource type="Script" uid="uid://hlle4mwduj25" path="res://Scenes/LeaveRoom.cs" id="3_oiv3e"]
+[ext_resource type="Script" uid="uid://c5kdsosh8iq8u" path="res://Door.cs" id="4_3js8s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nn86p"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nn86p"]
+bg_color = Color(1, 0.21176471, 0.18431373, 1)
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uj218"]
+bg_color = Color(1, 0.5176471, 0.49803922, 0.65882355)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djdh2"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak6jr"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3js8s"]
+bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
+
+[node name="Room" type="Node2D" unique_id=1403791563]
+position = Vector2(1302.9375, 342.1875)
+scale = Vector2(0.42309022, 0.43263888)
+script = ExtResource("1_ak6jr")
+
+[node name="Patient_Room_Background" type="Sprite2D" parent="." unique_id=1209967813]
+z_index = -1
+position = Vector2(-810.5541, 461.84573)
+scale = Vector2(1.182, 1.16)
+texture = ExtResource("2_ak6jr")
+
+[node name="HallwayControl" type="Control" parent="." unique_id=141817288]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Leave_Room" type="Button" parent="HallwayControl" unique_id=1531308757]
+z_index = 1
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = -3079.5737
+offset_top = 1483.4832
+offset_right = 1458.4648
+offset_bottom = 1705.3772
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nn86p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nn86p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uj218")
+script = ExtResource("3_oiv3e")
+
+[node name="DoorControl" type="Control" parent="HallwayControl" unique_id=1915929726]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Door" type="Button" parent="HallwayControl/DoorControl" unique_id=1622659441]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = -2916.488
+offset_top = 80.0
+offset_right = -2283.0535
+offset_bottom = 671.7174
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_djdh2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak6jr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3js8s")
+text = "Room 1"
+script = ExtResource("4_3js8s")
+
+[node name="Door2" type="Button" parent="HallwayControl/DoorControl" unique_id=544577023]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = -2122.331
+offset_top = 80.0
+offset_right = -1488.8965
+offset_bottom = 671.7174
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_djdh2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak6jr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3js8s")
+text = "Room 2"
+script = ExtResource("4_3js8s")
+
+[node name="Door3" type="Button" parent="HallwayControl/DoorControl" unique_id=1819522272]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = -1377.8087
+offset_top = 80.0
+offset_right = -744.37415
+offset_bottom = 671.7174
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_djdh2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak6jr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3js8s")
+text = "Room 3"
+script = ExtResource("4_3js8s")
+
+[node name="Door4" type="Button" parent="HallwayControl/DoorControl" unique_id=36427974]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = -671.104
+offset_top = 80.0
+offset_right = -37.669434
+offset_bottom = 671.7174
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_djdh2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak6jr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3js8s")
+text = "Room 4"
+script = ExtResource("4_3js8s")
+
+[node name="Door5" type="Button" parent="HallwayControl/DoorControl" unique_id=1092232062]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = 30.874023
+offset_top = 80.0
+offset_right = 664.3086
+offset_bottom = 671.7174
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_djdh2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak6jr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3js8s")
+text = "Room 5"
+script = ExtResource("4_3js8s")
+
+[node name="Door6" type="Button" parent="HallwayControl/DoorControl" unique_id=1225412882]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 0
+offset_left = 739.9429
+offset_top = 80.0
+offset_right = 1373.3774
+offset_bottom = 671.7174
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_djdh2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ak6jr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3js8s")
+text = "Room 6"
+script = ExtResource("4_3js8s")
+
+[connection signal="pressed" from="HallwayControl/Leave_Room" to="." method="_on_leave_room_pressed"]

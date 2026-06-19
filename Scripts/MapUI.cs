@@ -29,7 +29,7 @@ public partial class MapUI : Control
     {
         BuyRoomButton.Text = $"Price: {Economy.roomCost}";
         RoomCount.Text = $"Rooms: {Upgrades.roomCount}";
-        Funds.Text = $"Funds: {DoctorInventory.Money} credits";
+        Funds.Text = $"Funds: {DoctorInventory.Money}";
         PatientCount.Text = $"Patients: {admittedPatients}";
     }
 
