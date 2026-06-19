@@ -20,10 +20,12 @@ public partial class Main : Node
     private void GeneratePatientRooms(Control roomControl)
     {
         var patientRoom = (Node2D)GetNode("Room");
+        Random random = new Random();
         for (int i = 0; i < finalRoomCount; i++)
         {
             Node2D newRoom = (Node2D)patientRoom.Duplicate();
             newRoom.Hide();
+            newRoom.Modulate = new Color(random.Next(0, 2), random.Next(0,2), 0, 1);
             roomControl.AddChild(newRoom);
             RoomList.Add(newRoom);
         }

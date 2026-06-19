@@ -81,8 +81,8 @@ public partial class Room : Node2D
     {
         //when leaving the room, hide it, show the office, and pop the room off the previous scenes stack, to not interfere with the right click functionality
         Hide();
-        var OfficeScene = (Node2D)GetParent().GetNode("Office");
-        OfficeScene.Show();
+        var HallwayScene = (Node2D)GetParent().GetParent().GetNode("Hallway");
+        HallwayScene.Show();
         GlobalData.PreviousScenes.Pop();
     }
 
