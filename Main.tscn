@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://j7adtnydmxx5" path="res://Pause_Menu.tscn" id="6_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://dtqygqtybqe4i" path="res://Scenes/Hallway.tscn" id="8_trn2v"]
 
-[node name="Main" type="Node" unique_id=1988220635]
+[node name="Main" type="Node" unique_id=1988220635 node_paths=PackedStringArray("RoomControl")]
 script = ExtResource("1_lgr22")
+RoomControl = NodePath("RoomControlMain")
 
 [node name="Office" parent="." unique_id=586678661 instance=ExtResource("1_r0du0")]
 
@@ -28,3 +29,9 @@ z_index = 100
 
 [node name="Hallway" parent="." unique_id=1664626497 instance=ExtResource("8_trn2v")]
 visible = false
+
+[node name="RoomControlMain" type="Control" parent="." unique_id=396244499]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
