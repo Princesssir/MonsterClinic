@@ -45,7 +45,8 @@ public partial class Contents_O : Node2D
         Hide();
         var day_M = GetNode<DayManager>("/root/DayManager");
         day_M.Player_Ingame_Days++;
-        DoctorInventory.Money += GlobalData.DailyEarnings;
+        //make the money from treating patients, and the passive income
+        DoctorInventory.Money += GlobalData.DailyEarnings + GlobalData.PassiveIncome;
         GlobalData.Countdown--;
         var BedScene = (Node2D)GetParent().GetNode("Bed");
         BedScene.Show();
