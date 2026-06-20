@@ -6,19 +6,16 @@ public partial class Hallway : Node2D
 {
 	Control HallwayControl;
 	Control DoorControl;
+    Button LeaveButton;
     List<Button> Doors =  new List<Button>();
-    Main MainNode;
 
-    public override void _Ready()
-    {
-        MainNode = (Main)GetParent();
-        //CloseFundsPopup.Pressed += () => CloseParent(CloseFundsPopup);
-       // HallwayInitialize();
-    }
     public void HallwayInitialize()
 	{
         HallwayControl = GetNode<Control>("HallwayControl");
+        LeaveButton = HallwayControl.GetNode<Button>("Leave_Room");
         DoorControl = HallwayControl.GetNode<Control>("DoorControl");
+
+        LeaveButton.Pressed += LeaveRoom;
 
         //Doors
         int doorIndex = 0;
@@ -42,10 +39,19 @@ public partial class Hallway : Node2D
 
         //var RoomScene = (Node2D)GetParent().GetNode("Room");
         //GD.Print($"Room count: {RoomList.Count}.");
-        var RoomScene = MainNode.RoomList[index];
+        var RoomScene = RoomManager.RoomList[index];
         RoomScene.Show();
 
         //push the scene we're entering to the previous scenes stack
         GlobalData.PreviousScenes.Push(RoomScene.GetPath());
+    }
+
+    private void LeaveRoom()
+    {
+        //when leaving the room, hide it, show the office, and pop the room off the previous scenes stack, to not interfere with the right click functionality
+        Hide();
+        var OfficeScene = (Node2D)GetParent().GetNode("Office");
+        OfficeScene.Show();
+        GlobalData.PreviousScenes.Pop();
     }
 }

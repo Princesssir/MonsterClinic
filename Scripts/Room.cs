@@ -21,6 +21,8 @@ public partial class Room : Node2D
     Label PatientCuredPopup;
     Button ClosePatientCuredPopup;
 
+    public bool isEmpty = true;
+
     //part of Princess's old stuff, keeping it around just in case
     /*public override void _EnterTree()
     {

@@ -15,27 +15,33 @@ public partial class AdmissionManager : Node
         }*/
 
 
-        Node mainNode = GetParent().GetParent(); 
-        
-        
-        var roomNode = mainNode.GetNode<Node2D>("Room");
-        var patientInterface = mainNode.GetNode<Node2D>("Patient_Interface");
-        var patient = roomNode.GetNode<Node2D>("Patient_Display");
-        var patientInfo = roomNode.GetNode<CanvasItem>("Patient_Info");
+        Node mainNode = GetParent().GetParent();
 
-        //give the newly admitted patient a random malady at a random severity
-        Random rnd = new Random();
-        GlobalData.CurrentPatientMalady = GlobalData.Maladies[rnd.Next(0, 3)];
-        GlobalData.CurrentPatientSeverity = rnd.Next(2,5);
 
-        //hide the patient admission screen, show the patient room, with the patient sprite and info now visible
-        roomNode.Show();
-        patientInterface.Hide();
-        patient.Show();
-        patientInfo.Show();
-        //we don't need to go back to this scene from the patient room after they're admitted, better have the right click go back to the office, so we're removing the patient admission from the stack here
-        GlobalData.PreviousScenes.Pop();
-        //push the scene we're entering to the previous scenes stack
-        GlobalData.PreviousScenes.Push(roomNode.GetPath());
+        //var roomNode = mainNode.GetNode<Node2D>("Room");
+        var roomNode = RoomManager.FindEmptyRoom();
+        if (roomNode != null)
+        {
+            Random random = new Random();
+            var patientInterface = mainNode.GetNode<Node2D>("Patient_Interface");
+            var patient = roomNode.GetNode<Node2D>("Patient_Display");
+            var patientInfo = roomNode.GetNode<CanvasItem>("Patient_Info");
+
+            //give the newly admitted patient a random malady at a random severity
+            Random rnd = new Random();
+            GlobalData.CurrentPatientMalady = GlobalData.Maladies[rnd.Next(0, 3)];
+            GlobalData.CurrentPatientSeverity = rnd.Next(2, 5);
+
+            //hide the patient admission screen, show the patient room, with the patient sprite and info now visible
+            roomNode.Show();
+            patientInterface.Hide();
+            patient.Show();
+            patient.Modulate = new Color((float)(random.NextDouble() * 0.1f), 1, (float)(random.NextDouble() * 0.1f), 1);
+            patientInfo.Show();
+            //we don't need to go back to this scene from the patient room after they're admitted, better have the right click go back to the office, so we're removing the patient admission from the stack here
+            GlobalData.PreviousScenes.Pop();
+            //push the scene we're entering to the previous scenes stack
+            GlobalData.PreviousScenes.Push(roomNode.GetPath());
+        }
     }
 }

@@ -6,7 +6,6 @@ public partial class Main : Node
 {
     // Called when the node enters the scene tree for the first time.
     [Export] Control RoomControl;
-    public List<Node2D> RoomList = new List<Node2D>();
     int finalRoomCount = 6;
 	public override void _Ready()
 	{
@@ -25,9 +24,9 @@ public partial class Main : Node
         {
             Node2D newRoom = (Node2D)patientRoom.Duplicate();
             newRoom.Hide();
-            newRoom.Modulate = new Color(random.Next(0, 2), random.Next(0,2), 0, 1);
+            newRoom.Modulate = new Color((float)(random.NextDouble()), (float)(random.NextDouble()), 0, 1);
             roomControl.AddChild(newRoom);
-            RoomList.Add(newRoom);
+            RoomManager.RoomList.Add(newRoom);
         }
     }
 
