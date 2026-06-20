@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dkm01vf4lknir" path="res://Contents_P_I.cs" id="1_ljdgf"]
 [ext_resource type="Texture2D" uid="uid://dv407cyytps0d" path="res://place holders/678389911_1870797110453119_1821731508704277239_n.png" id="2_bomhp"]
-[ext_resource type="Script" uid="uid://d2ik2xsn376ov" path="res://PatientStats.cs" id="2_ecejo"]
 [ext_resource type="Texture2D" uid="uid://pko0y5y0chtt" path="res://place holders/679961220_1321777009872154_7719911029311369346_n.png" id="3_uph1y"]
 [ext_resource type="Texture2D" uid="uid://c5b2sbksxoyvm" path="res://place holders/684146226_2513326992456987_2687682788803640839_n.jpg" id="4_ecejo"]
 [ext_resource type="FontFile" uid="uid://d076lt4s4m3cn" path="res://Font/uglyhandwriting.ttf" id="5_vwqed"]
@@ -75,16 +74,13 @@ bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
 [node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DeceasedSprite1", "DeceasedSprite2", "PatientStatsNode", "PatientLabel", "AgeLabel", "PortraitSprite")]
 script = ExtResource("1_ljdgf")
-SpeechManagerAccess = NodePath("ControlPatientInterface/SpeechManager/SpeechBubble")
+SpeechManagerAccess = NodePath("ControlPatientInterface/SpeechManager")
 DeceasedSprite1 = NodePath("Sprites_PH/Deceased_Sprite")
 DeceasedSprite2 = NodePath("Sprites_PH/Deceased_Sprite_2")
-PatientStatsNode = NodePath("PatientStats")
-PatientLabel = NodePath("Sprites_PH/Clipboard/Patient/Label")
-AgeLabel = NodePath("Sprites_PH/Clipboard/Age/Label")
+PatientStatsNode = NodePath("")
+PatientLabel = NodePath("Sprites_PH/Clipboard/Patient/PatientLabel")
+AgeLabel = NodePath("Sprites_PH/Clipboard/Age/AgeLabel")
 PortraitSprite = NodePath("Sprites_PH/Patient")
-
-[node name="PatientStats" type="Node" parent="." unique_id=1129415090]
-script = ExtResource("2_ecejo")
 
 [node name="Sprites_PH" type="Node2D" parent="." unique_id=2126787329]
 
@@ -104,7 +100,7 @@ offset_top = -946.59534
 offset_right = 464.04236
 offset_bottom = -812.7731
 
-[node name="Label" type="Label" parent="Sprites_PH/Clipboard/Patient" unique_id=92196170]
+[node name="PatientLabel" type="Label" parent="Sprites_PH/Clipboard/Patient" unique_id=92196170]
 layout_mode = 0
 offset_left = 58.76518
 offset_top = -3.9359512
@@ -123,7 +119,7 @@ offset_top = -816.7091
 offset_right = 482.27972
 offset_bottom = -686.8229
 
-[node name="Label" type="Label" parent="Sprites_PH/Clipboard/Age" unique_id=1101784673]
+[node name="AgeLabel" type="Label" parent="Sprites_PH/Clipboard/Age" unique_id=1101784673]
 layout_mode = 0
 offset_left = -2.0263855
 offset_top = 19.679739

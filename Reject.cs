@@ -17,8 +17,7 @@ public partial class Reject : Button
         if (PatientManager != null)
         {
            //the mthod i added to Contents_P_I to refresh the patient data and update the UI.
-            PatientManager.RefreshPatientInterface();
+            PatientManager.GenerateNewPatient();
         }
-        
     }
 }

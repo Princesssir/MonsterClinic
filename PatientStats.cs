@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class PatientStats : Node
+public partial class PatientStats
 {
     // This class is used for storing the patient's data inside of the patient admission interface.
     // This will later be plugged in a way where this gets instantiated every time there is a new patient to be admitted.
@@ -20,7 +20,12 @@ public partial class PatientStats : Node
 
     // Also defining a bool that tracks if the patient is alive, in case he gets SHOT
     public bool isAlive;
-    public void PatientInitialize()
+
+    public PatientStats()
+    {
+        PatientInitialize();
+    }
+    private void PatientInitialize()
 	{
         // refresh the patient's data.
         // For just assigning random numbers, this will be overhauled later.
