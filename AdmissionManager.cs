@@ -3,13 +3,13 @@ using System;
 
 public partial class AdmissionManager : Node
 {
-    [Export] public Sprite2D PatientSpriteDisplay; 
+    [Export] public Sprite2D PatientSpriteDisplay;
 
     public void _on_admit_pressed()
     {
         //part of Princess's system for moving the patient sprite to the patient room, currently deprecated, but just commented out because it might be useful again
         // saves patient sprite
-        /*if (PatientSpriteDisplay != null)
+        /* if (PatientSpriteDisplay != null)
         {
             GlobalData.AdmittedPatientTexture = PatientSpriteDisplay.Texture;
         }*/
