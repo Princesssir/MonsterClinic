@@ -72,12 +72,11 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl1ua"]
 bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
-[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DeceasedSprite1", "DeceasedSprite2", "PatientStatsNode", "PatientLabel", "AgeLabel", "PortraitSprite")]
+[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DeceasedSprite1", "DeceasedSprite2", "PatientLabel", "AgeLabel", "PortraitSprite")]
 script = ExtResource("1_ljdgf")
 SpeechManagerAccess = NodePath("ControlPatientInterface/SpeechManager")
 DeceasedSprite1 = NodePath("Sprites_PH/Deceased_Sprite")
 DeceasedSprite2 = NodePath("Sprites_PH/Deceased_Sprite_2")
-PatientStatsNode = NodePath("")
 PatientLabel = NodePath("Sprites_PH/Clipboard/Patient/PatientLabel")
 AgeLabel = NodePath("Sprites_PH/Clipboard/Age/AgeLabel")
 PortraitSprite = NodePath("Sprites_PH/Patient")
@@ -232,7 +231,7 @@ text = "Reject"
 script = ExtResource("7_27yax")
 PatientManager = NodePath("../..")
 
-[node name="Admit" type="Button" parent="ControlPatientInterface" unique_id=1942473230]
+[node name="Admit" type="Button" parent="ControlPatientInterface" unique_id=1942473230 node_paths=PackedStringArray("PatientManager")]
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 0
 offset_left = 1084.0
@@ -245,6 +244,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Admit "
 script = ExtResource("6_7u4js")
+PatientManager = NodePath("../..")
 
 [node name="Inventory" type="Button" parent="ControlPatientInterface" unique_id=204242760]
 custom_minimum_size = Vector2(120, 120)

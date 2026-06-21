@@ -27,8 +27,6 @@ public static class GlobalData
 
     public static int Medicine3Count { get; set; } = 0;
 
-   
-
     public static string[] Maladies = { "A", "B", "C" };
 
     public static string CurrentPatientMalady { get; set; } = "none";
