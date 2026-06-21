@@ -7,12 +7,12 @@ public partial class Admit : Button
     [Export] public Contents_P_I PatientManager;
     public override void _Ready()
     {
-        Pressed += ButtonPressed;
+        //Pressed += ButtonPressed;
     }
 
     private void ButtonPressed()
     {
-        PatientManager.GenerateNewPatientVoid();
+        //PatientManager.GenerateNewPatientVoid();
         //Text = "your patient awaits";
     }
 

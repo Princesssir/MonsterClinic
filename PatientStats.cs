@@ -14,12 +14,14 @@ public partial class PatientStats
     public string dialogue = "Hello I am a patient";
 
     //Patients ID
-    public string PatientID;
-    public int Age;
+    public string patientID;
+    public int age;
     public Color PortraitColor;
 
     // Also defining a bool that tracks if the patient is alive, in case he gets SHOT
     public bool isAlive;
+
+    public Malady malady;
 
     public PatientStats()
     {
@@ -33,8 +35,8 @@ public partial class PatientStats
         Random rnd = new Random();
         heartRate = rnd.Next(50, 151);  
         skinStatus = rnd.Next(1, 6);
-        PatientID = rnd.Next(1, 1000).ToString("D3");//  "D3" writes the ID as a 3-digit string  005 
-        Age = rnd.Next(18, 91); // random ages of patients between 18 and 90 seemed appropriate for the game
+        patientID = rnd.Next(1, 1000).ToString("D3");//  "D3" writes the ID as a 3-digit string  005 
+        age = rnd.Next(18, 91); // random ages of patients between 18 and 90 seemed appropriate for the game
 
         // Assigning a random color to the patient's portrait, This will be changed later when we have actual portraits.
         PortraitColor = new Color(

@@ -24,7 +24,7 @@ public partial class Main : Node
         {
             Node2D newRoom = (Node2D)patientRoom.Duplicate();
             newRoom.Hide();
-            newRoom.Modulate = new Color((float)(random.NextDouble()), (float)(random.NextDouble()), 0, 1);
+            //newRoom.Modulate = new Color((float)(random.NextDouble()), (float)(random.NextDouble()), 0, 1);
             roomControl.AddChild(newRoom);
             RoomManager.RoomList.Add(newRoom);
         }

@@ -1,8 +1,10 @@
 using Godot;
 using System;
+using System.Linq;
 
 public partial class AdmissionManager : Node
 {
+    [Export] Contents_P_I PatientAdmission;
     [Export] public Sprite2D PatientSpriteDisplay;
 
     public void _on_admit_pressed()
@@ -27,10 +29,15 @@ public partial class AdmissionManager : Node
             var patient = roomNode.GetNode<Node2D>("Patient_Display");
             var patientInfo = roomNode.GetNode<CanvasItem>("Patient_Info");
 
+            Room room = roomNode as Room;
+            room.Patient = PatientAdmission.PatientPointer;
+            PatientAdmission.GenerateNewPatientVoid();
+
             //give the newly admitted patient a random malady at a random severity
             Random rnd = new Random();
-            GlobalData.CurrentPatientMalady = GlobalData.Maladies[rnd.Next(0, 3)];
-            GlobalData.CurrentPatientSeverity = rnd.Next(2, 5);
+            //room.Patient.malady = GlobalData.Maladies[rnd.Next(0, 3)];
+            room.Patient.malady = MaladyList.Database.ElementAt(rnd.Next(0, 2)).Value;
+            room.Patient.malady.severity = rnd.Next(2, 5);
 
             //hide the patient admission screen, show the patient room, with the patient sprite and info now visible
             roomNode.Show();

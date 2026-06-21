@@ -231,7 +231,7 @@ text = "Reject"
 script = ExtResource("7_27yax")
 PatientManager = NodePath("../..")
 
-[node name="Admit" type="Button" parent="ControlPatientInterface" unique_id=1942473230 node_paths=PackedStringArray("PatientManager")]
+[node name="Admit" type="Button" parent="ControlPatientInterface" unique_id=1942473230]
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 0
 offset_left = 1084.0
@@ -244,7 +244,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Admit "
 script = ExtResource("6_7u4js")
-PatientManager = NodePath("../..")
 
 [node name="Inventory" type="Button" parent="ControlPatientInterface" unique_id=204242760]
 custom_minimum_size = Vector2(120, 120)
@@ -390,8 +389,9 @@ theme_override_colors/font_color = Color(0, 0, 0, 0.9882353)
 theme_override_font_sizes/font_size = 20
 text = "Fever"
 
-[node name="AdmissionManager" type="Node" parent="." unique_id=1218543265 node_paths=PackedStringArray("PatientSpriteDisplay")]
+[node name="AdmissionManager" type="Node" parent="." unique_id=1218543265 node_paths=PackedStringArray("PatientAdmission", "PatientSpriteDisplay")]
 script = ExtResource("15_uph1y")
+PatientAdmission = NodePath("..")
 PatientSpriteDisplay = NodePath("../Sprites_PH/Patient")
 
 [connection signal="pressed" from="ControlPatientInterface/Admit" to="AdmissionManager" method="_on_admit_pressed"]

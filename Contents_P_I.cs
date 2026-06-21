@@ -9,7 +9,7 @@ public partial class Contents_P_I : Node2D
     //Since the inventory currently is a container, I also store a reference to that so i don't have to show and hide both of the buttons individually.
     // Patient stats stores patient symptoms and other relevant info. Currently I just added it into the scene but later we'll have it instantiated.
 
-    PatientStats PatientPointer;
+    public PatientStats PatientPointer;
     [Export] SpeechManager SpeechManagerAccess;
 
     Button ReturnButton;
@@ -128,8 +128,8 @@ public partial class Contents_P_I : Node2D
         DeceasedSprite1.Hide();
         DeceasedSprite2.Hide();
 
-        PatientLabel.Text = "Patient: " + patientStats.PatientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
-        AgeLabel.Text = "Age: " + patientStats.Age.ToString(); //used stringt o convert the integer age to a string for display purposes
+        PatientLabel.Text = "Patient: " + patientStats.patientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
+        AgeLabel.Text = "Age: " + patientStats.age.ToString(); //used stringt o convert the integer age to a string for display purposes
 
         return patientStats;
     }
@@ -144,8 +144,8 @@ public partial class Contents_P_I : Node2D
         DeceasedSprite1.Hide();
         DeceasedSprite2.Hide();
 
-        PatientLabel.Text = "Patient: " + patientStats.PatientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
-        AgeLabel.Text = "Age: " + patientStats.Age.ToString(); //used stringt o convert the integer age to a string for display purposes
+        PatientLabel.Text = "Patient: " + patientStats.patientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
+        AgeLabel.Text = "Age: " + patientStats.age.ToString(); //used stringt o convert the integer age to a string for display purposes
 
         PatientPointer = patientStats;
     }

@@ -23,6 +23,8 @@ public partial class Room : Node2D
 
     public bool isEmpty = true;
 
+    public PatientStats Patient;
+
     //part of Princess's old stuff, keeping it around just in case
     /*public override void _EnterTree()
     {
@@ -126,7 +128,10 @@ public partial class Room : Node2D
     //it could activate whenever the scene's visibility changes,but there's a (probably) harmless error that happens then, so I instead use a node who's visibility always matches the scene
     private void _on_patient_room_background_visibility_changed()
     {
-        PatientInfo.Text = "Patient info: \n Malady: Malady " + GlobalData.CurrentPatientMalady + "\n Severity: " + GlobalData.CurrentPatientSeverity;
+        PatientInfo.Text = $"Patient info: " +
+            $"\n Malady: Malady {Patient.malady.name}" +
+            $"\n Severity: {Patient.malady.severity}" +
+            $"\n Age: {Patient.age}";
 
         GiveMedicine1Button.Text = $"{MedicineManager.Database["Morphine"].name} \n Owned: {MedicineManager.Database["Morphine"].amount}";
         GiveMedicine2Button.Text = $"{MedicineManager.Database["Aspirin"].name} \n Owned: {MedicineManager.Database["Aspirin"].amount}";

@@ -6,7 +6,7 @@ public partial class MaladyManager : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		//all of our Maladies into an array so that we may assign them to patients deliberately 
+		/*//all of our Maladies into an array so that we may assign them to patients deliberately 
 
 		MaladyList MaladyListInstance = new MaladyList();
 
@@ -20,6 +20,6 @@ public partial class MaladyManager : Node
 
 		// the Control code, if everything runs smoothly this should show in the COmpiler 
 		GD.Print(GlobalData.PatientMalady.name);
-		GD.Print(GlobalData.PatientMalady.severity.ToString());
+		GD.Print(GlobalData.PatientMalady.severity.ToString());*/
     }
 }
