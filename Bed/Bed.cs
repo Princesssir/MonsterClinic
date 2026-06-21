@@ -6,7 +6,8 @@ public partial class Bed : Node2D
 {
     private RichTextLabel DaysCounter;
     private RichTextLabel MoneyEarned;
-
+    [Export] public FadeAnimation F;
+    [Export] PackedScene Transition = ResourceLoader.Load<PackedScene>("res://fade_animation.tscn");
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -68,6 +69,26 @@ public partial class Bed : Node2D
 
     private void _on_visibility_changed()
     {
+        // i use a int, some how it worked better than a boolean
+        if (GlobalData.ControlSpawnFading == 1)
+        {
+            
+            // get the GridContainer, so the text dont get covered from the FadeAnimation. FadeAnimation gets added to the GridContainer
+            var spawn = GetNode<GridContainer>("Spawn");
+            var s = Transition.Instantiate<FadeAnimation>();
+            spawn.AddChild(s);
+
+            // calls the Methode Fades from the FadeAnimation
+            s.Fades();
+
+            // Conditon Changes
+            GlobalData.Fading = true;
+            // Control for the spawn FadeAnimation
+            GlobalData.ControlSpawnFading = 2;
+        }
+       
+
+
         var day_M = GetNode<DayManager>("/root/DayManager");
 
         var DaysCounter = GetNode<RichTextLabel>("Day");
@@ -80,6 +101,9 @@ public partial class Bed : Node2D
 
         var DaysCounters = GetNode<RichTextLabel>("TreatmentDays");
         DaysCounters.BbcodeEnabled = true;
+        // FadeAnimation en = GetNode<FadeAnimation>("res://FadeAnimation.cs");
+
+        GlobalData.Fading = false;
 
         if (GlobalData.Countdown >= 3)
         {
@@ -105,10 +129,11 @@ public partial class Bed : Node2D
             GlobalData.Dialog_Dealer = true;
         }
 
-    }
+       
+
+    }}
 
     
-    
 
 
-}
+

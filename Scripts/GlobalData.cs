@@ -17,6 +17,9 @@ public static class GlobalData
 
     public static string Reasion { get; set; } = "none";
 
+    public static Boolean Fading { get; set; } = true;
+    public static int ControlSpawnFading { get; set; } = 0;
+
     //public static int Money { get; set; } = 150;
 
     public static int DailyEarnings { get; set; } = 0;

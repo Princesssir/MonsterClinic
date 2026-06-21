@@ -1,15 +1,16 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class Contents_O : Node2D
 {
-
+    [Export] public FadeAnimation F;
     private Timer sceneTimer;
     [Export] PackedScene dealer_selftreatment_dialog = ResourceLoader.Load<PackedScene>("res://dialog.tscn");
+    [Export] PackedScene Transition = ResourceLoader.Load<PackedScene>("res://fade_animation.tscn");
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        
 
     }
 
@@ -42,37 +43,70 @@ public partial class Contents_O : Node2D
     }
     private void _on_bed_pressed()
     {
+        GlobalData.ControlSpawnFading = 1;
         Hide();
+        // F.Fades();
         var day_M = GetNode<DayManager>("/root/DayManager");
         day_M.Player_Ingame_Days++;
         DoctorInventory.Money += GlobalData.DailyEarnings;
         GlobalData.Countdown--;
         var BedScene = (Node2D)GetParent().GetNode("Bed");
         BedScene.Show();
+        GlobalData.Fading = false;
+        
         //push the scene we're entering to the previous scenes stack
         GlobalData.PreviousScenes.Push(BedScene.GetPath());
 
         // Timer from the scene
+
+
+        //F.Fades();
+        
         var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
         sceneTimer.OneShot = true;
 
         // connect the signals
+        
         sceneTimer.Timeout += OnSceneTimerTimeout;
 
+       
+        //FadeAnimation g = GetNode<FadeAnimation>("FadeAnimation.cs");
+        //g.Fades();
         // timer is getting set to 3 seconds and starts
         sceneTimer.Start(3.0);
+        
         GlobalData.Medicincavailability--;
     }
-
+    
     private void OnSceneTimerTimeout()
     {
-        // switching scenes
+        // instantiate the scene FadeAnimation
+        var s = Transition.Instantiate<FadeAnimation>();
+
+        // Daily earnings gets reseted
         GlobalData.DailyEarnings = 0;
+
+        // get node bed scene
         var BedScene = (Node2D)GetParent().GetNode("Bed");
+
+        // Condition Changes
+        GlobalData.Fading = true;
+
+        // condition for the Controled Spawn
+        if(GlobalData.ControlSpawnFading == 2)
+        {
+            // add the scene FadeAnimation and call the Methode Fades
+            AddChild(s);
+            s.Fades();
+            
+        }
+
+        // switches scene
         BedScene.Hide();
         Show();
         //push the scene we're entering to the previous scenes stack
         GlobalData.PreviousScenes.Pop();
+ 
     }
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
