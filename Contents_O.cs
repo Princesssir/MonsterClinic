@@ -9,7 +9,12 @@ public partial class Contents_O : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
-        
+        // Timer from the scene
+        var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
+        sceneTimer.OneShot = true;
+
+        // connect the signals
+        sceneTimer.Timeout += OnSceneTimerTimeout;
 
     }
 
@@ -50,8 +55,7 @@ public partial class Contents_O : Node2D
         GlobalData.Countdown--;
         var BedScene = (Node2D)GetParent().GetNode("Bed");
         BedScene.Show();
-        //push the scene we're entering to the previous scenes stack
-        GlobalData.PreviousScenes.Push(BedScene.GetPath());
+        
 
         var MedicineAccess = (ColorRect)GetParent().GetNode("Room").GetNode("Stylish_Medicine_Background");
         var GiveMedicine1 = (Button)MedicineAccess.GetNode("Give_Medicine_1");
@@ -60,17 +64,18 @@ public partial class Contents_O : Node2D
         GiveMedicine1.Disabled = false;
         GiveMedicine2.Disabled = false;
         GiveMedicine3.Disabled = false;
+        if (GlobalData.Countdown >= 0)
+        {
+            //push the scene we're entering to the previous scenes stack
+            GlobalData.PreviousScenes.Push(BedScene.GetPath());
 
-        // Timer from the scene
-        var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
-        sceneTimer.OneShot = true;
+            // Timer from the scene
+            var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
 
-        // connect the signals
-        sceneTimer.Timeout += OnSceneTimerTimeout;
-
-        // timer is getting set to 3 seconds and starts
-        sceneTimer.Start(3.0);
-        GlobalData.Medicincavailability--;
+            // timer is getting set to 3 seconds and starts
+            sceneTimer.Start(3.0);
+            GlobalData.Medicincavailability--;
+        }
     }
 
     private void OnSceneTimerTimeout()
