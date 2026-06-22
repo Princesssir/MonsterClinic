@@ -329,7 +329,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Cough" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_1" unique_id=904256855]
+[node name="CheckboxLabel" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_1" unique_id=904256855]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 38.0
@@ -337,7 +337,7 @@ offset_right = 211.0
 offset_bottom = 66.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 37
-text = "Headache"
+text = "blablabla"
 
 [node name="Checkbox_2" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=1325796187]
 custom_minimum_size = Vector2(100, 100)
@@ -352,7 +352,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Cough" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_2" unique_id=342738797]
+[node name="CheckboxLabel" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_2" unique_id=342738797]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 38.0
@@ -360,7 +360,7 @@ offset_right = 211.0
 offset_bottom = 66.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 37
-text = "Body Pain"
+text = "blablabla"
 
 [node name="Checkbox_3" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=1293334289]
 custom_minimum_size = Vector2(100, 100)
@@ -375,7 +375,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Cough" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_3" unique_id=1430096113]
+[node name="CheckboxLabel" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_3" unique_id=1430096113]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 38.0
@@ -383,7 +383,7 @@ offset_right = 211.0
 offset_bottom = 66.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 37
-text = "Sneezing"
+text = "blablabla"
 
 [node name="Checkbox_4" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=1379858808]
 custom_minimum_size = Vector2(100, 100)
@@ -398,7 +398,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Cough" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_4" unique_id=1705393758]
+[node name="CheckboxLabel" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_4" unique_id=1705393758]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 38.0
@@ -406,7 +406,7 @@ offset_right = 211.0
 offset_bottom = 66.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 37
-text = "Heart Problems"
+text = "blablabla"
 
 [node name="Checkbox_5" type="Button" parent="ControlPatientInterface/Diagnosis_Box" unique_id=1861412027]
 custom_minimum_size = Vector2(100, 100)
@@ -421,7 +421,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 script = ExtResource("12_oaj4u")
 
-[node name="Cough" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_5" unique_id=1676854035]
+[node name="CheckboxLabel" type="Label" parent="ControlPatientInterface/Diagnosis_Box/Checkbox_5" unique_id=1676854035]
 layout_mode = 0
 offset_left = 144.0
 offset_top = 38.0
@@ -429,7 +429,7 @@ offset_right = 211.0
 offset_bottom = 66.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 37
-text = "Fever"
+text = "blablabla"
 
 [node name="AdmissionManager" type="Node" parent="." unique_id=1218543265 node_paths=PackedStringArray("PatientAdmission", "PatientSpriteDisplay", "AdmitButton")]
 script = ExtResource("15_uph1y")

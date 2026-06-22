@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Linq;
 
 public partial class Diagnosis_Box : Label
 {
@@ -15,6 +16,7 @@ public partial class Diagnosis_Box : Label
     private List<bool> SymptomChecks = new List<bool>();
     public override void _Ready()
 	{
+        int count = 0;
         //Looking through all the children to find all the checkboxes.
         foreach (Node child in GetChildren())
         {
@@ -24,16 +26,19 @@ public partial class Diagnosis_Box : Label
                 Button childButton = (Button)child;
                 CheckboxList.Add((Checkbox)child);
 
+                CheckboxList[count].Initialize(count);
+
                 //Make sure we check all the boxes whenever one of them will be pressed
                 childButton.Pressed += CheckCheckboxes;
 
                 //We add a symptomChecks value to that list accordingly.
                 SymptomChecks.Add(false);
+                count++;
             }
         }
     }
 
-    private void CheckCheckboxes()
+    private void Lol()
     {
         //Whenever any of the checkboxes are pressed we check whether we should update the text
         //in the diagnosis box accordingly. For this we also use the SymptomChecks, which tell us
@@ -60,5 +65,70 @@ public partial class Diagnosis_Box : Label
         {
             Text = "What do these Symptoms tell us??";
         }
+    }
+
+    private void CheckCheckboxes()
+    {
+        List<string> currentSymptoms = new List<string>();
+        List<string> finalSymptoms = new List<string>();
+        string possibleMaladies = "Could be: ";
+        foreach(Checkbox checkbox in CheckboxList)
+        {
+            if(checkbox.GetCheckValue())
+            {
+                currentSymptoms.Add(checkbox.GetCondition());
+                //GD.Print($"Condition: {checkbox.GetCondition()}");
+            }
+        }
+        if(currentSymptoms.Count <= 0)
+        {
+            Text = "What could it be?";
+            return;
+        }
+        for (int i = 0; i < currentSymptoms.Count; i++)
+        {
+            for (int j = 0; j < MaladyList.Database.Count; j++)
+            {
+                //if (MaladyList.Database.ElementAt(j).Value.allSymptoms.Contains(currentSymptoms[i]))
+                if(MaladyMatch(j, currentSymptoms))
+                {
+                    GD.Print($"Match found! {MaladyList.Database.ElementAt(j).Value.name} contains {currentSymptoms[i]}");
+                    GD.Print($"{MaladyList.Database.ElementAt(j).Value} has " +
+                        $"{MaladyList.Database.ElementAt(j).Value.allSymptoms[0]} " +
+                        $"{MaladyList.Database.ElementAt(j).Value.allSymptoms[1]} " +
+                        $"{MaladyList.Database.ElementAt(j).Value.allSymptoms[2]}");
+                    if (!finalSymptoms.Contains(MaladyList.Database.ElementAt(j).Value.name))
+                    {
+                        finalSymptoms.Add(MaladyList.Database.ElementAt(j).Value.name);
+                    }
+                    //possibleMaladies += $"{MaladyList.Database.ElementAt(j).Value.name}";
+                    //break;
+                }
+            }
+        }
+        if (finalSymptoms.Count <= 0)
+        {
+            Text = "I'm not sure what this could possibly mean...";
+            return;
+        }
+        possibleMaladies += $"{finalSymptoms[0]}";
+        for (int k = 1; k < finalSymptoms.Count; k++)
+        {
+            possibleMaladies += " or ";
+            possibleMaladies += $"{finalSymptoms[k]}";
+        }
+        Text = possibleMaladies;
+    }
+
+    private bool MaladyMatch(int index, List<string> symptoms)
+    {
+        foreach(string symptom in symptoms)
+        {
+            if (!MaladyList.Database.ElementAt(index).Value.allSymptoms.Contains(symptom))
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

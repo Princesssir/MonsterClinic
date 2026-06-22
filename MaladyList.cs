@@ -17,6 +17,12 @@ public static class MaladyList
             pulseSymptoms =
             {
                 SymptomList.Database["HeartProblems"]
+            },
+            allSymptoms =
+            {
+                SymptomList.Database["HeartProblems"].name,
+                SymptomList.Database["BodyPain"].name,
+                SymptomList.Database["Headache"].name
             }
         },
         ["BluePox"] = new Malady 
@@ -30,6 +36,12 @@ public static class MaladyList
             temperatureSymptoms =
             {
                 SymptomList.Database["Fever"]
+            },
+            allSymptoms =
+            {
+                SymptomList.Database["Sneezing"].name,
+                SymptomList.Database["Headache"].name,
+                SymptomList.Database["Fever"].name
             }
         },
     };
