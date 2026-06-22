@@ -26,7 +26,7 @@ public partial class Contents_P_I : Node2D
 
 
     //References to the "DECEASED" sprites which show up when you kill the patient
-    [Export] Sprite2D DeceasedSprite1, DeceasedSprite2;
+    [Export] Sprite2D DeceasedSprite1;
     [Export] public Label PatientLabel;
     [Export] public Label AgeLabel;
     [Export] public Sprite2D PortraitSprite;
@@ -58,7 +58,6 @@ public partial class Contents_P_I : Node2D
 
         //Hiding the inventory and the "DECEASED" sprites which show up when patient is killed.
         DeceasedSprite1.Hide();
-        DeceasedSprite2.Hide();
         InventoryContainer.Hide();
     }
 
@@ -120,7 +119,6 @@ public partial class Contents_P_I : Node2D
     {
         PatientPointer.isAlive = false;
         DeceasedSprite1.Show();
-        DeceasedSprite2.Show();
     }
     
     private void ReturnToOffice()
@@ -140,7 +138,6 @@ public partial class Contents_P_I : Node2D
        // random tint to the portrait
         PortraitSprite.Modulate = patientStats.PortraitColor;
         DeceasedSprite1.Hide();
-        DeceasedSprite2.Hide();
 
         PatientLabel.Text = "Patient: " + patientStats.patientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
         AgeLabel.Text = "Age: " + patientStats.age.ToString(); //used stringt o convert the integer age to a string for display purposes
@@ -156,7 +153,6 @@ public partial class Contents_P_I : Node2D
         // random tint to the portrait
         PortraitSprite.Modulate = patientStats.PortraitColor;
         DeceasedSprite1.Hide();
-        DeceasedSprite2.Hide();
 
         PatientLabel.Text = "Patient: " + patientStats.patientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
         AgeLabel.Text = "Age: " + patientStats.age.ToString(); //used stringt o convert the integer age to a string for display purposes
@@ -174,6 +170,7 @@ public partial class Contents_P_I : Node2D
     }
     private void VisitLatestPatient()
     {
+        SpeechManagerAccess.SetBubbleStatus(false);
         var hallway = LatestRoom.GetParent().GetParent().GetNode<Node2D>("Hallway");
         var patient = LatestRoom.GetNode<Node2D>("Patient_Display");
         var patientInfo = LatestRoom.GetNode<CanvasItem>("Patient_Info");
