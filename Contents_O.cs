@@ -9,6 +9,8 @@ public partial class Contents_O : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
+       
+
         // Timer from the scene
         var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
         sceneTimer.OneShot = true;
@@ -29,21 +31,36 @@ public partial class Contents_O : Node2D
 	}
     private void _on_patient_i_a_pressed()
     {
-
         Hide();
+
         var PatientScene = (Node2D)GetParent().GetNode("Patient_Interface");
         PatientScene.Show();
+
+        Contents_P_I PatientInterface = PatientScene as Contents_P_I;
+        PatientInterface.UpdatePatientInterfaceUI();
+
+        Hallway hallway = GetParent().GetNode<Hallway>("Hallway");
+        hallway.UpdateHallwayUI();
+
         //push the scene we're entering to the previous scenes stack
         GlobalData.PreviousScenes.Push(PatientScene.GetPath());
     }
 
 	private void _on_elevator_pressed()
 	{
-		Hide();
-        var RoomScene = (Node2D)GetParent().GetNode("Room");
-        RoomScene.Show();
+        Hide();
+
+        var HallwayScene = (Node2D)GetParent().GetNode("Hallway");
+        HallwayScene.Show();
+
+        //var RoomScene = (Node2D)GetParent().GetNode("Room");
+        //RoomScene.Show();
+
+        Hallway hallway = GetParent().GetNode<Hallway>("Hallway");
+        hallway.UpdateHallwayUI();
+
         //push the scene we're entering to the previous scenes stack
-        GlobalData.PreviousScenes.Push(RoomScene.GetPath());
+        GlobalData.PreviousScenes.Push(HallwayScene.GetPath());
     }
     private void _on_bed_pressed()
     {
@@ -51,6 +68,7 @@ public partial class Contents_O : Node2D
         var day_M = GetNode<DayManager>("/root/DayManager");
         day_M.Player_Ingame_Days++;
         //make the money from treating patients, and the passive income
+        GlobalData.PassiveIncome = GlobalData.patientCount * 20;
         DoctorInventory.Money += GlobalData.DailyEarnings + GlobalData.PassiveIncome;
         GlobalData.Countdown--;
         var BedScene = (Node2D)GetParent().GetNode("Bed");
@@ -64,6 +82,9 @@ public partial class Contents_O : Node2D
         GiveMedicine1.Disabled = false;
         GiveMedicine2.Disabled = false;
         GiveMedicine3.Disabled = false;
+
+        Hallway hallway = GetParent().GetNode<Hallway>("Hallway");
+        hallway.ResetRoomUI();
         if (GlobalData.Countdown >= 0)
         {
             //push the scene we're entering to the previous scenes stack

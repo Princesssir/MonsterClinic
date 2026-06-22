@@ -7,6 +7,7 @@ public partial class Room : Node2D
 
     //part of Princess's old stuff, keeping it around just in case
     //[Export] public Sprite2D PatientDisplay;
+    [Export] AdmissionManager AdmissionManager;
     Button LeaveRoomButton;
     Sprite2D PatientDisplay;
     Label PatientInfo;
@@ -22,6 +23,11 @@ public partial class Room : Node2D
     Button ClosePatientCuredPopup;
     Label CorrectMedicinePopup;
     Button CloseCorrectMedicinePopup;
+
+    public bool isEmpty = true;
+
+    public PatientStats Patient;
+
 
     //part of Princess's old stuff, keeping it around just in case
     /*public override void _EnterTree()
@@ -73,7 +79,7 @@ public partial class Room : Node2D
     private void HoverOn()
     {
         //makes the text show up when hovering over the button
-        LeaveRoomButton.Text = "Leave room";
+        LeaveRoomButton.Text = "Leave";
     }
 
     private void HoverOff()
@@ -86,9 +92,12 @@ public partial class Room : Node2D
     {
         //when leaving the room, hide it, show the office, and pop the room off the previous scenes stack, to not interfere with the right click functionality
         Hide();
-        var OfficeScene = (Node2D)GetParent().GetNode("Office");
-        OfficeScene.Show();
-        GlobalData.PreviousScenes.Pop();
+        var HallwayScene = (Node2D)GetParent().GetParent().GetNode("Hallway");
+        HallwayScene.Show();
+        if(GlobalData.PreviousScenes.Count == 0)
+        {
+            GlobalData.PreviousScenes.Pop();
+        }
     }
 
     //universal method for closing a node's parent, used for all the x's in the top right of popups
@@ -113,8 +122,8 @@ public partial class Room : Node2D
             PatientDisplay.Hide();
             PatientInfo.Hide();
 
-            GlobalData.CurrentPatientMalady = "none";
-            GlobalData.CurrentPatientSeverity = 0;
+            //GlobalData.CurrentPatientMalady = "none";
+            //GlobalData.CurrentPatientSeverity = 0;
         }
     }
 
@@ -122,8 +131,6 @@ public partial class Room : Node2D
     //it could activate whenever the scene's visibility changes,but there's a (probably) harmless error that happens then, so I instead use a node who's visibility always matches the scene
     private void _on_patient_room_background_visibility_changed()
     {
-        PatientInfo.Text = "Patient info: \n Malady: Malady " + GlobalData.CurrentPatientMalady + "\n Severity: " + GlobalData.CurrentPatientSeverity;
-
         GiveMedicine1Button.Text = $"{MedicineManager.Database["Morphine"].name} \n Owned: {MedicineManager.Database["Morphine"].amount}";
         GiveMedicine2Button.Text = $"{MedicineManager.Database["Aspirin"].name} \n Owned: {MedicineManager.Database["Aspirin"].amount}";
         GiveMedicine3Button.Text = $"{MedicineManager.Database["Ozempic"].name} \n Owned: {MedicineManager.Database["Ozempic"].amount}";
@@ -145,5 +152,16 @@ public partial class Room : Node2D
                 PatientDisplay.Hide();
             }
         }*/
+    }
+
+    public void UpdatePatientInfoLabel()
+    {
+        if(!isEmpty)
+        {
+            PatientInfo.Text = $"Patient info: " +
+                   $"\n Malady: {Patient.malady.name}" +
+                   $"\n Severity: {Patient.malady.severity}" +
+                   $"\n Age: {Patient.age}";
+        }
     }
 }

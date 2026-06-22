@@ -9,7 +9,7 @@ public partial class Contents_P_I : Node2D
     //Since the inventory currently is a container, I also store a reference to that so i don't have to show and hide both of the buttons individually.
     // Patient stats stores patient symptoms and other relevant info. Currently I just added it into the scene but later we'll have it instantiated.
 
-    PatientStats PatientStats;
+    public PatientStats PatientPointer;
     [Export] SpeechManager SpeechManagerAccess;
 
     Button ReturnButton;
@@ -25,6 +25,11 @@ public partial class Contents_P_I : Node2D
 
     //References to the "DECEASED" sprites which show up when you kill the patient
     [Export] Sprite2D DeceasedSprite1, DeceasedSprite2;
+    [Export] public Label PatientLabel;
+    [Export] public Label AgeLabel;
+    [Export] public Sprite2D PortraitSprite;
+
+    [Export] AdmissionManager AdmissionManagerAccess;
 
     public override void _Ready()
 	{
@@ -32,21 +37,14 @@ public partial class Contents_P_I : Node2D
         //Grabbing the references to all the buttons
         GetAllButtons();
         //Grabbing the patient stats.
-        PatientStats = GetNode<PatientStats>("PatientStats");
-        if (PatientStats == null)
-        {
-            GD.Print("Error patient stats not found!!");
-        }
 
-        // Initializing patient stats, this will use a constructor later. Kinda ugly to do it like this.
-        PatientStats.PatientInitalize();
+        PatientPointer = GenerateNewPatient();
 
         //Assigning functionality to each of the buttons.
         ReturnButton.Pressed += ReturnToOffice;
         DialogueButton.Pressed += ShowSpeechDialogue;
         ZoomButton.Pressed += ShowSpeechZoom;
         PulseButton.Pressed += ShowSpeechHeartrate;
-        RejectButton.Pressed += ShowSpeechReject;
         InventoryButton.Pressed += ToggleInventory;
         DiagnosisButton.Pressed += ShowSpeechDiagnosis;
         ShotgunButton.Pressed += KillPatient;
@@ -55,6 +53,11 @@ public partial class Contents_P_I : Node2D
         DeceasedSprite1.Hide();
         DeceasedSprite2.Hide();
         InventoryContainer.Hide();
+    }
+
+    public void UpdatePatientInterfaceUI()
+    {
+        AdmissionManagerAccess.IsClinicFull();
     }
 
     private void GetAllButtons()
@@ -81,21 +84,18 @@ public partial class Contents_P_I : Node2D
 
     private void ShowSpeechDialogue()
     {
-        SpeechManagerAccess.SpeechText(PatientStats.dialogue);
+        SpeechManagerAccess.SpeechText(PatientPointer.dialogue);
     }
-    private void ShowSpeechReject()
-    {
-        SpeechManagerAccess.SpeechText("Patient has left");
-    }
+  
 
     private void ShowSpeechZoom()
     {
-        SpeechManagerAccess.SpeechText("Skin status is: " + PatientStats.skinStatus);
+        SpeechManagerAccess.SpeechText("Skin status is: " + PatientPointer.skinStatus);
     }
 
     private void ShowSpeechHeartrate()
     {
-        SpeechManagerAccess.SpeechText("Heart rate is: " + PatientStats.heartRate);
+        SpeechManagerAccess.SpeechText("Heart rate is: " + PatientPointer.heartRate);
     }
 
     private void ShowSpeechDiagnosis()
@@ -111,7 +111,7 @@ public partial class Contents_P_I : Node2D
     //For now killing the patient doesn't have any advanced functionality. Just showing the sprites.
     private void KillPatient()
     {
-        PatientStats.isAlive = false;
+        PatientPointer.isAlive = false;
         DeceasedSprite1.Show();
         DeceasedSprite2.Show();
     }
@@ -124,4 +124,38 @@ public partial class Contents_P_I : Node2D
         OfficeScene.Show();
         GlobalData.PreviousScenes.Pop();
     }
+
+    public PatientStats GenerateNewPatient()
+    {
+        //  generate new data
+        PatientStats patientStats = new PatientStats();
+
+       // random tint to the portrait
+        PortraitSprite.Modulate = patientStats.PortraitColor;
+        DeceasedSprite1.Hide();
+        DeceasedSprite2.Hide();
+
+        PatientLabel.Text = "Patient: " + patientStats.patientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
+        AgeLabel.Text = "Age: " + patientStats.age.ToString(); //used stringt o convert the integer age to a string for display purposes
+
+        return patientStats;
+    }
+
+    public void GenerateNewPatientVoid()
+    {
+        //  generate new data
+        PatientStats patientStats = new PatientStats();
+
+        // random tint to the portrait
+        PortraitSprite.Modulate = patientStats.PortraitColor;
+        DeceasedSprite1.Hide();
+        DeceasedSprite2.Hide();
+
+        PatientLabel.Text = "Patient: " + patientStats.patientID; //convert data to strings to display it on Labels  and '+' operator connects static text "ID: " with the variable value
+        AgeLabel.Text = "Age: " + patientStats.age.ToString(); //used stringt o convert the integer age to a string for display purposes
+
+        PatientPointer = patientStats;
+    }
+
 }
+

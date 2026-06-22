@@ -30,14 +30,13 @@ public static class GlobalData
 
     public static int Medicine3Count { get; set; } = 0;
 
-   
-
-    public static string[] Maladies = { "A", "B", "C" };
-
+    public static int patientCount = 0;
     public static string CurrentPatientMalady { get; set; } = "none";
 
+    // this is a placeholder for the implementation of the future Malady Class system 
     public static int CurrentPatientSeverity { get; set; } = 0;
 
     //stack that holds previous scenes accessed, going back to the office, kinda like the branches of a tree
     public static Stack PreviousScenes { get; set; } = new Stack();
+
 }
