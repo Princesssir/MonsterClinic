@@ -35,7 +35,7 @@ public partial class PatientStats
             string returnDialogue = malady.dialogueSymptoms[0].quotes[0];
             return returnDialogue;
         }
-        return "errr... hello?";
+        return "...";
     }
 
     public string GetPulse()

@@ -26,7 +26,7 @@ public partial class Diagnosis_Box : Label
                 Button childButton = (Button)child;
                 CheckboxList.Add((Checkbox)child);
 
-                CheckboxList[count].Initialize(count);
+                CheckboxList[count].Initialize(count + 1);
 
                 //Make sure we check all the boxes whenever one of them will be pressed
                 childButton.Pressed += CheckCheckboxes;
@@ -37,33 +37,18 @@ public partial class Diagnosis_Box : Label
             }
         }
     }
-
-    private void Lol()
+    public void SetAllCheckboxStatus(bool status)
     {
-        //Whenever any of the checkboxes are pressed we check whether we should update the text
-        //in the diagnosis box accordingly. For this we also use the SymptomChecks, which tell us
-        //whether each individual checkbox is ticked or not.
-        for(int i = 0; i < CheckboxList.Count; i++)
+        foreach (Checkbox checkbox in CheckboxList)
         {
-            SymptomChecks[i] = CheckboxList[i].GetCheckValue();
+            checkbox.Disabled = !status;
         }
-        //After checking we simply update the text!
-
-        if (SymptomChecks[0] == true && SymptomChecks[1] == false && SymptomChecks[2] == false && SymptomChecks[3] == false)
+    }
+    public void ClearAllBoxes()
+    {
+        foreach(Checkbox checkbox in CheckboxList)
         {
-            Text = "It could be this, \n mhm but it also could be some other things \n what other symptoms are there?";
-        }
-        else if (SymptomChecks[1] == true && SymptomChecks[0] == true && SymptomChecks[2] == false && SymptomChecks[3] == false)
-        {
-            Text = "this narrows it down to x and y \n is that all?";
-        }
-        else if (SymptomChecks[2] == true && SymptomChecks[1] == true && SymptomChecks[0] == true && SymptomChecks[3] == false)
-        {
-            Text = "this narrows it down to y \n is that all?";
-        }
-        else
-        {
-            Text = "What do these Symptoms tell us??";
+            checkbox.SetCheckboxStatus(false);
         }
     }
 

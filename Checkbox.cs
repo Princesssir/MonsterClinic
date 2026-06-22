@@ -48,4 +48,18 @@ public partial class Checkbox : Button
     {
         return condition;
     }
+
+    public void SetCheckboxStatus(bool status)
+    {
+        
+        isChecked = status;
+        if(status)
+        {
+            Text = "x";
+        }
+        else
+        {
+            Text = " ";
+        }
+    }
 }

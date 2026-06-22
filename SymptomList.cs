@@ -5,13 +5,21 @@ public static class SymptomList
 {
     public static Dictionary<string, Symptom> Database = new()
     {
+        ["Nothing"] = new Symptom
+        {
+            name = "",
+            quotes =
+            {
+                "..."
+            }
+        },
         ["BodyPain"] = new Symptom
         {
             name = "Body Pain",
             quotes =
             {
                 "Doc, you have to help me, everything hurts so much!",
-                "It's not normal for things to ache when you breathe, right?"
+                "It's not normal for things\n to ache when you breathe, right?"
             }
         },
         ["Headache"] = new Symptom
@@ -20,7 +28,7 @@ public static class SymptomList
             quotes =
             {
                 "My head is splitting. Please do something before I die!",
-                "Please, just take my headache away, or take me out of my misery..."
+                "Please, just take my headache away,\n or take me out of my misery..."
             }
         },
         ["Sneezing"] = new Symptom
@@ -28,8 +36,8 @@ public static class SymptomList
             name = "Sneezing",
             quotes =
             {
-                "I can't stop sneezing and I can feel my lungs giving up. Can you fix me?",
-                "You're a - ATCHOO - doctor right? Do you have anything to - ATCHOO - help me?"
+                "I can't stop sneezing and I can feel\n my lungs giving up. Can you fix me?",
+                "You're a - ATCHOO - doctor right?\n Do you have anything to - ATCHOO - help me?"
             }
         },
         ["HeartProblems"] = new Symptom

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dkm01vf4lknir" path="res://Contents_P_I.cs" id="1_ljdgf"]
 [ext_resource type="Texture2D" uid="uid://dv407cyytps0d" path="res://place holders/678389911_1870797110453119_1821731508704277239_n.png" id="2_bomhp"]
 [ext_resource type="FontFile" uid="uid://cbrjaxrc0kv1t" path="res://CustomText/danielbd_MediumText.ttf" id="3_3xib3"]
+[ext_resource type="FontFile" uid="uid://1dbbvtdnti6g" path="res://CustomText/digital-7_CountdownText.ttf" id="4_7u4js"]
 [ext_resource type="Texture2D" uid="uid://c5b2sbksxoyvm" path="res://place holders/684146226_2513326992456987_2687682788803640839_n.jpg" id="4_ecejo"]
 [ext_resource type="Texture2D" uid="uid://wcwpr5c2jw40" path="res://Assets/2D Art/Admission/admission-background.png" id="5_ecejo"]
 [ext_resource type="Texture2D" uid="uid://bk0mng4lad56f" path="res://Assets/2D Art/Admission/admission-nextroom-overlay.png" id="6_3xib3"]
@@ -78,14 +79,16 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl1ua"]
 bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
-[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DeceasedSprite1", "PatientLabel", "AgeLabel", "PortraitSprite", "AdmissionManagerAccess")]
+[node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DeceasedSprite1", "PatientLabel", "AgeLabel", "PatientsLeftLabel", "PortraitSprite", "AdmissionManagerAccess", "Diagnosis")]
 script = ExtResource("1_ljdgf")
 SpeechManagerAccess = NodePath("ControlPatientInterface/SpeechManager")
 DeceasedSprite1 = NodePath("Sprites_PH/Deceased_Sprite")
 PatientLabel = NodePath("Sprites_PH/PatientLabel")
 AgeLabel = NodePath("Sprites_PH/AgeLabel")
+PatientsLeftLabel = NodePath("Sprites_PH/PatientsLeftLabel")
 PortraitSprite = NodePath("Sprites_PH/Patient")
 AdmissionManagerAccess = NodePath("AdmissionManager")
+Diagnosis = NodePath("ControlPatientInterface/Diagnosis_Box")
 
 [node name="Sprites_PH" type="Node2D" parent="." unique_id=2126787329]
 
@@ -115,6 +118,19 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_3xib3")
 theme_override_font_sizes/font_size = 50
 text = "bhivadjnaknvf"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PatientsLeftLabel" type="Label" parent="Sprites_PH" unique_id=723120182]
+z_index = 2
+offset_left = 1064.0
+offset_top = -26.0
+offset_right = 1509.8047
+offset_bottom = 121.598175
+theme_override_colors/font_color = Color(0.9782012, 0.00012359976, 0.7855249, 1)
+theme_override_fonts/font = ExtResource("4_7u4js")
+theme_override_font_sizes/font_size = 50
+text = "jnvnhvnjofvanoj"
 horizontal_alignment = 1
 vertical_alignment = 1
 
