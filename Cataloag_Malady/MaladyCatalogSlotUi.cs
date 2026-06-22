@@ -16,22 +16,19 @@ public partial class MaladyCatalogSlotUi : Control
         var MaladyAutoload = GetNode<Malady_Autoload>("/root/MaladyAutoload");
         if (MaladyData != null)
         {
-        MaladyData = MaladyAutoload.ListMaladies[MaladyAutoload.indexChecker];
-        MaladyList = MaladyAutoload.ListMaladies;
+             MaladyData = MaladyAutoload.ListMaladies[MaladyAutoload.indexChecker];
+             MaladyList = MaladyAutoload.ListMaladies;
             // set up the name, description and sympthoms of the malady in the Labels and RichtextLabels.
             GetNode<Label>("Name").Text = MaladyData.MaladyName;
             GetNode<RichTextLabel>("Description").Text = MaladyData.Description;
             GetNode<RichTextLabel>("Sympthoms").Text = string.Join("\n", MaladyData.Sympthoms);
-        }
-        }
-        
 
-        //if the current entry is the final one in the list, reset the index checker, so it doesn't go beyond the list size when it runs after new game or load game
-        if (MaladyAutoload.indexChecker == MaladyList.Count - 1) 
-        {
-            MaladyAutoload.indexChecker = -1;
+            //if the current entry is the final one in the list, reset the index checker, so it doesn't go beyond the list size when it runs after new game or load game
+            if (MaladyAutoload.indexChecker == MaladyList.Count - 1)
+            {
+                MaladyAutoload.indexChecker = -1;
+            }
         }
-
     }
     
 

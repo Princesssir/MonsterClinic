@@ -9,12 +9,20 @@ public partial class Main : Node
     int finalRoomCount = 6;
 	public override void _Ready()
 	{
+        InitializeAllData();
         //always keep the office at the bottom of the previous scenes stack, so the reference on how to return to it is always there
         GlobalData.PreviousScenes.Push(GetNode("Office").GetPath());
         GeneratePatientRooms(RoomControl);
+        
+	}
+
+    private void InitializeAllData()
+    {
+        GD.Print("init!");
+        RoomManager.Initialize();
         Hallway hallway = GetNode<Node2D>("Hallway") as Hallway;
         hallway.HallwayInitialize();
-	}
+    }
 
     private void GeneratePatientRooms(Control roomControl)
     {
