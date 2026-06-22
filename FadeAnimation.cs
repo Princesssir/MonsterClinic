@@ -17,7 +17,7 @@ public partial class FadeAnimation : Node2D
         tw_fade = GetTree().CreateTween();
 
         // get Timer
-        var d = GetNode<Timer>("Delete_Timer");
+        var deleteselfTimer = GetNode<Timer>("Delete_Timer");
 
         // condition for the animation
         if (GlobalData.Fading == false)
@@ -37,8 +37,8 @@ public partial class FadeAnimation : Node2D
             GlobalData.Fading = true;
 
             // Timer get set to 3 sec, so long is the bed scene. Timer starts
-            d.SetWaitTime(3.0);
-            d.Start();
+            deleteselfTimer.SetWaitTime(3.0);
+            deleteselfTimer.Start();
         }
         else
         {
@@ -54,8 +54,8 @@ public partial class FadeAnimation : Node2D
             tw_fade.SetEase(Tween.EaseType.Out);
 
             // Timer get set to 1 sec, so the player dont get locked into a 3 sec wait to click again
-            d.SetWaitTime(1.0);
-            d.Start();
+            deleteselfTimer.SetWaitTime(1.0);
+            deleteselfTimer.Start();
         }
         
 

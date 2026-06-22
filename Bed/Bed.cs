@@ -6,7 +6,7 @@ public partial class Bed : Node2D
 {
     private RichTextLabel DaysCounter;
     private RichTextLabel MoneyEarned;
-    [Export] public FadeAnimation F;
+ 
     [Export] PackedScene Transition = ResourceLoader.Load<PackedScene>("res://fade_animation.tscn");
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
@@ -75,11 +75,11 @@ public partial class Bed : Node2D
             
             // get the GridContainer, so the text dont get covered from the FadeAnimation. FadeAnimation gets added to the GridContainer
             var spawn = GetNode<GridContainer>("Spawn");
-            var s = Transition.Instantiate<FadeAnimation>();
-            spawn.AddChild(s);
+            var fading = Transition.Instantiate<FadeAnimation>();
+            spawn.AddChild(fading);
 
             // calls the Methode Fades from the FadeAnimation
-            s.Fades();
+            fading.Fades();
 
             // Conditon Changes
             GlobalData.Fading = true;

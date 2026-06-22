@@ -81,7 +81,7 @@ public partial class Contents_O : Node2D
     private void OnSceneTimerTimeout()
     {
         // instantiate the scene FadeAnimation
-        var s = Transition.Instantiate<FadeAnimation>();
+        var fading = Transition.Instantiate<FadeAnimation>();
 
         // Daily earnings gets reseted
         GlobalData.DailyEarnings = 0;
@@ -96,8 +96,8 @@ public partial class Contents_O : Node2D
         if(GlobalData.ControlSpawnFading == 2)
         {
             // add the scene FadeAnimation and call the Methode Fades
-            AddChild(s);
-            s.Fades();
+            AddChild(fading);
+            fading.Fades();
             
         }
 
