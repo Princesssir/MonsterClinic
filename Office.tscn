@@ -4,12 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://c5ncjx7yugc5j" path="res://Assets/2D Art/Office/office-pc.png" id="2_kjhbo"]
 [ext_resource type="Script" uid="uid://dm42silqg7ir1" path="res://Treatment_Deadline.cs" id="3_p0jbg"]
 [ext_resource type="FontFile" uid="uid://cr8ufnapixhdd" path="res://CustomText/MyUglyHandwriting-Regular_MediumButtonText.otf" id="4_n8ipj"]
+[ext_resource type="Texture2D" uid="uid://ba6h4djyflram" path="res://Assets/2D Art/Office/office-pc-hover.png" id="4_ttk34"]
 [ext_resource type="Texture2D" uid="uid://b4o0ubcg603ro" path="res://Assets/2D Art/Office/office-mirror.png" id="6_4fm71"]
 [ext_resource type="Script" uid="uid://damlipp41xqb1" path="res://Mirror.cs" id="7_4fm71"]
+[ext_resource type="Texture2D" uid="uid://c0vxsda0mkipe" path="res://Assets/2D Art/Office/office-mirror-hover.png" id="8_knk1q"]
 [ext_resource type="Texture2D" uid="uid://jdngferi6lje" path="res://Assets/2D Art/Office/office-elevator.png" id="9_yauhp"]
+[ext_resource type="Texture2D" uid="uid://bfwmwuxfbo8c1" path="res://Assets/2D Art/Office/office-elevator-hover.png" id="11_43i68"]
 [ext_resource type="Texture2D" uid="uid://djvdgfra7b3b8" path="res://Assets/2D Art/Office/office-phone.png" id="11_gisrx"]
 [ext_resource type="Texture2D" uid="uid://cvcqxyesknw0" path="res://Assets/2D Art/Office/office-bed.png" id="12_grpir"]
+[ext_resource type="Texture2D" uid="uid://disqtbncomq6u" path="res://Assets/2D Art/Office/office-phone-hover.png" id="13_kjhbo"]
 [ext_resource type="Texture2D" uid="uid://duxu8md0l1yr5" path="res://Assets/2D Art/Office/office-background.png" id="14_3080y"]
+[ext_resource type="Texture2D" uid="uid://orf6jcr622m" path="res://Assets/2D Art/Office/office-bed-hover.png" id="15_4fm71"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fedq"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
@@ -53,18 +58,15 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Computer" type="Button" parent="Player_Interactables_O" unique_id=1784326359]
+[node name="Computer" type="TextureButton" parent="Player_Interactables_O" unique_id=1607513987]
 layout_mode = 0
 offset_left = 82.5
 offset_top = 398.725
 offset_right = 712.5
 offset_bottom = 833.7257
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-icon = ExtResource("2_kjhbo")
-flat = true
-expand_icon = true
+texture_normal = ExtResource("2_kjhbo")
+texture_hover = ExtResource("4_ttk34")
 
 [node name="ComputerLabel" type="Label" parent="Player_Interactables_O/Computer" unique_id=764561184]
 layout_mode = 0
@@ -118,21 +120,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 
-[node name="Mirror" type="Button" parent="Player_Interactables_O" unique_id=1997607079]
+[node name="Mirror" type="TextureButton" parent="Player_Interactables_O" unique_id=1571392299]
 layout_mode = 0
-offset_left = 261.335
-offset_top = 146.78
-offset_right = 524.83496
-offset_bottom = 474.28
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "
-"
-icon = ExtResource("6_4fm71")
-flat = true
-expand_icon = true
+offset_left = 255.0
+offset_top = 137.0
+offset_right = 782.0
+offset_bottom = 792.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_4fm71")
+texture_hover = ExtResource("8_knk1q")
 script = ExtResource("7_4fm71")
 
 [node name="MirrorLabel" type="Label" parent="Player_Interactables_O/Mirror" unique_id=1633342914]
@@ -143,6 +139,7 @@ offset_left = -101.0
 offset_top = -45.0
 offset_right = 358.0
 offset_bottom = 952.0
+scale = Vector2(1.5, 1.5)
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
 text = "Oh wow m8, you look terrible, 
@@ -163,10 +160,11 @@ text = "X"
 
 [node name="MirrorLabel3" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 100.0
-offset_right = 255.0
-offset_bottom = 172.22
+offset_left = 138.0
+offset_top = 232.0
+offset_right = 293.0
+offset_bottom = 304.22
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.7294118, 0.7176471, 0.60784316, 1)
 theme_override_fonts/font = ExtResource("4_n8ipj")
 theme_override_font_sizes/font_size = 70
@@ -174,22 +172,15 @@ text = "Mirror"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Elevator" type="Button" parent="Player_Interactables_O" unique_id=1792734093]
+[node name="Elevator" type="TextureButton" parent="Player_Interactables_O" unique_id=1126172707]
 layout_mode = 0
-offset_left = 1169.9999
-offset_top = 30.0
-offset_right = 1558.5713
-offset_bottom = 723.3334
-scale = Vector2(1.05, 1.05)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "
-"
-icon = ExtResource("9_yauhp")
-flat = true
-expand_icon = true
+offset_left = 1182.0
+offset_top = 71.0
+offset_right = 1958.0
+offset_bottom = 1379.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("9_yauhp")
+texture_hover = ExtResource("11_43i68")
 
 [node name="Destination_PH" type="Label" parent="Player_Interactables_O/Elevator" unique_id=1756916659]
 visible = false
@@ -209,10 +200,11 @@ vertical_alignment = 1
 
 [node name="PatientRoomLabel" type="Label" parent="Player_Interactables_O/Elevator" unique_id=658853895]
 layout_mode = 0
-offset_left = 46.125
-offset_top = 163.035
-offset_right = 308.125
-offset_bottom = 242.24937
+offset_left = 96.0
+offset_top = 308.0
+offset_right = 358.0
+offset_bottom = 387.21436
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.7294118, 0.7176471, 0.60784316, 1)
 theme_override_fonts/font = ExtResource("4_n8ipj")
 theme_override_font_sizes/font_size = 60
@@ -220,28 +212,23 @@ text = "Patient Room"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Patient_Interface_Access" type="Button" parent="Player_Interactables_O" unique_id=1350439951]
+[node name="Patient_Interface_Access" type="TextureButton" parent="Player_Interactables_O" unique_id=1651295887]
 custom_minimum_size = Vector2(503, 475)
 layout_mode = 0
-offset_left = 1555.71
-offset_top = 445.28
-offset_right = 2058.711
-offset_bottom = 1356.2804
+offset_left = 1559.0
+offset_top = 553.0
+offset_right = 2062.001
+offset_bottom = 1464.0004
 scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-icon = ExtResource("11_gisrx")
-flat = true
-expand_icon = true
+texture_normal = ExtResource("11_gisrx")
+texture_hover = ExtResource("13_kjhbo")
 
 [node name="ReceptionLabel" type="Label" parent="Player_Interactables_O/Patient_Interface_Access" unique_id=1431757594]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 400.0
-offset_right = 420.58008
-offset_bottom = 529.44
+offset_left = 93.41992
+offset_top = 184.56006
+offset_right = 414.0
+offset_bottom = 314.00006
 theme_override_colors/font_color = Color(0.7294118, 0.7176471, 0.60784316, 1)
 theme_override_fonts/font = ExtResource("4_n8ipj")
 theme_override_font_sizes/font_size = 90
@@ -249,27 +236,23 @@ text = "Reception"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Bed" type="Button" parent="Player_Interactables_O" unique_id=1565711458]
+[node name="Bed" type="TextureButton" parent="Player_Interactables_O" unique_id=324566403]
 layout_mode = 0
-offset_left = 401.585
-offset_top = 398.77
-offset_right = 896.04626
-offset_bottom = 684.7742
-scale = Vector2(1.55, 1.55)
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-icon = ExtResource("12_grpir")
-flat = true
-expand_icon = true
+offset_left = 406.0
+offset_top = 411.0
+offset_right = 1823.0
+offset_bottom = 1252.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("12_grpir")
+texture_hover = ExtResource("15_4fm71")
 
 [node name="BedLabel" type="Label" parent="Player_Interactables_O/Bed" unique_id=490842031]
 layout_mode = 0
-offset_left = 100.0
-offset_top = 100.0
-offset_right = 318.33224
-offset_bottom = 196.2774
+offset_left = 309.99994
+offset_top = 310.00006
+offset_right = 528.3322
+offset_bottom = 406.27747
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0.7294118, 0.7176471, 0.60784316, 1)
 theme_override_fonts/font = ExtResource("4_n8ipj")
 theme_override_font_sizes/font_size = 80

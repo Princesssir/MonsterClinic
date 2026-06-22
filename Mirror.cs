@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public partial class Mirror : Button
+public partial class Mirror : TextureButton
 {
 
     //All the necessary mirror references
-    Button MirrorButton;
+    TextureButton MirrorButton;
     Button Close;
     Label MirrorLabel;
     public override void _Ready()
