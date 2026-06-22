@@ -48,18 +48,12 @@ public partial class AdmissionManager : Node
                 TreatmentManager treatment = roomNode.GetNode<TreatmentManager>("Treatment_Manager");
                 treatment.ReenableMedicine();
 
-                //hide the patient admission screen, show the patient room, with the patient sprite and info now visible
-                roomNode.Show();
-                patientInterface.Hide();
-                patient.Show();
-                patient.Modulate = new Color((float)(random.NextDouble() * 0.1f), 1, (float)(random.NextDouble() * 0.1f), 1);
-                patientInfo.Show();
-                //we don't need to go back to this scene from the patient room after they're admitted, better have the right click go back to the office, so we're removing the patient admission from the stack here
-                GlobalData.PreviousScenes.Pop();
-                //push the scene we're entering to the previous scenes stack
-                GlobalData.PreviousScenes.Push(roomNode.GetPath());
+
+
+                PatientAdmission.SetLatestPatientRoom(room);
+                IsClinicFull();
             }
-        }
+       }
     }
 
     public bool IsClinicFull()

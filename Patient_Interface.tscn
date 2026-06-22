@@ -179,10 +179,10 @@ text = "Return "
 [node name="Dialogue" type="Button" parent="ControlPatientInterface" unique_id=667856672]
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 0
-offset_left = 1454.3125
-offset_top = 714.6875
-offset_right = 1644.3125
-offset_bottom = 814.6875
+offset_left = 1400.0
+offset_top = 700.0
+offset_right = 1590.0
+offset_bottom = 800.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
@@ -193,10 +193,10 @@ Dialogue"
 [node name="Zoom" type="Button" parent="ControlPatientInterface" unique_id=764683982]
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 0
-offset_left = 1218.3125
-offset_top = 713.6875
-offset_right = 1406.3125
-offset_bottom = 813.6875
+offset_left = 1200.0
+offset_top = 700.0
+offset_right = 1390.0
+offset_bottom = 800.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
@@ -207,10 +207,10 @@ text = "Zoom Into
 [node name="Pulse" type="Button" parent="ControlPatientInterface" unique_id=1056763404]
 custom_minimum_size = Vector2(140, 100)
 layout_mode = 0
-offset_left = 998.3125
-offset_top = 713.6875
-offset_right = 1169.3125
-offset_bottom = 813.6875
+offset_left = 1000.0
+offset_top = 700.0
+offset_right = 1190.0
+offset_bottom = 800.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
@@ -220,10 +220,10 @@ text = "Measure Pulse "
 [node name="Reject" type="Button" parent="ControlPatientInterface" unique_id=1995509717 node_paths=PackedStringArray("PatientManager")]
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 0
-offset_left = 1366.0
-offset_top = 871.0
-offset_right = 1516.0
-offset_bottom = 971.0
+offset_left = 1428.0
+offset_top = 850.0
+offset_right = 1638.0
+offset_bottom = 950.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
@@ -235,16 +235,30 @@ PatientManager = NodePath("../..")
 [node name="Admit" type="Button" parent="ControlPatientInterface" unique_id=1942473230]
 custom_minimum_size = Vector2(210, 100)
 layout_mode = 0
-offset_left = 1084.0
-offset_top = 871.0
-offset_right = 1294.0
-offset_bottom = 971.0
+offset_left = 979.0
+offset_top = 850.0
+offset_right = 1189.0
+offset_bottom = 950.0
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
 text = "Admit "
 script = ExtResource("6_7u4js")
+
+[node name="VisitPatient" type="Button" parent="ControlPatientInterface" unique_id=984521041]
+custom_minimum_size = Vector2(210, 100)
+layout_mode = 0
+offset_left = 1200.0
+offset_top = 850.0
+offset_right = 1410.0
+offset_bottom = 950.0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_0r6l1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rh4kq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x1bgp")
+text = "Visit 
+Patient"
 
 [node name="Inventory" type="Button" parent="ControlPatientInterface" unique_id=204242760]
 custom_minimum_size = Vector2(120, 120)

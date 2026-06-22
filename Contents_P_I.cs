@@ -17,9 +17,11 @@ public partial class Contents_P_I : Node2D
     Button ZoomButton;
     Button PulseButton;
     Button RejectButton;
+    Button VisitButton;
     Button InventoryButton;
     Button DiagnosisButton;
     Button ShotgunButton;
+    Button VisitPatientButton;
     VBoxContainer InventoryContainer;
 
 
@@ -30,6 +32,8 @@ public partial class Contents_P_I : Node2D
     [Export] public Sprite2D PortraitSprite;
 
     [Export] AdmissionManager AdmissionManagerAccess;
+
+    Node2D LatestRoom = null;
 
     public override void _Ready()
 	{
@@ -48,6 +52,9 @@ public partial class Contents_P_I : Node2D
         InventoryButton.Pressed += ToggleInventory;
         DiagnosisButton.Pressed += ShowSpeechDiagnosis;
         ShotgunButton.Pressed += KillPatient;
+
+        VisitButton.Pressed += VisitLatestPatient;
+        VisitButton.Disabled = true;
 
         //Hiding the inventory and the "DECEASED" sprites which show up when patient is killed.
         DeceasedSprite1.Hide();
@@ -70,6 +77,7 @@ public partial class Contents_P_I : Node2D
         ZoomButton = control.GetNode<Button>("Zoom");
         PulseButton = control.GetNode<Button>("Pulse");
         RejectButton = control.GetNode<Button>("Reject");
+        VisitButton = control.GetNode<Button>("VisitPatient");
         InventoryButton = control.GetNode<Button>("Inventory");
 
         //Going one step deeper for the inventory buttons.
@@ -87,7 +95,6 @@ public partial class Contents_P_I : Node2D
         SpeechManagerAccess.SpeechText(PatientPointer.dialogue);
     }
   
-
     private void ShowSpeechZoom()
     {
         SpeechManagerAccess.SpeechText("Skin status is: " + PatientPointer.skinStatus);
@@ -155,6 +162,31 @@ public partial class Contents_P_I : Node2D
         AgeLabel.Text = "Age: " + patientStats.age.ToString(); //used stringt o convert the integer age to a string for display purposes
 
         PatientPointer = patientStats;
+    }
+
+    public void SetLatestPatientRoom(Node2D room)
+    {
+        LatestRoom = room;
+        if(VisitButton.Disabled)
+        {
+            VisitButton.Disabled = false;
+        }
+    }
+    private void VisitLatestPatient()
+    {
+        var hallway = LatestRoom.GetParent().GetParent().GetNode<Node2D>("Hallway");
+        var patient = LatestRoom.GetNode<Node2D>("Patient_Display");
+        var patientInfo = LatestRoom.GetNode<CanvasItem>("Patient_Info");
+        //hide the patient admission screen, show the patient room, with the patient sprite and info now visible
+        Hide();
+        LatestRoom.Show();
+        patient.Show();
+        patientInfo.Show();
+        //we don't need to go back to this scene from the patient room after they're admitted, better have the right click go back to the office, so we're removing the patient admission from the stack here
+        GlobalData.PreviousScenes.Pop();
+        //push the scene we're entering to the previous scenes stack
+        GlobalData.PreviousScenes.Push(hallway.GetPath());
+        GlobalData.PreviousScenes.Push(LatestRoom.GetPath());
     }
 
 }
