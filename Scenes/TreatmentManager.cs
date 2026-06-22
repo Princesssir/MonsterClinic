@@ -7,9 +7,15 @@ public partial class TreatmentManager : Node
     //Storing a reference to all the buttons, labels, etc., for easy reference in the methods
     Sprite2D PatientDisplay;
     Label PatientInfo;
-    Button GiveMedicine1Button;
-    Button GiveMedicine2Button;
-    Button GiveMedicine3Button;
+    TextureButton GiveMedicine1Button;
+    Label Med1Name;
+    Label Med1Count;
+    TextureButton GiveMedicine2Button;
+    Label Med2Name;
+    Label Med2Count;
+    TextureButton GiveMedicine3Button;
+    Label Med3Name;
+    Label Med3Count;
     Label WrongMedicinePopup;
     Label NoPatientPopup;
     Label PatientCuredPopup;
@@ -32,34 +38,48 @@ public partial class TreatmentManager : Node
         PatientDisplay = GetParent().GetNode<Sprite2D>("Patient_Display");
         PatientInfo = GetParent().GetNode<Label>("Patient_Info");
 
-        GiveMedicine1Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_1");
-        GiveMedicine2Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_2");
-        GiveMedicine3Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_3");
+        GiveMedicine1Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
+        Med1Name = GiveMedicine1Button.GetNode<Label>("Med1_Name");
+        Med1Count = GiveMedicine1Button.GetNode("Stripe").GetNode<Label>("Med1_Count");
+        GiveMedicine2Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_2");
+        Med2Name = GiveMedicine2Button.GetNode<Label>("Med2_Name");
+        Med2Count = GiveMedicine2Button.GetNode("Stripe").GetNode<Label>("Med2_Count");
+        GiveMedicine3Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_3");
+        Med3Name = GiveMedicine3Button.GetNode<Label>("Med3_Name");
+        Med3Count = GiveMedicine3Button.GetNode("Stripe").GetNode<Label>("Med3_Count");
         WrongMedicinePopup = GetParent().GetNode<Label>("Wrong_Medicine_Popup");
         NoPatientPopup = GetParent().GetNode<Label>("No_Patient_Popup");
         PatientCuredPopup = GetParent().GetNode<Label>("Patient_Cured_Popup");
         CorrectMedicinePopup = GetParent().GetNode<Label>("Correct_Medicine_Popup");
     }
 
-    private void MedicineOperations(Button medicineChoice)
+    private void MedicineOperations(TextureButton medicineChoice)
 	{
         //setting up crucial parameters of a medicine, and changing them depending on which medicine is being usesd
         Medicine medicine = null;
         string matchingMalady = "none";
+        Label nameBox = null;
+        Label countBox = null;
         if (medicineChoice == GiveMedicine1Button)
         {
             medicine = MedicineManager.Database["Morphine"];
             matchingMalady = "A";
+            nameBox = Med1Name;
+            countBox = Med1Count;
         }
         else if (medicineChoice == GiveMedicine2Button)
         {
             medicine = MedicineManager.Database["Aspirin"];
             matchingMalady = "B";
+            nameBox = Med2Name;
+            countBox = Med2Count;
         }
         else if (medicineChoice == GiveMedicine3Button)
         {
             medicine = MedicineManager.Database["Ozempic"];
             matchingMalady = "C";
+            nameBox = Med3Name;
+            countBox = Med3Count;
         }
 
         if (PatientDisplay.Visible == false)
@@ -72,7 +92,8 @@ public partial class TreatmentManager : Node
         {
             //use the medicine
             medicine.amount--;
-            medicineChoice.Text = $"{medicine.name} \n Owned: {medicine.amount}";
+            nameBox.Text = $"{medicine.name}";
+            countBox.Text = $"{medicine.amount}";
             //if we're out of the medicine, remove it from the inventory
             if (medicine.amount == 0)
             {

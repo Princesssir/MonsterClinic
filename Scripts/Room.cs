@@ -10,9 +10,15 @@ public partial class Room : Node2D
     Button LeaveRoomButton;
     Sprite2D PatientDisplay;
     Label PatientInfo;
-    Button GiveMedicine1Button;
-    Button GiveMedicine2Button;
-    Button GiveMedicine3Button;
+    TextureButton GiveMedicine1Button;
+    Label Med1Name;
+    Label Med1Count;
+    TextureButton GiveMedicine2Button;
+    Label Med2Name;
+    Label Med2Count;
+    TextureButton GiveMedicine3Button;
+    Label Med3Name;
+    Label Med3Count;
     Label WrongMedicinePopup;
     Button CloseWrongMedicinePopup;
     Label NoPatientPopup;
@@ -58,9 +64,15 @@ public partial class Room : Node2D
         PatientDisplay = GetNode<Sprite2D>("Patient_Display");
         PatientInfo = GetNode<Label>("Patient_Info");
 
-        GiveMedicine1Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_1");
-        GiveMedicine2Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_2");
-        GiveMedicine3Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_3");
+        GiveMedicine1Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
+        Med1Name = GiveMedicine1Button.GetNode<Label>("Med1_Name");
+        Med1Count = GiveMedicine1Button.GetNode("Stripe").GetNode<Label>("Med1_Count");
+        GiveMedicine2Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_2");
+        Med2Name = GiveMedicine2Button.GetNode<Label>("Med2_Name");
+        Med2Count = GiveMedicine2Button.GetNode("Stripe").GetNode<Label>("Med2_Count");
+        GiveMedicine3Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_3");
+        Med3Name = GiveMedicine3Button.GetNode<Label>("Med3_Name");
+        Med3Count = GiveMedicine3Button.GetNode("Stripe").GetNode<Label>("Med3_Count");
         WrongMedicinePopup = GetNode<Label>("Wrong_Medicine_Popup");
         CloseWrongMedicinePopup = WrongMedicinePopup.GetNode<Button>("Close_Wrong_medicine_Popup");
         NoPatientPopup = GetNode<Label>("No_Patient_Popup");
@@ -125,9 +137,12 @@ public partial class Room : Node2D
     {
         PatientInfo.Text = "Patient info: \n Malady: Malady " + GlobalData.CurrentPatientMalady + "\n Severity: " + GlobalData.CurrentPatientSeverity;
 
-        GiveMedicine1Button.Text = $"{MedicineManager.Database["Morphine"].name} \n Owned: {MedicineManager.Database["Morphine"].amount}";
-        GiveMedicine2Button.Text = $"{MedicineManager.Database["Aspirin"].name} \n Owned: {MedicineManager.Database["Aspirin"].amount}";
-        GiveMedicine3Button.Text = $"{MedicineManager.Database["Ozempic"].name} \n Owned: {MedicineManager.Database["Ozempic"].amount}";
+        Med1Name.Text = $"{MedicineManager.Database["Morphine"].name}";
+        Med1Count.Text = $"{MedicineManager.Database["Morphine"].amount}";
+        Med2Name.Text = $"{MedicineManager.Database["Aspirin"].name} ";
+        Med2Count.Text = $"{MedicineManager.Database["Aspirin"].amount}";
+        Med3Name.Text = $"{MedicineManager.Database["Ozempic"].name}";
+        Med3Count.Text = $"{MedicineManager.Database["Ozempic"].amount}";
 
         WrongMedicinePopup.Hide();
         NoPatientPopup.Hide();

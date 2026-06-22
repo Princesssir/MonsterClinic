@@ -77,9 +77,9 @@ public partial class Main : Node
 
     private void _on_room_visibility_changed()
     {
-        var GiveMedicine1Button = GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_1");
-        var GiveMedicine2Button = GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_2");
-        var GiveMedicine3Button = GetNode("Inventory").GetNode("Open_Inventory").GetNode<Button>("Give_Medicine_3");
+        var GiveMedicine1Button = GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
+        var GiveMedicine2Button = GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_2");
+        var GiveMedicine3Button = GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_3");
         if (PatientRoom.Visible == true)
         {
             Inventory.Show();
