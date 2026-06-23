@@ -55,6 +55,9 @@ public partial class Hallway : Node2D
         RoomScene.Show();
         Room room = RoomScene as Room;
         room.UpdatePatientInfoLabel();
+        Inventory inv = GetParent().GetNode<Inventory>("Inventory");
+        TreatmentManager treatment = inv.GetNode<TreatmentManager>("Treatment_Manager");
+        treatment.SetTreatmentRoomReference(room);
         Sprite2D PatientDisplay = GetParent().GetNode("Inventory").GetNode("Treatment_Manager").GetNode<Sprite2D>("Patient_Display");
         //GD.Print(room)
         if (room.HasPatient() == true)
@@ -79,6 +82,10 @@ public partial class Hallway : Node2D
         roomInput.Show();
         Room room = roomInput as Room;
         room.UpdatePatientInfoLabel();
+        Inventory inv = GetParent().GetNode<Inventory>("Inventory");
+        TreatmentManager treatment = inv.GetNode<TreatmentManager>("Treatment_Manager");
+        treatment.SetTreatmentRoomReference(room);
+        //treatment.ShowUI();
         Sprite2D PatientDisplay = GetParent().GetNode("Inventory").GetNode("Treatment_Manager").GetNode<Sprite2D>("Patient_Display");
         if (room.HasPatient() == true)
         {
