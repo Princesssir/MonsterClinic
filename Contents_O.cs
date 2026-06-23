@@ -12,7 +12,7 @@ public partial class Contents_O : Node2D
        
 
         // Timer from the scene
-        var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
+        sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
         sceneTimer.OneShot = true;
 
         // connect the signals

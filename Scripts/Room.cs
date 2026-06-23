@@ -106,6 +106,7 @@ public partial class Room : Node2D
         Hide();
         var HallwayScene = (Node2D)GetParent().GetParent().GetNode("Hallway");
         HallwayScene.Show();
+        GlobalData.inPatientRoom = false;
         if(GlobalData.PreviousScenes.Count == 0)
         {
             GlobalData.PreviousScenes.Pop();

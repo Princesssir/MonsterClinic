@@ -32,6 +32,8 @@ visible = false
 visible = false
 
 [node name="Inventory" parent="." unique_id=126072234 instance=ExtResource("8_trn2v")]
+z_index = 2
+position = Vector2(0, -110)
 
 [node name="Pause" parent="." unique_id=370433973 instance=ExtResource("6_3dxm6")]
 visible = false

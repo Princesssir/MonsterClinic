@@ -21,6 +21,10 @@ public partial class Hallway : Node2D
         LeaveRoomButton.MouseExited += HoverOff;
         LeaveRoomButton.Pressed += LeaveRoom;
 
+        GD.Print(GetParent().Name);
+        Main main = GetParent() as Main;
+
+
         //Doors
         int doorIndex = 0;
         foreach (Node child in DoorControl.GetChildren())
@@ -33,6 +37,7 @@ public partial class Hallway : Node2D
                 doorButton.doorId = doorIndex;
                 doorIndex++;
                 childButton.Pressed += () => GoToRoom(doorButton.doorId);
+                childButton.Pressed += main.InventoryPatientRoom;
                 childButton.Disabled = true;
             }
         }
