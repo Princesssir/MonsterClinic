@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://3ailttjlob0g" path="res://Contents_O.cs" id="1_35wc1"]
 [ext_resource type="Texture2D" uid="uid://c5ncjx7yugc5j" path="res://Assets/2D Art/Office/office-pc.png" id="2_kjhbo"]
-[ext_resource type="Script" uid="uid://dm42silqg7ir1" path="res://Treatment_Deadline.cs" id="3_p0jbg"]
 [ext_resource type="FontFile" uid="uid://cr8ufnapixhdd" path="res://CustomText/MyUglyHandwriting-Regular_MediumButtonText.otf" id="4_n8ipj"]
 [ext_resource type="Texture2D" uid="uid://ba6h4djyflram" path="res://Assets/2D Art/Office/office-pc-hover.png" id="4_ttk34"]
 [ext_resource type="Texture2D" uid="uid://b4o0ubcg603ro" path="res://Assets/2D Art/Office/office-mirror.png" id="6_4fm71"]
@@ -16,6 +15,14 @@
 [ext_resource type="Texture2D" uid="uid://duxu8md0l1yr5" path="res://Assets/2D Art/Office/office-background.png" id="14_3080y"]
 [ext_resource type="Texture2D" uid="uid://orf6jcr622m" path="res://Assets/2D Art/Office/office-bed-hover.png" id="15_4fm71"]
 [ext_resource type="Texture2D" uid="uid://7ph5wsicr3ic" path="res://Assets/2D Art/Office/office-cans.png" id="16_gisrx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye4h6"]
+bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fedq"]
 bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
@@ -35,14 +42,6 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l87an"]
 bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye4h6"]
-bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
 [node name="Contents_O" type="Node2D" unique_id=586678661]
 script = ExtResource("1_35wc1")
@@ -82,45 +81,6 @@ text = "Computer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Deadline" type="Button" parent="Player_Interactables_O" unique_id=65374973]
-layout_mode = 0
-offset_left = 700.0
-offset_top = 204.0
-offset_right = 826.0
-offset_bottom = 329.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "Treatment
-Deadline"
-script = ExtResource("3_p0jbg")
-
-[node name="DeadlineLabel" type="Label" parent="Player_Interactables_O/Deadline" unique_id=102657559]
-visible = false
-z_index = 1
-layout_mode = 0
-offset_left = -152.0
-offset_top = -134.0
-offset_right = 329.0
-offset_bottom = 311.0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
-text = "abcdefg"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Close" type="Button" parent="Player_Interactables_O/Deadline/DeadlineLabel" unique_id=287276693]
-layout_mode = 0
-offset_left = 431.0
-offset_right = 481.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxFlat_2fedq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
-theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
-text = "X"
-
 [node name="Mirror" type="TextureButton" parent="Player_Interactables_O" unique_id=1571392299]
 layout_mode = 0
 offset_left = 255.0
@@ -159,6 +119,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bw284")
 theme_override_styles/hover = SubResource("StyleBoxFlat_l87an")
 text = "X"
 
+[node name="MirrorImage" type="TextureRect" parent="Player_Interactables_O/Mirror/MirrorLabel" unique_id=1297061777]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 124.66667
+offset_right = 451.3333
+offset_bottom = 799.3333
+
 [node name="MirrorLabel3" type="Label" parent="Player_Interactables_O/Mirror" unique_id=942413366]
 layout_mode = 0
 offset_left = 138.0
@@ -170,6 +137,21 @@ theme_override_colors/font_color = Color(0.7294118, 0.7176471, 0.60784316, 1)
 theme_override_fonts/font = ExtResource("4_n8ipj")
 theme_override_font_sizes/font_size = 70
 text = "Mirror"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeadlineLabel" type="Label" parent="Player_Interactables_O/Mirror" unique_id=102657559]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = -107.99999
+offset_top = 930.0
+offset_right = 373.0
+offset_bottom = 1375.0
+scale = Vector2(1.4236115, 1.3866645)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_ye4h6")
+text = "abcdefg"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -281,7 +263,6 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("16_gisrx")
 
 [connection signal="pressed" from="Player_Interactables_O/Computer" to="." method="_on_computer_a_pressed"]
-[connection signal="pressed" from="Player_Interactables_O/Deadline" to="Player_Interactables_O/Deadline/DeadlineLabel" method="_on_treatment_d_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Mirror" to="Player_Interactables_O/Mirror/MirrorLabel" method="_on_mirror_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Elevator" to="." method="_on_elevator_pressed"]
 [connection signal="pressed" from="Player_Interactables_O/Patient_Interface_Access" to="." method="_on_patient_i_a_pressed"]
