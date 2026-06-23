@@ -52,6 +52,9 @@ public partial class Room : Node2D
         LeaveRoomButton.MouseExited += HoverOff;
         LeaveRoomButton.Pressed += LeaveRoom;
 
+        
+
+
         //yes this looks kinda wacky, but apparently that's how I gotta write it if I want to have methods that take arguments
         //CloseWrongMedicinePopup.Pressed += () => CloseParent(CloseWrongMedicinePopup);
         //CloseNoPatientPopup.Pressed += () => CloseParent(CloseNoPatientPopup);
