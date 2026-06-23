@@ -62,7 +62,7 @@ public partial class MainMenu : Control
         var ColorRecthide = GetNode<ColorRect>("ColorRect");
         ColorRecthide.Show();
         var TextRTL = GetNode<RichTextLabel>("ColorRect/RichTextLabel");
-        TextRTL.Text = "Credits arent right ready now, try in the full version again";
+        TextRTL.Text = "Credits arent currently available, try again in the full version :)";
     }
 
     private void _on_delete_save_pressed()

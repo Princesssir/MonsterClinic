@@ -27,6 +27,7 @@ offset_top = 741.0
 offset_right = 414.0
 offset_bottom = 889.0
 theme_override_font_sizes/font_size = 45
+disabled = true
 text = "Load Game"
 
 [node name="Lock_Color" type="ColorRect" parent="." unique_id=1606529089]
@@ -45,6 +46,7 @@ offset_top = 549.0
 offset_right = 1112.0
 offset_bottom = 697.0
 theme_override_font_sizes/font_size = 45
+disabled = true
 text = "Option"
 
 [node name="Credits_Button" type="Button" parent="." unique_id=30100071]
@@ -54,7 +56,7 @@ offset_top = 755.0
 offset_right = 1115.0
 offset_bottom = 903.0
 theme_override_font_sizes/font_size = 45
-text = "Creadits"
+text = "Credits"
 
 [node name="Exit_Button" type="Button" parent="." unique_id=2097634797]
 layout_mode = 0
@@ -72,6 +74,7 @@ offset_top = 549.0
 offset_right = 1828.0
 offset_bottom = 697.0
 theme_override_font_sizes/font_size = 45
+disabled = true
 text = "Delete_save"
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1266797198]
