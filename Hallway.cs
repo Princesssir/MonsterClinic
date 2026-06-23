@@ -59,11 +59,12 @@ public partial class Hallway : Node2D
         TreatmentManager treatment = inv.GetNode<TreatmentManager>("Treatment_Manager");
         treatment.SetTreatmentRoomReference(room);
         Sprite2D PatientDisplay = GetParent().GetNode("Inventory").GetNode("Treatment_Manager").GetNode<Sprite2D>("Patient_Display");
-        //GD.Print(room)
+        //if room has a patient, show the universal patient and make their color the one corresponding to the room's patient
         if (room.HasPatient() == true)
         {
             PatientDisplay.Show();
             PatientDisplay.Modulate = room.Patient.PortraitColor;
+        //if no patient, hide the universal patient
         } else
         {
             PatientDisplay.Hide();
@@ -87,11 +88,13 @@ public partial class Hallway : Node2D
         treatment.SetTreatmentRoomReference(room);
         //treatment.ShowUI();
         Sprite2D PatientDisplay = GetParent().GetNode("Inventory").GetNode("Treatment_Manager").GetNode<Sprite2D>("Patient_Display");
+        //if room has a patient, show the universal patient and make their color the one corresponding to the room's patient
         if (room.HasPatient() == true)
         {
             PatientDisplay.Show();
             PatientDisplay.Modulate = room.Patient.PortraitColor;
         }
+        //if no patient, hide the universal patient
         else
         {
             PatientDisplay.Hide();
