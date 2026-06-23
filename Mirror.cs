@@ -15,7 +15,7 @@ public partial class Mirror : Button
 
     Texture2D[] mirrorImages =
     {
-
+        // These are the place holder images stored in the godot files for the office
         GD.Load<Texture2D>("res://Assets/2D Art/Office/MirrorImage/stickman1.png"),
         GD.Load<Texture2D>("res://Assets/2D Art/Office/MirrorImage/stickman2.png"),
         GD.Load<Texture2D>("res://Assets/2D Art/Office/MirrorImage/stickman3.png"),
@@ -54,12 +54,33 @@ public partial class Mirror : Button
         MirrorLabel.Hide();
     }
 
+    // Sorting out the images so that they change color according to the days left
     private void ChangeMirrorImage()
     {
-        int randomImage = GD.RandRange(0, mirrorImages.Length - 1);
-        MirrorImage.Texture = mirrorImages[randomImage];
+        if (GlobalData.Countdown >= 4)
+        {
+            // Green (4 days)
+            MirrorImage.Texture = mirrorImages[3];
+        }
+
+        else if (GlobalData.Countdown == 3)
+        {
+            // Yellow (3 days)
+            MirrorImage.Texture = mirrorImages[2];
+        }
+
+        else if (GlobalData.Countdown == 2)
+        {
+            // orange (2 days)
+            MirrorImage.Texture = mirrorImages[1];
+        }
+
+        else if (GlobalData.Countdown <= 1)
+        {
+            // Red (1 day)
+            MirrorImage.Texture = mirrorImages[0];
+        }
 
     }
 
- 
 }

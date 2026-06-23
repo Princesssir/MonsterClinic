@@ -130,7 +130,6 @@ expand_icon = true
 script = ExtResource("7_4fm71")
 
 [node name="MirrorLabel" type="Label" parent="Player_Interactables_O/Mirror" unique_id=1633342914]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
@@ -152,12 +151,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 28.665009
-offset_top = 178.22
-offset_right = -21.334991
-offset_bottom = -260.78003
+offset_left = 17.665009
+offset_top = 75.22
+offset_right = -14.335022
+offset_bottom = -151.78003
 grow_horizontal = 2
 grow_vertical = 2
+expand_mode = 1
 
 [node name="Close" type="Button" parent="Player_Interactables_O/Mirror/MirrorLabel" unique_id=1033698163]
 layout_mode = 0
