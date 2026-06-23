@@ -60,25 +60,6 @@ border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkk41"]
 bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2s87"]
-bg_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_073d2"]
-bg_color = Color(0.1254902, 0.1254902, 0.1254902, 1)
-border_width_left = 7
-border_width_top = 7
-border_width_right = 7
-border_width_bottom = 7
-border_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl1ua"]
-bg_color = Color(0.3764706, 0.3764706, 0.3764706, 1)
-
 [node name="Contents_P_I" type="Node2D" unique_id=315031335 node_paths=PackedStringArray("SpeechManagerAccess", "DeceasedSprite1", "PatientLabel", "AgeLabel", "PatientsLeftLabel", "PortraitSprite", "AdmissionManagerAccess", "Diagnosis")]
 script = ExtResource("1_ljdgf")
 SpeechManagerAccess = NodePath("ControlPatientInterface/SpeechManager")
@@ -282,6 +263,7 @@ Last Admitted
 Patient"
 
 [node name="Inventory" type="Button" parent="ControlPatientInterface" unique_id=204242760]
+visible = false
 custom_minimum_size = Vector2(120, 120)
 layout_mode = 0
 offset_left = 1730.0

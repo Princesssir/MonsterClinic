@@ -42,7 +42,7 @@ public partial class Room : Node2D
         Hide();
     }*/
 
-    public override void _Ready()
+    public void Initialize()
     {
         //grabs references to all the necessary nodes
         GetNodes();
@@ -53,24 +53,23 @@ public partial class Room : Node2D
         LeaveRoomButton.Pressed += LeaveRoom;
 
         //yes this looks kinda wacky, but apparently that's how I gotta write it if I want to have methods that take arguments
-        CloseWrongMedicinePopup.Pressed += () => CloseParent(CloseWrongMedicinePopup);
-        CloseNoPatientPopup.Pressed += () => CloseParent(CloseNoPatientPopup);
-        ClosePatientCuredPopup.Pressed += () => CloseParent(ClosePatientCuredPopup);
-        CloseCorrectMedicinePopup.Pressed += () => CloseParent(CloseCorrectMedicinePopup);
-
-
-
-
+        //CloseWrongMedicinePopup.Pressed += () => CloseParent(CloseWrongMedicinePopup);
+        //CloseNoPatientPopup.Pressed += () => CloseParent(CloseNoPatientPopup);
+        //ClosePatientCuredPopup.Pressed += () => CloseParent(ClosePatientCuredPopup);
+        //CloseCorrectMedicinePopup.Pressed += () => CloseParent(CloseCorrectMedicinePopup);
     }
 
     private void GetNodes()
     {
+        TreatmentManager treatment = GetNode<TreatmentManager>("Treatment_Manager");
+        treatment.Initialize();
+
         //Basically just grabbing all the nodes
         LeaveRoomButton = GetNode<Button>("Leave_Room");
         PatientDisplay = GetNode<Sprite2D>("Patient_Display");
         PatientInfo = GetNode<Label>("Patient_Info");
 
-        GiveMedicine1Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
+        /*GiveMedicine1Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
         Med1Name = GiveMedicine1Button.GetNode<Label>("Med1_Name");
         Med1Count = GiveMedicine1Button.GetNode("Stripe").GetNode<Label>("Med1_Count");
         GiveMedicine2Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_2");
@@ -86,7 +85,7 @@ public partial class Room : Node2D
         PatientCuredPopup = GetNode<Label>("Patient_Cured_Popup");
         ClosePatientCuredPopup = PatientCuredPopup.GetNode<Button>("Close_Patient_Cured_Popup");
         CorrectMedicinePopup = GetNode<Label>("Correct_Medicine_Popup");
-        CloseCorrectMedicinePopup = CorrectMedicinePopup.GetNode<Button>("Close_Correct_medicine_Popup");
+        CloseCorrectMedicinePopup = CorrectMedicinePopup.GetNode<Button>("Close_Correct_medicine_Popup");*/
     }
 
     private void HoverOn()
@@ -144,9 +143,10 @@ public partial class Room : Node2D
     //it could activate whenever the scene's visibility changes,but there's a (probably) harmless error that happens then, so I instead use a node who's visibility always matches the scene
     private void _on_patient_room_background_visibility_changed()
     {
-        PatientInfo.Text = "Patient info: \n Malady: Malady " + GlobalData.CurrentPatientMalady + "\n Severity: " + GlobalData.CurrentPatientSeverity;
+        if (Patient == null) return;
+        PatientInfo.Text = "Patient info: \n Malady: " + Patient.malady.name + "\n Severity: " + Patient.malady.severity;
 
-        Med1Name.Text = $"{MedicineManager.Database["Morphine"].name}";
+        /*Med1Name.Text = $"{MedicineManager.Database["Morphine"].name}";
         Med1Count.Text = $"{MedicineManager.Database["Morphine"].amount}";
         Med2Name.Text = $"{MedicineManager.Database["Aspirin"].name} ";
         Med2Count.Text = $"{MedicineManager.Database["Aspirin"].amount}";
@@ -155,7 +155,7 @@ public partial class Room : Node2D
 
         WrongMedicinePopup.Hide();
         NoPatientPopup.Hide();
-        CorrectMedicinePopup.Hide();
+        CorrectMedicinePopup.Hide();*/
 
         //part of Princess's old stuff, keeping it around just in case
         /*if (IsVisibleInTree())

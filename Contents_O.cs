@@ -88,13 +88,14 @@ public partial class Contents_O : Node2D
             //push the scene we're entering to the previous scenes stack
             GlobalData.PreviousScenes.Push(BedScene.GetPath());
 
-        // timer is getting set to 3 seconds and starts
-        sceneTimer.Start(3.0);
-        if (GlobalData.Medicincavailability != 0)
-        {
-            GlobalData.Medicincavailability--;
+            // timer is getting set to 3 seconds and starts
+            sceneTimer.Start(3.0);
+            if (GlobalData.Medicincavailability != 0)
+            {
+                GlobalData.Medicincavailability--;
+            }
+            DialogDealer();
         }
-        DialogDealer();
 
     }
 

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c36i0asmfb8o" path="res://Scenes/Room.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://ct6tj36bp5ro0" path="res://Bed/bed.tscn" id="5_fos0i"]
 [ext_resource type="PackedScene" uid="uid://j7adtnydmxx5" path="res://Pause_Menu.tscn" id="6_3dxm6"]
-[ext_resource type="PackedScene" uid="uid://dtqygqtybqe4i" path="res://Scenes/Hallway.tscn" id="8_trn2v"]
+[ext_resource type="PackedScene" uid="uid://dtqygqtybqe4i" path="res://Scenes/Hallway.tscn" id="8_03owx"]
 [ext_resource type="PackedScene" uid="uid://c0wl0p1tagma5" path="res://Inventory.tscn" id="8_trn2v"]
 
 [node name="Main" type="Node" unique_id=1988220635 node_paths=PackedStringArray("RoomControl")]
@@ -28,22 +28,21 @@ visible = false
 [node name="Bed" parent="." unique_id=615608472 instance=ExtResource("5_fos0i")]
 visible = false
 
+[node name="Hallway" parent="." unique_id=1262223275 instance=ExtResource("8_03owx")]
+visible = false
+
 [node name="Inventory" parent="." unique_id=126072234 instance=ExtResource("8_trn2v")]
-z_index = 99
 
 [node name="Pause" parent="." unique_id=370433973 instance=ExtResource("6_3dxm6")]
 visible = false
 z_index = 100
-
-[connection signal="visibility_changed" from="Office" to="." method="_on_office_visibility_changed"]
-[connection signal="visibility_changed" from="Patient_Interface" to="." method="_on_patient_interface_visibility_changed"]
-[connection signal="visibility_changed" from="Patient_Interface" to="Inventory" method="_on_patient_interface_visibility_changed"]
-[connection signal="visibility_changed" from="Room" to="." method="_on_room_visibility_changed"]
-[node name="Hallway" parent="." unique_id=1664626497 instance=ExtResource("8_trn2v")]
-visible = false
 
 [node name="RoomControlMain" type="Control" parent="." unique_id=396244499]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="visibility_changed" from="Office" to="." method="_on_office_visibility_changed"]
+[connection signal="visibility_changed" from="Patient_Interface" to="." method="_on_patient_interface_visibility_changed"]
+[connection signal="visibility_changed" from="Room" to="." method="_on_room_visibility_changed"]

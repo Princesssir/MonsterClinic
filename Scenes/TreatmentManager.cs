@@ -23,16 +23,25 @@ public partial class TreatmentManager : Node
 
     Room Room;
 
+    public void Initialize()
+    {
+        GetNodes();
+
+        GiveMedicine1Button.Pressed += () => MedicineOperations(GiveMedicine1Button);
+        GiveMedicine2Button.Pressed += () => MedicineOperations(GiveMedicine2Button);
+        GiveMedicine3Button.Pressed += () => MedicineOperations(GiveMedicine3Button);
+    }
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
 	{
         //grabs references to all the necessary nodes
-        GetNodes();
+        //GetNodes();
 
         //assigning methods to all the buttons, yes this looks kinda wacky, but apparently that's how I gotta write it if I want to have methods that take arguments
-        GiveMedicine1Button.Pressed += () => MedicineOperations(GiveMedicine1Button);
-        GiveMedicine2Button.Pressed += () => MedicineOperations(GiveMedicine2Button);
-        GiveMedicine3Button.Pressed += () => MedicineOperations(GiveMedicine3Button);
+        //GiveMedicine1Button.Pressed += () => MedicineOperations(GiveMedicine1Button);
+        //GiveMedicine2Button.Pressed += () => MedicineOperations(GiveMedicine2Button);
+        //GiveMedicine3Button.Pressed += () => MedicineOperations(GiveMedicine3Button);
     }
     private void GetNodes()
     {
@@ -41,14 +50,13 @@ public partial class TreatmentManager : Node
 
         PatientDisplay = GetParent().GetNode<Sprite2D>("Patient_Display");
         PatientInfo = GetParent().GetNode<Label>("Patient_Info");
-
-        GiveMedicine1Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
+        GiveMedicine1Button = GetParent().GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
         Med1Name = GiveMedicine1Button.GetNode<Label>("Med1_Name");
         Med1Count = GiveMedicine1Button.GetNode("Stripe").GetNode<Label>("Med1_Count");
-        GiveMedicine2Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_2");
+        GiveMedicine2Button = GetParent().GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_2");
         Med2Name = GiveMedicine2Button.GetNode<Label>("Med2_Name");
         Med2Count = GiveMedicine2Button.GetNode("Stripe").GetNode<Label>("Med2_Count");
-        GiveMedicine3Button = GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_3");
+        GiveMedicine3Button = GetParent().GetParent().GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_3");
         Med3Name = GiveMedicine3Button.GetNode<Label>("Med3_Name");
         Med3Count = GiveMedicine3Button.GetNode("Stripe").GetNode<Label>("Med3_Count");
         WrongMedicinePopup = GetParent().GetNode<Label>("Wrong_Medicine_Popup");
