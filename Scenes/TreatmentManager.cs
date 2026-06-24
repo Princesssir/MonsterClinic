@@ -113,7 +113,7 @@ public partial class TreatmentManager : Node
     {
         if(Room != null)
         {
-            if (Room.Patient != null)
+            if (Room.Patient.isAlive == true)
             {
                 PatientInfo.Show();
                 PatientDisplay.Show();

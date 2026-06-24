@@ -72,29 +72,28 @@ public partial class Hallway : Node2D
         //if room has a patient, show the universal patient and make their color the one corresponding to the room's patient
         if (room.HasPatient() == true)
         {
-            if (room.Patient.malady.severity < 100)
+            if (room.Patient.malady.severity < 4)
             {
-                GD.Print("Dead");
+                GD.Print("skiidi");
                 PatientDisplay.Show();
-                //GD.Print(Corpse.Visible.ToString());
-                //Corpse.Show();
-                //GD.Print(Corpse.Visible.ToString());
+                Corpse.Hide();
                 PatientDisplay.Modulate = room.Patient.PortraitColor;
             }
             else
             {
-                GD.Print(room.Patient.malady.severity);
                 GD.Print("skibidi");
                 room.Patient.isAlive = false;
                 PatientDisplay.Hide();
-                //Corpse.Show();
+                GD.Print(PatientDisplay.Visible.ToString());
+                Corpse.Show();
             }
         }
         //if no patient, hide the universal patient
         else
         {
+            GD.Print("kibidi");
+            Corpse.Hide();
             PatientDisplay.Hide();
-            Corpse.Show();
         }
 
         //push the scene we're entering to the previous scenes stack
@@ -119,22 +118,27 @@ public partial class Hallway : Node2D
         //if room has a patient, show the universal patient and make their color the one corresponding to the room's patient
         if (room.HasPatient() == true)
         {
-            if (room.Patient.malady.severity < 100)
+            if (room.Patient.malady.severity < 4)
             {
+                GD.Print("skiidi");
                 PatientDisplay.Show();
+                Corpse.Hide();
                 PatientDisplay.Modulate = room.Patient.PortraitColor;
-            } else
+            }
+            else
             {
-                GD.Print(room.Patient.malady.severity);
                 GD.Print("skibidi");
-                //room.Patient.isAlive = false;
+                room.Patient.isAlive = false;
                 PatientDisplay.Hide();
+                GD.Print(PatientDisplay.Visible.ToString());
                 Corpse.Show();
             }
         }
         //if no patient, hide the universal patient
         else
         {
+            GD.Print("kibidi");
+            Corpse.Hide();
             PatientDisplay.Hide();
         }
 
