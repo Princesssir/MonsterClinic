@@ -23,11 +23,6 @@ public partial class Dialog : Control
 		//one dialog text is initiated for the dealer dialog. This dialog can be used provally for the patients too, but need than modifications
 		dialogues = new string[1][];
 
-		// making the medicine availability random for the player, so he cant spam the self treatment
-		var randomavalibility = new Random();
-		GlobalData.Medicincavailability = randomavalibility.Next(2, 5);
-
-
 		// the dialog for the dealer has the index 0, for other dialogs use 0 + 1, so the second dialog has the index 1 and so on.
 		// for an out put or input for the array use the second index, so dialogues[0][0] is the first line of the dealer dialog, dialogues[0][1] is the second line and so on. For the second dialog you need to put dialogues[1][0] and so on.
 		dialogues[0] = new string[]
@@ -92,14 +87,17 @@ public partial class Dialog : Control
         }   
         else
 		{
-			// when the dialog is finished, the medicine availability is added to the countdown, so it is more balanced for the player
-			GlobalData.Countdown = GlobalData.Countdown + GlobalData.Medicincavailability;
+            // making the medicine availability random for the player, so he cant spam the self treatment
+            var randomavalibility = new Random();
+            GlobalData.Medicincavailability = randomavalibility.Next(2, 5);
+            // when the dialog is finished, the medicine availability is added to the countdown, so it is more balanced for the player
+            GlobalData.Countdown = GlobalData.Countdown + GlobalData.Medicincavailability;
 			// the dialog is set to false, so it can only be spawned once
 			GlobalData.Dialog_Dealer = false;
 			// the control for the dealer dialog, so it isnt spammed
-			GlobalData.Dialog_Dealer_Control = true;
+			//GlobalData.Dialog_Dealer_Control = true;
 			// the dialog self destructs itself
-			QueueFree();
+			//QueueFree();
 		}
 
         

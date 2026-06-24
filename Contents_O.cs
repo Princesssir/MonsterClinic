@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 
 public partial class Contents_O : Node2D
 {
-    [Export] public FadeAnimation F;
     private Timer sceneTimer;
     [Export] PackedScene dealer_selftreatment_dialog = ResourceLoader.Load<PackedScene>("res://dialog.tscn");
     [Export] PackedScene Transition = ResourceLoader.Load<PackedScene>("res://fade_animation.tscn");
@@ -45,7 +44,7 @@ public partial class Contents_O : Node2D
     {
         GlobalData.ControlSpawnFading = 1;
         Hide();
-        // F.Fades();
+        
         var day_M = GetNode<DayManager>("/root/DayManager");
         day_M.Player_Ingame_Days++;
         DoctorInventory.Money += GlobalData.DailyEarnings;
@@ -59,8 +58,6 @@ public partial class Contents_O : Node2D
 
         // Timer from the scene
 
-
-        //F.Fades();
         
         var sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
         sceneTimer.OneShot = true;
@@ -74,8 +71,11 @@ public partial class Contents_O : Node2D
         //g.Fades();
         // timer is getting set to 3 seconds and starts
         sceneTimer.Start(3.0);
+        if(GlobalData.Medicincavailability != 0)
+        {
+            GlobalData.Medicincavailability--;
+        }
         
-        GlobalData.Medicincavailability--;
     }
     
     private void OnSceneTimerTimeout()
@@ -101,6 +101,13 @@ public partial class Contents_O : Node2D
             
         }
 
+        if (GlobalData.Dialog_Dealer == true)
+        {
+            var DialogForDealer = (Control)GetParent().GetNode("Dialog");
+            DialogForDealer.Show();
+        }
+        
+
         // switches scene
         BedScene.Hide();
         Show();
@@ -108,34 +115,13 @@ public partial class Contents_O : Node2D
         GlobalData.PreviousScenes.Pop();
  
     }
-    // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
-	{
-        // Dialog Dealer checks if the dialog should spawn again and the dealer control is so that the code isnt spammened in the process
-        if (GlobalData.Dialog_Dealer == true && GlobalData.Dialog_Dealer_Control == true)
-        {
-            // Gridcontainer gets shown, the dialog gets instanciated and added as a child to the GridContainer
-            var GridContainer = GetNode<GridContainer>("Spawn_DialogControl");
-            // GridContainer shows, so the player cant interact with the other objects behind it
-            GridContainer.Show();
-            // Dialog gets instantiated and added so it spawns in the GridContainer
-            var selftreatmentDialog = dealer_selftreatment_dialog.Instantiate<Dialog>();
-            GridContainer.AddChild(selftreatmentDialog);
-            // Dealer Control checks if the dialog should spawn again
-            GlobalData.Dialog_Dealer_Control = false;
-            // The medicine need to decrease for the player
-            GlobalData.MedicinePlayer--;
-        }
-
+    {
         if (GlobalData.Dialog_Dealer == false)
         {
-            // The GridContainer needs to be hidden again, so the player can interact with the objects behind it
-            var GridContainer = GetNode<GridContainer>("Spawn_DialogControl");
-            GridContainer.Hide();
+            var DialogForDealer = (Control)GetParent().GetNode("Dialog");
+            DialogForDealer.Hide();
         }
-
-
-
     }
 
     }

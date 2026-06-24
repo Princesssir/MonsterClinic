@@ -29,42 +29,6 @@ public partial class Bed : Node2D
         DoctorInventory.Money += GlobalData.DailyEarnings;
         GlobalData.DailyEarnings = 0;
 
-       
-
-
-
-        // the treatment countdown gets his information from the Global autoload. It is different than from the Daymanager, because Global has the namespace global which is gets set in the upper code (almost the first thing) and then you can call the class Variable and the integer
-
-
-
-
-        // setting the RichTextLabel up (needs new name or its getting confusing), to custommize it like up there before BbcodeEnabled needs to be true. The frontSize is 110, the text is big.
-        var DaysCounters = GetNode<RichTextLabel>("TreatmentDays");
-        DaysCounters.BbcodeEnabled = true;
-
-        // here is the Text chaning a little bit, with the color (pink and red) and "Animation". the Text will shake and be a little wavy. The treatment Countdown decides which text will be showned to the player
-        if (GlobalData.Countdown >= 3)
-        {
-            DaysCounters.Text = $"[b][font_size=110]{GlobalData.Countdown} days left without treatment[/font_size][/b]";
-        }
-        else if (GlobalData.Countdown >= 1 && GlobalData.Countdown < 3)
-        {
-            DaysCounters.Text = $"[b][font_size=110][shake rate=50][color=DEEP_PINK]{GlobalData.Countdown} days left without treatment [/color][/shake][/font_size][/b]";
-        }
-        else if (GlobalData.Countdown == 0)
-        {
-            DaysCounters.Text = $"[b][font_size=110][shake rate=200][wave rate=20][color=red]{GlobalData.Countdown} days left without treatment [/color][/wave][/shake][/font_size][/b]";
-        }
-        else
-        {
-            //not implemented yet
-            //GetTree().ChangeSceneToFile("res://DeathScreen/death_screen.tscn");
-        }
-
-
-
-
-
     }
 
     private void _on_visibility_changed()
@@ -117,7 +81,7 @@ public partial class Bed : Node2D
         {
             DaysCounters.Text = $"[b][font_size=110][shake rate=200][wave rate=20][color=red]{GlobalData.Countdown} days left without treatment [/color][/wave][/shake][/font_size][/b]";
         }
-        else
+        else if(GlobalData.MedicinePlayer == 0 && GlobalData.Countdown == 0)
         {
             //Scene changed to the death Screen, The reasion can be also set in the Global autoload, so you can change the reasion for the death screen, depending on how the player died
             GlobalData.Reasion = "Your sickness killed you! Keep an eye on your treatment countdown";
@@ -127,9 +91,8 @@ public partial class Bed : Node2D
         if (GlobalData.MedicinePlayer >= 1)
         {
             GlobalData.Dialog_Dealer = true;
+            GlobalData.MedicinePlayer--;
         }
-
-       
 
     }}
 
