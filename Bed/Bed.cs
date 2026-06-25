@@ -69,6 +69,9 @@ public partial class Bed : Node2D
 
         GlobalData.Fading = false;
 
+        GD.Print(GlobalData.Countdown);
+
+        
         if (GlobalData.Countdown >= 3)
         {
             DaysCounters.Text = $"[b][font_size=110]{GlobalData.Countdown} days left without treatment[/font_size][/b]";
@@ -77,16 +80,28 @@ public partial class Bed : Node2D
         {
             DaysCounters.Text = $"[b][font_size=110][shake rate=50][color=DEEP_PINK]{GlobalData.Countdown} days left without treatment [/color][/shake][/font_size][/b]";
         }
+        
         else if (GlobalData.Countdown == 0)
         {
-            DaysCounters.Text = $"[b][font_size=110][shake rate=200][wave rate=20][color=red]{GlobalData.Countdown} days left without treatment [/color][/wave][/shake][/font_size][/b]";
+            DaysCounters.Text = $"[b][font_size=110][shake rate=50][color=DEEP_PINK]{GlobalData.Countdown} days left without treatment [/color][/shake][/font_size][/b]";
+            
         }
-        else if(GlobalData.MedicinePlayer == 0 && GlobalData.Countdown == 0)
+        // idk why but the COuntdown is weird, it only works if its -1 or -2 for the death
+        else if (GlobalData.MedicinePlayer >= 1 && GlobalData.Countdown == -1)
+        {
+            DaysCounters.Text = $"[b][font_size=110][shake rate=200][wave rate=20][color=green] Treatment is comming [/color][/wave][/shake][/font_size][/b]";
+        }
+        else if (GlobalData.MedicinePlayer == 0 && GlobalData.Countdown == -2 && GlobalData.Dialog_Dealer == false)
         {
             //Scene changed to the death Screen, The reasion can be also set in the Global autoload, so you can change the reasion for the death screen, depending on how the player died
             GlobalData.Reasion = "Your sickness killed you! Keep an eye on your treatment countdown";
             GetTree().ChangeSceneToFile("res://DeathScreen/death_screen.tscn");
         }
+        else if(GlobalData.Countdown == -1 && GlobalData.MedicinePlayer == 0)
+        {
+            DaysCounters.Text = $"[b][font_size=110][shake rate=200][wave rate=20][color=red] Death is waiting [/color][/wave][/shake][/font_size][/b]";
+        }
+
 
         if (GlobalData.MedicinePlayer >= 1)
         {
@@ -94,7 +109,10 @@ public partial class Bed : Node2D
             GlobalData.MedicinePlayer--;
         }
 
-    }}
+
+
+    }
+}
 
     
 

@@ -233,6 +233,10 @@ public partial class Contents_C : Node2D
                 GlobalData.MedicineCost = GlobalData.MedicineCost * 2; // Increase the cost for the next purchase
                 button.Text = "Self Treatment \n (Price: " + GlobalData.MedicineCost + ") \n \n Owned: " + GlobalData.MedicinePlayer.ToString() + ") \n availability in: " + GlobalData.Medicincavailability.ToString();
                 DealerWindowMoneyDisplay.Text = DoctorInventory.Money.ToString();
+                
+                // so the player gets a random number for the avalibility for the selftreatment, gets send to the dialog
+                var randomavalibility = new Random();
+                Dialog.availibility = randomavalibility.Next(2, 5);
 
             }
             else if (DoctorInventory.Money < GlobalData.MedicineCost)

@@ -48,11 +48,10 @@ public partial class Contents_O : Node2D
         var day_M = GetNode<DayManager>("/root/DayManager");
         day_M.Player_Ingame_Days++;
         DoctorInventory.Money += GlobalData.DailyEarnings;
-        GlobalData.Countdown--;
         var BedScene = (Node2D)GetParent().GetNode("Bed");
         BedScene.Show();
         GlobalData.Fading = false;
-        
+        GlobalData.Countdown--;
         //push the scene we're entering to the previous scenes stack
         GlobalData.PreviousScenes.Push(BedScene.GetPath());
 
@@ -75,6 +74,7 @@ public partial class Contents_O : Node2D
         {
             GlobalData.Medicincavailability--;
         }
+
         
     }
     
@@ -105,6 +105,8 @@ public partial class Contents_O : Node2D
         {
             var DialogForDealer = (Control)GetParent().GetNode("Dialog");
             DialogForDealer.Show();
+            Dialog.currentIndex = 0;
+            
         }
         
 
@@ -121,6 +123,7 @@ public partial class Contents_O : Node2D
         {
             var DialogForDealer = (Control)GetParent().GetNode("Dialog");
             DialogForDealer.Hide();
+            
         }
     }
 
