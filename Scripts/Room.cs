@@ -5,10 +5,6 @@ using static System.Net.Mime.MediaTypeNames;
 public partial class Room : Node2D 
 {
     //Storing a reference to all the buttons, labels, etc., for easy reference in the methods
-
-    //part of Princess's old stuff, keeping it around just in case
-    //[Export] public Sprite2D PatientDisplay;
-    [Export] AdmissionManager AdmissionManager;
     Button LeaveRoomButton;
     Sprite2D PatientDisplay;
     Label PatientInfo;
@@ -37,15 +33,6 @@ public partial class Room : Node2D
     public PatientStats Patient;
 
     public bool alreadyTreated = false;
-
-
-    //part of Princess's old stuff, keeping it around just in case
-    /*public override void _EnterTree()
-    {
-
-        // VisibilityChanged += OnVisibilityChanged;
-        Hide();
-    }*/
 
     public void Initialize(Action HideUIAction)
     {

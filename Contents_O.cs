@@ -5,7 +5,6 @@ public partial class Contents_O : Node2D
 {
     private Timer sceneTimer;
     [Export] PackedScene dealer_selftreatment_dialog = ResourceLoader.Load<PackedScene>("res://dialog.tscn");
-    Mirror Mirror;
     // Called when the node enters the scene tree for the first time.
     public void Initialize()
 	{
@@ -28,13 +27,13 @@ public partial class Contents_O : Node2D
 
     private void InitializeChildren()
     {
-        Mirror.Initialize();
+        Control control = GetNode<Control>("Player_Interactables_O");
+        Mirror mirror = control.GetNode<Mirror>("Mirror");
+        mirror.Initialize();
     }
     private void GetNodes()
     {
         sceneTimer = GetNode<Timer>("ChangeToBed_Timer");
-        Control control = GetNode<Control>("Player_Interactables_O");
-        Mirror = control.GetNode<Mirror>("Mirror");
     }
 
     private void _on_computer_a_pressed()

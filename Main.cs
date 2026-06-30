@@ -7,7 +7,6 @@ public partial class Main : Node
     Contents_O Office;
     Contents_C Computer;
     Contents_P_I PatientInterface;
-    //Node2D PatientRoom;
     Bed Bed;
     PauseMenu PauseMenu;
     Inventory Inventory;
@@ -30,7 +29,6 @@ public partial class Main : Node
         Office = GetNode<Contents_O>("Office");
         Computer = GetNode<Contents_C>("Computer");
         PatientInterface = GetNode<Contents_P_I>("Patient_Interface");
-        //PatientRoom = GetNode<Node2D>("Room");
         Bed = GetNode<Bed>("Bed");
         PauseMenu = GetNode<PauseMenu>("Pause");
         Inventory = GetNode<Inventory>("Inventory");
@@ -39,7 +37,6 @@ public partial class Main : Node
     }
     private void Initialize()
     {
-        GD.Print("Initialize Main");
         GetNodes();
         //always keep the office at the bottom of the previous scenes stack, so the reference on how to return to it is always there
         GlobalData.PreviousScenes.Push(GetNode("Office").GetPath());

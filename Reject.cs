@@ -7,16 +7,16 @@ public partial class Reject : Button
 
     public void Initialize()
     {
-        Pressed += OnRejectPressed;
+        //Pressed += OnRejectPressed;
     }
 
     // This is the method that was missing!
     private void OnRejectPressed()
     {
-        if (PatientManager != null)
+        /*if (PatientManager != null)
         {
            //the mthod i added to Contents_P_I to refresh the patient data and update the UI.
             PatientManager.GenerateNewPatient();
-        }
+        }*/
     }
 }

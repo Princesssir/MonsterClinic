@@ -11,7 +11,6 @@ public partial class Contents_P_I : Node2D
     // Patient stats stores patient symptoms and other relevant info. Currently I just added it into the scene but later we'll have it instantiated.
 
     public PatientStats PatientPointer;
-    [Export] SpeechManager SpeechManagerAccess;
 
     Button ReturnButton;
     Button DialogueButton;
@@ -25,7 +24,7 @@ public partial class Contents_P_I : Node2D
     Button ShotgunButton;
     Button VisitPatientButton;
     VBoxContainer InventoryContainer;
-     private Timer DiagnosisTimer;
+    private Timer DiagnosisTimer;
 
     private int patientsLeft;
 
@@ -39,6 +38,7 @@ public partial class Contents_P_I : Node2D
 
     [Export] AdmissionManager AdmissionManagerAccess;
     [Export] Diagnosis_Box Diagnosis;
+    [Export] SpeechManager SpeechManagerAccess;
 
     Node2D LatestRoom = null;
 
@@ -323,6 +323,11 @@ public partial class Contents_P_I : Node2D
             Diagnosis.SetAllCheckboxStatus(false);
             NullPatientInitialize();
         }
+    }
+
+    public void OnRejectPressed()
+    {
+
     }
 }
 

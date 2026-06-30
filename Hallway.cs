@@ -10,7 +10,6 @@ public partial class Hallway : Node2D
     Button LeaveButton;
     List<Button> Doors =  new List<Button>();
 
-    public int testInt = 69;
     [Export] Button LeaveRoomButton;
     public void Initialize()
 	{
