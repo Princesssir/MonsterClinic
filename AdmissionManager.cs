@@ -16,7 +16,6 @@ public partial class AdmissionManager : Node
 
     Node2D LatestRoom = null;
 
-
     public void Initialize()
     {
         NullPatientInitialize();
@@ -49,7 +48,30 @@ public partial class AdmissionManager : Node
             }
        }
     }
+    public PatientStats GetNullPatient()
+    {
+        return nullPatient;
+    }
+    public void PatientQueueLogic()
+    {
+        patientsLeft--;
+    }
 
+    public int HowManyPatientsLeft()
+    {
+        return patientsLeft;
+    }
+
+    public void NewDayLogic()
+    {
+        LatestRoom = null;
+        patientsLeft = Upgrades.newPatientSlots;
+    }
+
+    public Node2D GetLatestRoom()
+    {
+        return LatestRoom;
+    }
     public void Reject()
     {
 
@@ -93,39 +115,11 @@ public partial class AdmissionManager : Node
     private void VisitInternalLogic()
     {
         GlobalData.inPatientRoom = true;
-        
-       
     }
-
     private void NullPatientInitialize()
     {
         nullPatient.malady = MaladyList.Database.ElementAt(0).Value;
         nullPatient.age = 0;
         nullPatient.patientID = "";
-    }
-
-    public PatientStats GetNullPatient()
-    {
-        return nullPatient;
-    }
-    public void PatientQueueLogic()
-    {
-        patientsLeft--;
-    }
-
-    public int HowManyPatientsLeft()
-    {
-        return patientsLeft;
-    }
-
-    public void NewDayLogic()
-    {
-        LatestRoom = null;
-        patientsLeft = Upgrades.newPatientSlots;
-    }
-
-    public Node2D GetLatestRoom()
-    {
-        return LatestRoom;
     }
 }

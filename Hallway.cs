@@ -1,6 +1,4 @@
 using Godot;
-using GodotPlugins.Game;
-using System;
 using System.Collections.Generic;
 
 public partial class Hallway : Node2D
@@ -9,7 +7,6 @@ public partial class Hallway : Node2D
 	Control DoorControl;
     Button LeaveButton;
     List<Button> Doors =  new List<Button>();
-
     [Export] Button LeaveRoomButton;
     public void Initialize()
 	{
@@ -51,7 +48,7 @@ public partial class Hallway : Node2D
                 doorButton.doorId = doorIndex;
                 doorIndex++;
                 childButton.Pressed += () => GoToRoom(doorButton.doorId);
-                childButton.Pressed += treatment.ShowUI;
+                //childButton.Pressed += treatment.ShowUI;
                 childButton.Pressed += main.InventoryPatientRoom;
                 childButton.Disabled = true;
             }
@@ -60,6 +57,7 @@ public partial class Hallway : Node2D
 
     private void GoToRoom(int index)
     {
+        //CALLED WHEN ONE OF THE DOORS ARE PRESSED IN THE HALLWAY
         Hide();
         GlobalData.inPatientRoom = true;
         //var RoomScene = (Node2D)GetParent().GetNode("Room");
@@ -67,7 +65,7 @@ public partial class Hallway : Node2D
         var RoomScene = RoomManager.RoomList[index];
         RoomScene.Show();
         Room room = RoomScene as Room;
-        room.UpdatePatientInfoLabel();
+        room.OnRoomEnter();
         Inventory inv = GetParent().GetNode<Inventory>("Inventory");
         TreatmentManager treatment = inv.GetNode<TreatmentManager>("Treatment_Manager");
         treatment.SetTreatmentRoomReference(room);
@@ -77,19 +75,20 @@ public partial class Hallway : Node2D
 
     public void GoToRoom(Node2D roomInput)
     {
-        Hide();
+        //CALLED WHEN "VISIT" BUTTON IS PRESSED IN THE ADMISSION
+        /*Hide();
         GlobalData.inPatientRoom = true;
         //var RoomScene = (Node2D)GetParent().GetNode("Room");
         //GD.Print($"Room count: {RoomList.Count}.");
         roomInput.Show();
         Room room = roomInput as Room;
-        room.UpdatePatientInfoLabel();
+        room.UpdateSprites();
         Inventory inv = GetParent().GetNode<Inventory>("Inventory");
         TreatmentManager treatment = inv.GetNode<TreatmentManager>("Treatment_Manager");
         treatment.SetTreatmentRoomReference(room);
         //treatment.ShowUI();
         //push the scene we're entering to the previous scenes stack
-        GlobalData.PreviousScenes.Push(roomInput.GetPath());
+        GlobalData.PreviousScenes.Push(roomInput.GetPath());*/
     }
 
     private void LeaveRoom()

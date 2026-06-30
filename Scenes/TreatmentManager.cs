@@ -36,10 +36,6 @@ public partial class TreatmentManager : Node
         GiveMedicine2Button.Pressed += () => MedicineOperations(GiveMedicine2Button);
         GiveMedicine3Button.Pressed += () => MedicineOperations(GiveMedicine3Button);
 
-        
-
-        
-
         CloseWrongMedicinePopup.Pressed += () => CloseParent(CloseWrongMedicinePopup);
         CloseNoPatientPopup.Pressed += () => CloseParent(CloseNoPatientPopup);
         ClosePatientCuredPopup.Pressed += () => CloseParent(ClosePatientCuredPopup);
@@ -60,9 +56,6 @@ public partial class TreatmentManager : Node
     private void GetNodes()
     {
         //Basically just grabbing all the nodes
-        PatientDisplay = GetNode<Sprite2D>("Patient_Display");
-        PatientInfo = GetNode<Label>("Patient_Info");
-        //GiveMedicine1Button = GetParent().GetNode("Inventory").GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
         GiveMedicine1Button = GetParent().GetNode("Open_Inventory").GetNode<TextureButton>("Give_Medicine_1");
         Med1Name = GiveMedicine1Button.GetNode<Label>("Med1_Name");
         Med1Count = GiveMedicine1Button.GetNode("Stripe").GetNode<Label>("Med1_Count");
@@ -109,19 +102,7 @@ public partial class TreatmentManager : Node
         }
     }
 
-    public void ShowUI()
-    {
-        if(Room != null)
-        {
-            if (Room.Patient != null)
-            {
-                PatientInfo.Show();
-                PatientDisplay.Show();
-            }
-        }
-        UpdateTreatmentText();
-    }
-    public void UpdateTreatmentText()
+    /*public void UpdateTreatmentText()
     {
         if (Room == null) return;
         if (Room.Patient == null) return;
@@ -129,7 +110,7 @@ public partial class TreatmentManager : Node
                    $"\n Malady: {Room.Patient.malady.name}" +
                    $"\n Severity: {Room.Patient.malady.severity}" +
                    $"\n Age: {Room.Patient.age}";
-    }
+    }*/
     public void HideUI()
     {
         foreach(Node child in GetChildren())
@@ -202,7 +183,7 @@ public partial class TreatmentManager : Node
             {
                 //the correct use of the medicine, severity goes down, the text gets updated
                 patient.malady.severity--;
-                UpdateTreatmentText();
+                //UpdateTreatmentText();
                 GD.Print($"Room: {Room.myIndex}");
                 //PatientInfo.Text = "Patient info: \n Malady: " + patient.malady.name + "\n Severity: " + patient.malady.severity; 
                 //if you get the severity down to 0, the patient is cured, you get a popup, and you get paid

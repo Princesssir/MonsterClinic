@@ -139,13 +139,10 @@ public partial class Main : Node
         {
             Inventory.Show();
             //if (GlobalData.DailyLockout == false)
-            if (Treatment.GetRoom().alreadyTreated == false)
-            {
-                //enable the GiveMedicine buttons when entering the patient room if the lockout is disabled
-                GiveMedicine1Button.Disabled = false;
-                GiveMedicine2Button.Disabled = false;
-                GiveMedicine3Button.Disabled = false;
-            }
+            //enable the GiveMedicine buttons when entering the patient room if the lockout is disabled
+            GiveMedicine1Button.Disabled = false;
+            GiveMedicine2Button.Disabled = false;
+            GiveMedicine3Button.Disabled = false;
         }   
         else
         {

@@ -82,7 +82,7 @@ public partial class Contents_P_I : Node2D
     public void NewDay()
     {
         AdmissionManagerAccess.NewDayLogic();
-        NextPatientInQueue();
+        NextPatient();
         PortraitSprite.Show();
         Diagnosis.SetAllCheckboxStatus(true);
         RejectButton.Disabled = false;
@@ -211,13 +211,11 @@ public partial class Contents_P_I : Node2D
 
     private void OnRejectPressed()
     {
-        GD.Print("Contents PI on reject pressed");
         NextPatient();
     }
 
     private void OnAdmitPressed()
     {
-        GD.Print("Contents PI on admit pressed");
         AdmissionManagerAccess.Admit();
         NextPatient();
         SetVisitButtonStatus();
@@ -225,7 +223,6 @@ public partial class Contents_P_I : Node2D
 
     private void NextPatient()
     {
-        GD.Print("Contents PI next patient!");
         //ShotgunButton.Disabled = false;
 
         //This is only here until the milestone, then it should be put somewhere else.
@@ -263,13 +260,13 @@ public partial class Contents_P_I : Node2D
 
     private void SetVisitButtonStatus()
     {
-        if (AdmissionManagerAccess.GetLatestRoom() == null)
+        if (AdmissionManagerAccess.GetLatestRoom() != null)
         {
             VisitButton.Disabled = false;
         }
     }
 
-    public void Visit()
+    private void Visit()
     {
         SpeechManagerAccess.SetBubbleStatus(false);
         /*Inventory inv = GetParent().GetNode<Inventory>("Inventory");
@@ -312,7 +309,5 @@ public partial class Contents_P_I : Node2D
         GlobalData.PreviousScenes.Push(hallway.GetPath());
         GlobalData.PreviousScenes.Push(room.GetPath());
     }
-
-  
 }
 
