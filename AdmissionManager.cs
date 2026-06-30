@@ -6,25 +6,24 @@ public partial class AdmissionManager : Node
 {
     [Export] Contents_P_I PatientAdmission;
     [Export] public Sprite2D PatientSpriteDisplay;
-    [Export] Admit AdmitButton;
+    [Export] Button AdmitButton;
+
+    private int patientsLeft;
+
+    PatientStats nullPatient = new PatientStats();
+
+    private PatientStats InternalPatient;
+
+    Node2D LatestRoom = null;
+
 
     public void Initialize()
     {
-
+        NullPatientInitialize();
     }
-    public void _on_admit_pressed()
+    public void Admit()
     {
-        //part of Princess's system for moving the patient sprite to the patient room, currently deprecated, but just commented out because it might be useful again
-        // saves patient sprite
-        /* if (PatientSpriteDisplay != null)
-        {
-            GlobalData.AdmittedPatientTexture = PatientSpriteDisplay.Texture;
-        }*/
-
-
         Node mainNode = GetParent().GetParent();
-
-
         //var roomNode = mainNode.GetNode<Node2D>("Room");
 
        if(IsClinicFull())
@@ -34,30 +33,26 @@ public partial class AdmissionManager : Node
             {
                 Inventory inv = GetParent().GetParent().GetNode<Inventory>("Inventory");
                 TreatmentManager treatment = inv.GetNode<TreatmentManager>("Treatment_Manager");
-                Random random = new Random();
-                var patientInterface = mainNode.GetNode<Node2D>("Patient_Interface");
-                Node2D patient = treatment.GetNode<Node2D>("Patient_Display");
-                var patientInfo = treatment.GetNode<CanvasItem>("Patient_Info");
 
                 Room room = roomNode as Room;
-                treatment.SetTreatmentRoomReference(room);
-                PatientAdmission.GenerateNewPatientVoid();
+                //treatment.SetTreatmentRoomReference(room);
+                //PatientAdmission.GenerateNewPatientVoid();
 
                 room.Patient = PatientAdmission.PatientPointer;
                 GlobalData.patientCount++;
 
-                //give the newly admitted patient a random malady at a random severity
-                //room.Patient.malady = GlobalData.Maladies[rnd.Next(0, 3)];
+                //treatment.UpdateTreatmentText();
+                //treatment.ReenableMedicine();
 
-                treatment.UpdateTreatmentText();
-                treatment.ReenableMedicine();
-                
-
-
-                PatientAdmission.SetLatestPatientRoom(room);
+                SetLatestPatientRoom(room);
                 IsClinicFull();
             }
        }
+    }
+
+    public void Reject()
+    {
+
     }
 
     public bool IsClinicFull()
@@ -65,11 +60,11 @@ public partial class AdmissionManager : Node
         int emptyRoomCount = RoomManager.GetEmptyRoomCount();
         if (emptyRoomCount > 0)
         {
-            AdmitButton.SetButtonStatus(true);
+            SetButtonStatus(AdmitButton, true);
         }
         else
         {
-            AdmitButton.SetButtonStatus(false);
+            SetButtonStatus(AdmitButton, false);
         }
         if (emptyRoomCount > 0)
         {
@@ -78,5 +73,59 @@ public partial class AdmissionManager : Node
         return false;
     }
 
-    
+    public void SetButtonStatus(Button button, bool status)
+    {
+        button.Disabled = !status;
+    }
+    public PatientStats GenerateNewPatient()
+    {
+        //  generate new data
+        PatientStats patientStats = new PatientStats();
+
+        InternalPatient = patientStats;
+        return patientStats;
+    }
+
+    public void SetLatestPatientRoom(Node2D room)
+    {
+        LatestRoom = room;
+    }
+    private void VisitInternalLogic()
+    {
+        GlobalData.inPatientRoom = true;
+        
+       
+    }
+
+    private void NullPatientInitialize()
+    {
+        nullPatient.malady = MaladyList.Database.ElementAt(0).Value;
+        nullPatient.age = 0;
+        nullPatient.patientID = "";
+    }
+
+    public PatientStats GetNullPatient()
+    {
+        return nullPatient;
+    }
+    public void PatientQueueLogic()
+    {
+        patientsLeft--;
+    }
+
+    public int HowManyPatientsLeft()
+    {
+        return patientsLeft;
+    }
+
+    public void NewDayLogic()
+    {
+        LatestRoom = null;
+        patientsLeft = Upgrades.newPatientSlots;
+    }
+
+    public Node2D GetLatestRoom()
+    {
+        return LatestRoom;
+    }
 }
