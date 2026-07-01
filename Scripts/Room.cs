@@ -104,7 +104,7 @@ public partial class Room : Node2D
 
     private void SetPatientRoomText()
     {
-        PatientInfo.Text = "zaza binx";
+         PatientInfo.Text = $"Malady: {Patient.malady.name} \n Age: {Patient.age} \n Severity: {Patient.malady.severity}";
     }
 
     public bool HasPatient()

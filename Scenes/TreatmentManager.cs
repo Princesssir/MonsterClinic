@@ -158,10 +158,10 @@ public partial class TreatmentManager : Node
             countBox = Med3Count;
         }
 
-        if (PatientDisplay.Visible == false)
+        /*if (PatientDisplay.Visible == false)
         {
             NoPatientPopup.Show();
-        }
+        }*/
         //else if (GlobalData.Medicine1Count > 0)
         else if (medicine.amount > 0)
         {
